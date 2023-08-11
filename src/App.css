@@ -7,4 +7,9 @@
 
 .text-1xl{
   font-size: 18px;
+  
+}
+
+.space-y{
+  letter-spacing: 1.2px;
 }
