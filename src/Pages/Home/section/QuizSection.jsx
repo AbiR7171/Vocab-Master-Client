@@ -13,7 +13,7 @@ const QuizSection = () => {
             <div 
             className='px-20 space-y-5'
             >
-                <h2 className="text-5xl font-bold">Special Quiz</h2>
+                <h2 className="text-5xl font-bold">Special Quiz.</h2>
                 <p
                 className='text-gray-400 flex items-center justify-center space-y'
                 >Learning with Duolingo is fun With quick, bite-sized lessons, you’ll earn points and unlock new levels while gaining real-world communication skills.</p>
