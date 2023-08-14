@@ -66,7 +66,7 @@ const Register = () => {
                             <div className="form-control mt-10">
                                 <input className="bg-[#FFC746] h-[54px] rounded-md text-[#69235B] font-[500] text-[20px] cursor-pointer" type="submit" value="Create an Account" />
                                 
-                                <p className='text-center text-[--text-color] font-[400] text-[20px] mt-4'>Already have an Account?<Link to="/" className='text-[#FFC746]'>Login</Link></p>
+                                <p className='text-center text-[--text-color] font-[400] text-[20px] mt-4'>Already have an Account?<Link to="/login" className='text-[#FFC746]'>Login</Link></p>
                             
                             </div>
 
