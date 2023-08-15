@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from "lottie-react";
 import banner from "../../../assets/LottieAnimation/Banner.json"
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -34,7 +35,7 @@ const Banner = () => {
                 bg-orange-700 w-9/12 py-4 text-white rounded-lg
                 '
                 >
-                    Get started
+                    <Link to="/login">Get started</Link>
                 </button>
 
                 <button 
