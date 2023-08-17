@@ -1,14 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
 
 
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+    const { createUser } = useContext(AuthContext)
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+   
+
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data)
+        createUser(data.email, data.password)
+            .then(result => {
+                const userCreated = result.user;
+                console.log(userCreated);
+                reset();
+                Swal.fire('Registration Successfull');
+                navigate(from, { replace: true })
+            })
+            .catch(error => console.log(error))
     };
 
 
@@ -16,14 +34,20 @@ const Register = () => {
         <div>
             <h2 className='text-center text-[#69235B] text-[18px] md:text-[40px] font-[700]'>Please Register</h2>
             <div className='w-[293px] h-10 md:w-[440px] md:h-16 leading-[20px] md:leading-[30px] mx-auto text-[#69235B] mt-7 text-center'>
-                <p className='font-[300] text-[14px] md:text-[24px]'>Welcome back! Sign in using your social account or email to continue us</p>
+                <p className='font-[300] text-[14px] md:text-[24px]'>Welcome back! Sign Up using your social account or email to continue us</p>
             </div>
+
+{/* -----------------Social Registration---------------------- */}
+            <div className='md:mt-20'>
+                <SocialLogin></SocialLogin>
+            </div>
+            <div className="divider w-[293px] md:w-[440px]   mx-auto">OR</div>
 
 
             {/* -------------------registration info---------------- */}
             <div className="">
 
-                <div className="md:w-[440px] mx-auto mt-5 md:mt-10">
+                <div className="md:w-[440px] mx-auto mt-5 md:mt-3">
 
                     <div className="w-full ">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -35,7 +59,7 @@ const Register = () => {
                                 {errors.name && <span className='text-red-500'>This field is required</span>}
                             </div>
 
-                            <div className="mt-7">
+                            <div className="mt-5">
                                 <label className="label">
                                     <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">Your Email</span>
                                 </label>
@@ -43,7 +67,7 @@ const Register = () => {
                                 {errors.email && <span className='text-red-500'>This field is required</span>}
                             </div>
 
-                            <div className="mt-7">
+                            <div className="mt-5">
                                 <label className="label">
                                     <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">Password</span>
                                 </label>
@@ -53,7 +77,7 @@ const Register = () => {
                                 {errors.password?.type === 'pattern' && <span className='text-red-500'>Must be at least one digit, one uppercase and lowerCase and one Special cherecter</span>}
                             </div>
 
-                            {/* <div className="mt-7">
+                            {/* <div className="mt-5">
                                 <label className="label">
                                     <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">Confirm Password</span>
                                 </label>
@@ -63,10 +87,10 @@ const Register = () => {
                                 /> {errors.confirmPassword && <p>Passwords do not match</p>}
                             </div> */}
 
-                            <div className="form-control mt-10">
+                            <div className="form-control mt-7">
                                 <input className="bg-[#FFC746] h-[54px] rounded-md text-[#69235B] font-[500] text-[20px] cursor-pointer" type="submit" value="Create an Account" />
                                 
-                                <p className='text-center text-[--text-color] font-[400] text-[20px] mt-4'>Already have an Account?<Link to="/login" className='text-[#FFC746]'>Login</Link></p>
+                                <p className='text-center text-[--text-color] font-[400] text-[15px]'>Already have an Account?<Link to="/login" className='text-[#FFC746]'>Login</Link></p>
                             
                             </div>
 
