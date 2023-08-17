@@ -35,7 +35,7 @@ const Banner = () => {
                 bg-orange-700 w-9/12 py-4 text-white rounded-lg
                 '
                 >
-                    <Link to="/login">Get started</Link>
+                    <Link to="/register">Get started</Link>
                 </button>
 
                 <button 
@@ -43,7 +43,7 @@ const Banner = () => {
                 bg-slate-200 w-9/12 py-4 text-black rounded-lg
                 '
                 >
-                    I Already have an account
+                    <Link to="/login">I Already have an account</Link>
                 </button>
 
             </div>
