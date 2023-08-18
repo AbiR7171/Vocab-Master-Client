@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import Lottie from "lottie-react";
-import banner from "../../../assets/LottieAnimation/Banner.json";
-
-import { LanguageContext } from "../../../context/Context";
 import banner from "../../../assets/LottieAnimation/Banner.json"
+import { LanguageContext } from "../../../context/Context";
+import { Link } from "react-router-dom";
+// import { LanguageContext } from "../../../context/Context";
 
 const Banner = () => {
   const { language } = useContext(LanguageContext);
+  console.log(language);
 
   const textContent = {
     en: {
@@ -43,10 +44,10 @@ const Banner = () => {
 
         <p className="text-2xl flex items-center justify-center">{heading2}</p>
 
-        <button className="uppercase bg-orange-700 w-9/12 py-4 text-white rounded-lg">{ getStartedButton}</button>
+        <button className="uppercase bg-orange-700 w-9/12 py-4 text-white rounded-lg"><Link to='/register'>{ getStartedButton}</Link></button>
 
         <button className="uppercase bg-slate-200 w-9/12 py-4 text-black rounded-lg">
-          {alreadyHaveAccountButton}
+        <Link to='//allRouts/learn'>{ alreadyHaveAccountButton}</Link>
         </button>
       </div>
     </div>

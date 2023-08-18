@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import animation from "../../../assets/LottieAnimation/quiz.json";
 import { LanguageContext } from "../../../context/Context";
 
+
 const QuizSection = () => {
 
   // language change feature
