@@ -4,7 +4,7 @@ import { app } from '../../firebase/firebase.config';
 // import { app } from '../component/firebase/firebase.config';
 // import { app } from '../firebase/firebase.config';
 
-const auth = getAuth(app);
+
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
@@ -14,6 +14,7 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
     const appleProvider = new OAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
+    const auth = getAuth(app);
 
 
     //for register----------------------------

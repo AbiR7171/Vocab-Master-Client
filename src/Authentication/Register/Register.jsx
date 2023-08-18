@@ -24,7 +24,7 @@ const Register = () => {
                 console.log(userCreated);
                 reset();
                 Swal.fire('Registration Successfull');
-                navigate(from, { replace: true })
+                navigate("/allRouts/learn")
             })
             .catch(error => console.log(error))
     };
