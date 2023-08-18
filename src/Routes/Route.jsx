@@ -3,9 +3,10 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Authentication/Login/Login"
 import Register from "../Authentication/Register/Register";
-import AllRouts from "../AllRouts/AllRouts/AllRouts";
-import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
+import Learn from "../Learn/Learn";
+import Session1 from "../Learn/session1";
 
 
 
@@ -19,30 +20,30 @@ const router = createBrowserRouter([
                element:<Home/>
             },
             {
-                path:"login",
+                path:"/login",
                 element:<Login></Login>
             },
             {
-                path:"register",
+                path:"/register",
                 element:<Register></Register>
             },
-            {
-                path:"allRouts",
-                element:<PrivateRoute><AllRouts></AllRouts></PrivateRoute>
-            }
         ]
 
+    },
+    {
+        path:"/allRouts",
+        element:<LeftSideRoutes/>,
+        children:[
+           {
+            path:"/allRouts/learn",
+            element:<Learn/>
+           },
+        ]
+    }, 
+    {
+     path:"/learn/sesson1",
+     element:<Session1/>
     }
-    // {
-    //     path:"allRouts",
-    //     element:<PrivateRoute><AllRouts></AllRouts></PrivateRoute>,
-    //     children:[
-    //         {
-    //             path:"leftRoute",
-    //             element:<LeftSideRoutes></LeftSideRoutes>
-    //         }
-    //     ]
-    // }
 ])
 
 
