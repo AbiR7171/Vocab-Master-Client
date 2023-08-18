@@ -23,7 +23,7 @@ const Banner = () => {
         <button
           className="uppercase 
                 bg-orange-700 w-9/12 py-4 text-white rounded-lg
-                '
+                "
                 >
                     Get started
                 </button>
@@ -31,7 +31,7 @@ const Banner = () => {
         <button
           className="uppercase 
                 bg-slate-200 w-9/12 py-4 text-black rounded-lg
-                '
+                "
                 >
                     I Already have an account
                 </button>
