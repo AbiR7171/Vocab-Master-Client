@@ -11,7 +11,7 @@ const Register = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const { createUser } = useContext(AuthContext)
     const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/allRouts";
    
 
     const navigate = useNavigate();
