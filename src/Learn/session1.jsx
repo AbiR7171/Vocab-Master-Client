@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Pagination, Navigation } from 'swiper/modules';
+import Swal from 'sweetalert2';
 
 
 
@@ -44,6 +45,13 @@ const Session1 = () => {
         setLevel(level + 1) 
         setDisable(true)
         localStorage.setItem("level", level +1)
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Completed',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
 
     
