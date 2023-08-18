@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import banner from "../../../assets/LottieAnimation/Banner.json";
-import { Link } from "react-router-dom";
+
 import { LanguageContext } from "../../../context/Context";
+import banner from "../../../assets/LottieAnimation/Banner.json"
 
 const Banner = () => {
   const { language } = useContext(LanguageContext);
@@ -50,6 +51,7 @@ const Banner = () => {
       </div>
     </div>
   );
+
 };
 
 export default Banner;

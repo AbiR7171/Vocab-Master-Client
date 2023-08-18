@@ -10,16 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^10.1.0",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.4",
+    "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",
+<<<<<<< HEAD
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.7.23",
+    "swiper": "^10.2.0"
+=======
     "sort-by": "^0.0.2",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+
+    "sweetalert2": "^11.7.22"
+>>>>>>> 04a62e82304db82bd43cf7a7d92eb0b02888bdcb
   },
   "devDependencies": {
+    "@iconify/react": "^4.1.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
