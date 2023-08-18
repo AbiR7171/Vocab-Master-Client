@@ -1,7 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import banner from "../../../assets/LottieAnimation/Banner.json";
-import { Link } from "react-router-dom";
+import banner from "../../../assets/LottieAnimation/Banner.json"
 
 const Banner = () => {
   return (
@@ -24,21 +23,23 @@ const Banner = () => {
         <button
           className="uppercase 
                 bg-orange-700 w-9/12 py-4 text-white rounded-lg
-                "
-        >
-          <Link to="/learn"> Get started</Link>
-        </button>
+                '
+                >
+                    Get started
+                </button>
 
         <button
           className="uppercase 
                 bg-slate-200 w-9/12 py-4 text-black rounded-lg
-                "
-        >
-          I Already have an account
-        </button>
-      </div>
-    </div>
-  );
+                '
+                >
+                    I Already have an account
+                </button>
+
+            </div>
+            
+        </div>
+    );
 };
 
 export default Banner;
