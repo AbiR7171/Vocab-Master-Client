@@ -27,12 +27,12 @@ const router = createBrowserRouter([
                 
             },
             {
-                path: 'learn',
+                path: '/learn',
                 element:<Progress></Progress>
     
             },
             {
-                path: "login",
+                path: "/login",
                 element: <Login></Login>
             },
             {
