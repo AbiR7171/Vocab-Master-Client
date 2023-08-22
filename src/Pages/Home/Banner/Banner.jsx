@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import banner from "../../../assets/LottieAnimation/Banner.json"
 import { LanguageContext } from "../../../context/Context";
 import { Link } from "react-router-dom";
-// import { LanguageContext } from "../../../context/Context";
+
 
 const Banner = () => {
   const { language } = useContext(LanguageContext);

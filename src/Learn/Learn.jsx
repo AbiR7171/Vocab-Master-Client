@@ -46,7 +46,7 @@ const Learn = () => {
             {/* Other buttons */}
             <div 
               className="bg-[#63DBBF] w-24 h-24 b rounded-full flex border- border-[#7e7b7b] border-b-8 mx-auto my-3 me-32"
-              onClick={() => window.my_modal_3.showModal()}
+              onClick={() => window.my_modal_2.showModal()}
             >
               <img
                 src={`${level > 0 ? "https://d35aaqx5ub95lt.cloudfront.net/images/path/icons/ef9c771afdb674f0ff82fae25c6a7b0a.svg" :
@@ -57,7 +57,7 @@ const Learn = () => {
             </div>
             <div
               className=" bg-[#E5E5E5]  w-24 h-24 b rounded-full flex border- border-[#7e7b7b] border-b-8 mx-auto my-3"
-              onClick={() => window.my_modal_3.showModal()}
+              onClick={() => window.my_modal_2.showModal()}
             >
               <img
                 src="	https://d35aaqx5ub95lt.cloudfront.net/images/path/icons/261caf5e7127c22944a432ef5c191cfa.svg"
@@ -66,7 +66,7 @@ const Learn = () => {
             </div>
             <div
               className=" bg-[#E5E5E5]  w-24 h-24 b rounded-full flex border- border-[#7e7b7b] border-b-8 mx-auto my-3"
-              onClick={() => window.my_modal_3.showModal()}
+              onClick={() => window.my_modal_2.showModal()}
             >
               <img
                 src="	https://d35aaqx5ub95lt.cloudfront.net/images/path/icons/261caf5e7127c22944a432ef5c191cfa.svg"
