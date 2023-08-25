@@ -8,7 +8,8 @@ import AllRouts from "../AllRouts/AllRouts/AllRouts";
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
-import Session1 from "../Learn/session1";
+import LessonOne from "../Pages/Home/Home/Learn/LessonOne";
+// import Session1 from "../Learn/session1";
 
 const router = createBrowserRouter([
   {
@@ -42,11 +43,13 @@ const router = createBrowserRouter([
         path: "/allRouts/learn",
         element: <Learn />,
       },
-      {
-        path:"/allRouts/learn/sesson1",
-        element:<Session1/>
-      }
     ],
+  },
+  {
+    
+      path:"/allRouts/learn/sesson1",
+      element:<LessonOne/>
+    
   },
 ]);
 

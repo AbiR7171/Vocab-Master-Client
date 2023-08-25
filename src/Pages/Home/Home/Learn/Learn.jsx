@@ -16,7 +16,7 @@ const Learn = () => {
                 <h2 className="text-white fw-bold text-2xl">ইউনিট 1</h2>
     
                 <p className="text-white fw-bold">
-                  নিজের পরিচয় দেয়া, অন্যদের পরিচয়
+                  
                 </p>
               </div>
               <button className="btn btn-outline"> Default</button>
@@ -30,7 +30,7 @@ const Learn = () => {
               data-tip="GET STARTED"
             >
               {/* active button */}
-             <Link to="/learn/sesson1">
+             <Link to="/allRouts/learn/sesson1">
              <div
                 className=" bg-[#63DBBF]  w-24 h-24 b rounded-full flex border-4 border-[#7e7b7b] border-b-8"
                 onClick={() => window.my_modal_2.showModal()}
