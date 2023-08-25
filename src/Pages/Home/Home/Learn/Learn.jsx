@@ -9,7 +9,7 @@ const Learn = () => {
     return (
         <>
           {/* Container */}
-          <div className=" mt-10   lg:flex items-center justify-around gap-5 font-primary w-full h-full">
+          <div className="container mx-auto lg:px-28 mt-10   lg:flex items-center justify-around gap-5 font-primary">
             {/* Unit 1 */}
             <div className="bg-[#63DBBF] w-[600px] rounded p-6 flex justify-between">
               <div>
@@ -32,7 +32,7 @@ const Learn = () => {
               {/* active button */}
              <Link to="/learn/sesson1">
              <div
-                className=" bg-[#63DBBF]  w-24 h-24  rounded-full flex border-4 border-[#7e7b7b] border-b-8"
+                className=" bg-[#63DBBF]  w-24 h-24 b rounded-full flex border-4 border-[#7e7b7b] border-b-8"
                 onClick={() => window.my_modal_2.showModal()}
               >
                 <img
