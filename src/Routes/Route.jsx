@@ -8,6 +8,7 @@ import AllRouts from "../AllRouts/AllRouts/AllRouts";
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
+import Docs from "../components/Docs/Docs";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "docs",
+        element: <Docs></Docs>,
       },
     ],
   },
