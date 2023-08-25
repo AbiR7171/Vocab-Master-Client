@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import Swal from "sweetalert2";
 
+
 const LessonOne = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
@@ -15,9 +16,9 @@ const LessonOne = () => {
   const [disable, setDisable] = useState(false);
   const [meaning, setMeaning]=useState()
   const [selectedOption, setSelectedOption] = useState(null);
+  const [number, setNumber]=useState(0)
   
   console.log(selectedOption);
-  console.log(meaning);
 
  
 
@@ -26,6 +27,7 @@ const LessonOne = () => {
     setSelectedOption(event.target.value);
 
     if(event.target.value == `d`){
+      setNumber(number + 1)
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -77,12 +79,17 @@ const LessonOne = () => {
 
   return (
     <div className=" bg-zinc-200 h-full ">
-      {/* <button
+     <div className="bg-black w-full h-20  bg-opacity-70">
+     <button
         onClick={handleBack}
         className="text-red-400 text-3xl absolute top-0  ms-4 mt-6"
       >
         <Icon icon="solar:round-arrow-left-bold" />
-      </button> */}
+      </button> 
+        <div className="flex items-center justify-end container mx-auto">
+          <Icon icon="material-symbols:diamond" className="text-3xl text-white mt-5" /> <p className="text-2xl mt-3 text-red-400">({number})</p>
+        </div>
+      </div>
 
       <div>
         <p className="text-center mt-20 text-2xl font-primary">

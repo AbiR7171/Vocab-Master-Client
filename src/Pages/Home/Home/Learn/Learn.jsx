@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Slider from '../../../../components/Slider/Slider';
+import Features from '../../../../components/Features/Features';
 
 const Learn = () => {
 
@@ -8,8 +10,10 @@ const Learn = () => {
 
     return (
         <>
-          {/* Container */}
-          <div className="container mx-auto lg:px-28 mt-10   lg:flex items-center justify-around gap-5 font-primary">
+         <div className=' flex justify-between gap-5 items-center w-full'>
+                  <div>
+                     {/* Container */}
+          <div className=" mt-10lg:flex items-center font-primary ">
             {/* Unit 1 */}
             <div className="bg-[#63DBBF] w-[600px] rounded p-6 flex justify-between">
               <div>
@@ -24,7 +28,7 @@ const Learn = () => {
           </div>
     
           {/* Get Started tooltip */}
-          <div className="text-center items-center mx-[500px] my-12">
+          <div className="text-center items-center  my-12">
             <div
               className="tooltip tooltip-open tooltip-accent bg-white p-2"
               data-tip="GET STARTED"
@@ -85,7 +89,15 @@ const Learn = () => {
               <h3 className="font-bold text-lg">Hello!</h3>
               <p className="py-4 bg-red-500 w-6"><Link>Start</Link></p>
             </form>
-          </dialog>
+           </dialog>
+                  </div>
+
+                  <div >
+                    <Link to="/docs"><p className='mb-5 font-Sec btn btn-link'>Docs</p></Link>
+                    <Slider/>
+                    <Features/>
+                  </div>
+         </div>
         </>
       );
 };
