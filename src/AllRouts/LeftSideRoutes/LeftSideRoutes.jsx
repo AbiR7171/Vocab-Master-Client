@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaUsers } from 'react-icons/fa';
+import {FaUsers} from 'react-icons/fa'
 import { FcHome } from 'react-icons/fc';
 import { Link, Outlet } from 'react-router-dom';
 import { GiSaloonDoors } from "react-icons/gi";
