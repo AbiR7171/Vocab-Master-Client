@@ -5,7 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 
 .font-primary{
   font-family: 'Merriweather', serif;
@@ -13,6 +13,10 @@
 
 .font-Sec{
   font-family: 'Cormorant Garamond', serif;
+}
+
+.font-Logo{
+  font-family: 'Mr Dafoe', cursive;
 }
 
 
@@ -24,4 +28,13 @@
 
 .space-y{
   letter-spacing: 1.2px;
+}
+
+
+.bg-Back{
+   background-image: url(./assets/images/Background1.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
 }
