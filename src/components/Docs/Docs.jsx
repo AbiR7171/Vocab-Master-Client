@@ -16,7 +16,7 @@ import mission from '../../assets/hasan/mission.avif'
 
 const Docs = () => {
     return (
-        <div>
+        <div className='container mx-auto'>
             {/* introduction */}
             <section className='mt-20'>
                 <div className='text-center mb-16'>

@@ -20,11 +20,12 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",
     "sort-by": "^0.0.2",
-    "tippy.js": "^6.3.7",
+    "sweetalert2": "^11.7.22",
     "swiper": "^10.2.0",
-    "sweetalert2": "^11.7.22"
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
+    "@iconify/react": "^4.1.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
