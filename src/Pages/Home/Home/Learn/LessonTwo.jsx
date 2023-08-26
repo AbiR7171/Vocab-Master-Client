@@ -9,7 +9,7 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import Swal from "sweetalert2";
 
 
-const LessonOne = () => {
+const LessonTwo = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
   const [level, setLevel] = useState(0);
@@ -54,7 +54,7 @@ const LessonOne = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        const levelONeData = data.filter((d) => d.level == "2.1");
+        const levelONeData = data.filter((d) => d.level == "2.2");
         setLesson(levelONeData);
       });
   }, []);
@@ -239,4 +239,4 @@ const LessonOne = () => {
   );
 };
 
-export default LessonOne;
+export default LessonTwo;

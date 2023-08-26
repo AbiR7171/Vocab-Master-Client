@@ -12,6 +12,7 @@ import LessonOne from "../Pages/Home/Home/Learn/LessonOne";
 // import Session1 from "../Learn/session1";
 import Docs from "../components/Docs/Docs";
 import PrivateRoute from "../components/PrivateRoute";
+import LessonTwo from "../Pages/Home/Home/Learn/LessonTwo";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       path:"/allRouts/learn/sesson1",
       element:<LessonOne/>
     
+  },
+  {
+    path:"/allRouts/learn/sesson2",
+    element:<LessonTwo/>
   },
   {
     path:"/docs",
