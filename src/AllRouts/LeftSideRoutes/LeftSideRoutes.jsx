@@ -26,7 +26,7 @@ const LeftSideRoutes = () => {
                     <li className='ms-5 text-xl font-semibold'><Link><GiSaloonDoors></GiSaloonDoors> অভিযান</Link></li>
                     <li className='ms-5 text-xl font-semibold'><Link><FaCartShopping></FaCartShopping> শপ</Link></li>
                     <li className='ms-5 text-xl font-semibold'><Link><CgProfile></CgProfile> প্রোফাইল</Link></li>
-                    <li className='ms-5 text-xl font-semibold'><Link><PiDotsThreeCircle></PiDotsThreeCircle> অন্যান্য</Link></li>
+                    <li className='ms-5 text-xl font-semibold'><Link to="/"><PiDotsThreeCircle></PiDotsThreeCircle> হোম</Link></li>
                     
                 </ul>
 

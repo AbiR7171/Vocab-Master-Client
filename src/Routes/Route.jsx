@@ -3,12 +3,16 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Authentication/Login/Login";
 import Register from "../Authentication/Register/Register";
-import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+
 import AllRouts from "../AllRouts/AllRouts/AllRouts";
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
+import LessonOne from "../Pages/Home/Home/Learn/LessonOne";
+// import Session1 from "../Learn/session1";
 import Docs from "../components/Docs/Docs";
+import PrivateRoute from "../components/PrivateRoute";
+import LessonTwo from "../Pages/Home/Home/Learn/LessonTwo";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +44,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/allRouts",
-    element: <LeftSideRoutes />,
+    element:<PrivateRoute> <LeftSideRoutes /></PrivateRoute>,
     children: [
       {
         path: "/allRouts/learn",
@@ -48,6 +52,20 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    
+      path:"/allRouts/learn/sesson1",
+      element:<LessonOne/>
+    
+  },
+  {
+    path:"/allRouts/learn/sesson2",
+    element:<LessonTwo/>
+  },
+  {
+    path:"/docs",
+    element:<Docs/>
+  }
 ]);
 
 export default router;
