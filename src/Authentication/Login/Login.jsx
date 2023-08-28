@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { AuthContext } from '../Provider/AuthProvider';
-import Swal from 'sweetalert2';
 
 const Login = () => {
-    
-    const { signin } = useContext(AuthContext)
+
+    const {signin} = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/allRouts";
@@ -34,7 +34,7 @@ const Login = () => {
                 <p className='font-[300] text-[14px] md:text-[24px]'>Welcome back! Sign in using your social account or email to continue us</p>
             </div>
 
-{/* --------------------Social Login------------------------- */}
+            {/* --------------------Social Login------------------------- */}
             <div className='md:mt-20'>
                 <SocialLogin></SocialLogin>
             </div>
@@ -47,7 +47,7 @@ const Login = () => {
 
                 <div className="md:w-[440px] mx-auto mt-10">
                     <div className=" w-full">
-                        
+
                         <form onSubmit={handleSubmit(onSubmit)} className="">
                             <div className="">
                                 <label className="label">
@@ -66,7 +66,7 @@ const Login = () => {
                                 <input className="bg-[#FFC746] h-[54px] rounded-md text-[#69235B] font-[500] text-[20px] cursor-pointer" type="submit" value="Login" />
                                 <p className='text-center text-[--text-color] font-[400] text-[15px]'>Don't have an Account?<Link to="/register" className='text-[#FFC746]'>Register</Link></p>
                             </div>
-                            
+
                         </form>
 
                     </div>

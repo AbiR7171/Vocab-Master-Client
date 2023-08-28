@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
 
