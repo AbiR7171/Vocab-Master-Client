@@ -8,7 +8,7 @@ import AllRouts from "../AllRouts/AllRouts/AllRouts";
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
-import LessonOne from "../Pages/Home/Home/Learn/LessonOne";
+import LessonOne from "../Pages/Home/Home/Learn/LessonONe/LessonOne";
 // import Session1 from "../Learn/session1";
 import Docs from "../components/Docs/Docs";
 import PrivateRoute from "../components/PrivateRoute";

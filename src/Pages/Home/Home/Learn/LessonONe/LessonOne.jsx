@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import Swal from "sweetalert2";
-import LessOnSlider from "./LessOnSlider";
+import LessOnSlider from "../LessOnSlider";
 
 
 const LessonOne = () => {
