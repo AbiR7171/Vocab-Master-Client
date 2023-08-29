@@ -13,6 +13,7 @@ import LessonOne from "../Pages/Home/Home/Learn/LessonONe/LessonOne";
 import Docs from "../components/Docs/Docs";
 import PrivateRoute from "../components/PrivateRoute";
 import LessonTwo from "../Pages/Home/Home/Learn/LessonTwo";
+import StepLessonOne from "../Pages/Home/Home/Learn/LessonONe/StepLessonOne";
 
 const router = createBrowserRouter([
   {
@@ -55,8 +56,14 @@ const router = createBrowserRouter([
   {
     
       path:"/allRouts/learn/sesson1",
-      element:<LessonOne/>
+      element:<LessonOne/>,
+      loader:()=> fetch("http://localhost:5000/lesson/category/TeaStall")
     
+  },
+  {
+    path:"/allRouts/learn/lessonOneStep",
+    element:<StepLessonOne/>
+
   },
   {
     path:"/allRouts/learn/sesson2",

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,7 +17,15 @@ const LessonOne = () => {
 
  
   const [number, setNumber]=useState(0)
-  
+
+  const lessonsss = useLoaderData()
+
+  console.log(lessonsss);
+
+
+  const level1 = lessonsss.filter(l => l.level === 1.1)
+
+  console.log(level1);
   // console.log(selectedOption);
 
  
@@ -27,15 +35,17 @@ const LessonOne = () => {
   console.log(level);
   console.log(lessons);
 
-  useEffect(() => {
-    fetch("https://vocab-master-server.vercel.app/quiz")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        const levelONeData = data.filter((d) => d.level == "2.1");
-        setLesson(levelONeData);
-      });
-  }, []);
+  // useEffect(()=>{
+       
+  //     fetch('http://localhost:5000/quiz')
+  //     .then(res => res.json())
+  //     .then(data =>{
+  //       console.log(data);
+  //       const level1 = data.filter(d => d.level === 1.1)
+  //       console.log(level1);
+  //       setLesson(level1)
+  //     })
+  // },[])
 
   const handleBack = () => {
     navigate(-1);
@@ -69,8 +79,19 @@ const LessonOne = () => {
                 })
    }
 
+
+
+   const backGroundStyle = {
+    backgroundImage :`url(${level1[0].categoryImage})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    width:"100vw",
+    
+ }
+
   return (
-    <div className=" bg-gradient-to-tr from-slate-900 via-purple-900 to-slate-900 text-white h-[100vh] bg-Back ">
+    <div style={backGroundStyle} className=" h-[100vh] bg-black bg-opacity-60">
      <div className=" w-full h-20 ">
      <button
         onClick={handleBack}
@@ -78,14 +99,19 @@ const LessonOne = () => {
       >
         <Icon icon="solar:round-arrow-left-bold" />
       </button> 
-        <div className="flex items-center justify-end container mx-auto">
-          <Icon icon="material-symbols:diamond" className="text-3xl text-white mt-5" /> <p className="text-2xl mt-3 text-red-400">({number})</p>
+
+      <div className="flex justify-end  me-8 py-4 bg-black bg-opacity-80 p-2">
+      <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
+        <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{number}</p>
         </div>
       </div>
 
-      <div>
-        <p className="text-center  text-2xl font-primary">
-          Welcome to Your First Vocabulary Lesson
+
+      </div>
+
+      <div className="bg-black bg-opacity-80 p-2">
+        <p className="text-center  text-4xl font-primary text-red-400">
+          Welcome to Your  Vocabulary Lesson
         </p>
         <div className="mt-20">
           <Swiper
@@ -98,9 +124,9 @@ const LessonOne = () => {
             className="mySwiper"
           >
             {
-              lessons.map(lesson => 
+              level1.map((lesson,index) => 
                 <SwiperSlide key={lesson._id}>
-                   <LessOnSlider lesson={lesson} setNumber={setNumber} number={number}></LessOnSlider>
+                   <LessOnSlider lesson={lesson} setNumber={setNumber} number={number} index={index} ></LessOnSlider>
                 </SwiperSlide>
                 )
             }
