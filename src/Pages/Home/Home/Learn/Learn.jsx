@@ -40,7 +40,7 @@ const Learn = () => {
               data-tip="CLICK THE GALAXY TO START"
             >
               {/* active button */}
-              <Link to="/allRouts/learn/sesson1">
+              <Link to="/allRouts/learn/lessonOneStep">
                 <div className="w-52">
                   <Lottie animationData={animation} loop={true} />
                 </div>
