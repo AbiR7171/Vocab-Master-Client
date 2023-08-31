@@ -3,10 +3,12 @@ import Swal from "sweetalert2";
 import { SwiperSlide } from "swiper/react";
 import Particles from "../../../../Paricels/Particels";
 import { Icon } from '@iconify/react';
+import TextToSpeechButton from "../../../../components/TextToSpeech/TextToSpeechButton";
 
 const LessOnSlider = ({ lesson, setNumber, number, index }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
+  const [ans, setAns] = useState(null)
   console.log(selectedOption);
 
   console.log(lesson);
@@ -17,7 +19,7 @@ const LessOnSlider = ({ lesson, setNumber, number, index }) => {
 
     if (event.target.value == `${lesson.quiz.correctAnswer}`) {
       setNumber(number + 1);
-
+      setAns(true)
       Swal.fire({
         position: "top-center",
         icon: "success",
@@ -26,6 +28,7 @@ const LessOnSlider = ({ lesson, setNumber, number, index }) => {
         timer: 1500,
       });
     } else {
+      setAns(false)
       Swal.fire({
         icon: "error",
         title: "Oops... <br> Wrong Answer",
@@ -34,20 +37,44 @@ const LessOnSlider = ({ lesson, setNumber, number, index }) => {
     }
   };
 
+  const textToSpeachContant = [
+    `Welcome to Your  Vocabulary Lesson`,
+    `this is word number ${index + 1}`,
+    `level: ${lesson?.level}`,
+    `Defficulty level: ${lesson?.difficultyLevel}`,
+    `In this slide we will learn the word: ${lesson?.word}`,
+    `This word is a ${lesson?.partsOfSpeech}`,
+    lesson?.definition,
+    `Let me give some examples`,
+    `Example 1: ${lesson?.examples[0]}`,
+    `Example 2: ${lesson?.examples[1]}`,
+    `Example 3: ${lesson?.examples[2]}`,
+    `There is a Quiz for you`,
+    `your question is`,
+    lesson?.quiz?.question,
+    `and your options are`,
+    lesson.quiz.options[0],
+    lesson.quiz.options[1],
+    lesson.quiz.options[2],
+    `please,select the correct option and move to the next word, thank you`
+  ]
+
   return (
     <div className="container mx-auto px-40 font-Sec  space-y-3">
       {/* <img src={lesson.categoryImage} alt="" /> */}
       <div className="flex justify-between items-center text-gray-500">
         <p className="text-2xl font-bold">Word No. {index + 1}</p>
         <p className="text-2xl font-bold">Level: {lesson.level}</p>
+        <TextToSpeechButton paragraphs={textToSpeachContant} ></TextToSpeechButton>
+        
         <p className="text-2xl font-bold ">
           Defficulty level:{" "}
-          <span className="uppercase text-1xl ">{lesson.difficultyLevel}</span>
+          <span className="uppercase text-1xl ">{lesson?.difficultyLevel}</span>
         </p>
       </div>
 
       <p className="text-4xl mt-4 font-bold text-red-600 ">
-        Word: {lesson.word}
+        Word: {lesson?.word}
       </p>
 
       <div className="flex justify-between  items-center text-green-600 ">
@@ -105,9 +132,9 @@ const LessOnSlider = ({ lesson, setNumber, number, index }) => {
           <p className="text-2xl font-semibold -mt-14 ">Examples :</p>
 
           <ul className=" font-bold  ">
-            <li> 1.{lesson.examples[0]}</li>
+            <li className="ms-2">1.{lesson.examples[0]}</li>
             <li className="ms-2">2.{lesson.examples[1]}</li>
-            <li className="ms-2">2.{lesson.examples[2]}</li>
+            <li className="ms-2">3.{lesson.examples[2]}</li>
           </ul>
         </div>
 
