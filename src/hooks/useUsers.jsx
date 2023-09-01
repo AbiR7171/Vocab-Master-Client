@@ -10,7 +10,7 @@ const useUsers = () => {
         queryKey:["email", user?.email],
         enabled:!loading,
         queryFn:async ()=>{
-            const res = await fetch(`http://localhost:5000/singleUser/users?email=${user?.email}`)
+            const res = await fetch(`https://vocab-master-server.vercel.app/singleUser/users?email=${user?.email}`)
             return res.json();
         }
     })

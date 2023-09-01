@@ -63,7 +63,7 @@ export default function UserSeasonChart() {
 
     
     useEffect(()=>{
-         axios.get("http://localhost:5000/users")
+         axios.get("https://vocab-master-server.vercel.app/users")
          .then(data =>{
               console.log(data.data);
               setUsers(data.data)

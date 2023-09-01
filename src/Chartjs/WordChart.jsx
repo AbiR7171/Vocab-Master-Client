@@ -61,7 +61,7 @@ export default function WordChart() {
 
     
     useEffect(()=>{
-         axios.get("http://localhost:5000/quiz")
+         axios.get("https://vocab-master-server.vercel.app/quiz")
          .then(data =>{
               console.log(data.data);
               setWords(data.data)

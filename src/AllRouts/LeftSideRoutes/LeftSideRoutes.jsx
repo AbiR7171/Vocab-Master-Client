@@ -10,11 +10,11 @@ import useAdmin from '../../hooks/useAdmin';
 
 const LeftSideRoutes = () => {
 
-    // const[isAdmin]=useAdmin()
+    const[isAdmin]=useAdmin()
 
-    // console.log(isAdmin);
+    console.log(isAdmin);
 
-    const isAdmin = true;
+    // const isAdmin = true;
 
 
     return (
@@ -39,6 +39,8 @@ const LeftSideRoutes = () => {
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminHome">Admin Home</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageUsers">Manage User</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/wordRequest">Word Request</Link></li>
+                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageWords">Manage Words</Link></li>
+                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/">Home</Link></li>
                   
                     </>
 

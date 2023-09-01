@@ -31,7 +31,7 @@ const Register = () => {
             })
             .catch(error => console.log(error)) 
 
-         axios.post("http://localhost:5000/users",
+         axios.post("https://vocab-master-server.vercel.app/users",
          {
             name:data.name,
             email:data.email,

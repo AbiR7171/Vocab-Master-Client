@@ -17,6 +17,9 @@ import StepLessonOne from "../Pages/Home/Home/Learn/LessonONe/StepLessonOne";
 import AdminHome from "../Admin/AdminHome";
 import ManageUser from "../Admin/ManageUser";
 import WordReques from "../Admin/WordReques";
+// import AllWord from "../Admin/AllWord";
+import ManageWords from "../Admin/ManageWords";
+import EditWord from "../Admin/EditWord";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +68,15 @@ const router = createBrowserRouter([
       {
         path:"/allRouts/wordRequest",
         element: <WordReques/>
+      },
+      {
+        path:"/allRouts/manageWords",
+        element:<ManageWords/>
+      },
+      {
+        path: "/allRouts/editWord/:id",
+        element:<EditWord/>,
+        loader:({params})=> fetch(`https://vocab-master-server.vercel.app/word/${params.id}`)
       }
     ],
   },
@@ -72,7 +84,7 @@ const router = createBrowserRouter([
     
       path:"/allRouts/learn/sesson1",
       element:<LessonOne/>,
-      loader:()=> fetch("http://localhost:5000/lesson/category/TeaStall")
+      loader:()=> fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall")
     
   },
   {
