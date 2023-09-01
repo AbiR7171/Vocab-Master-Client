@@ -28,7 +28,7 @@ const LessOnSlider = ({ lesson,index }) => {
 
 
 
-      axios.patch(`http://localhost:5000/singleUser/users?email=${user.email}`, {
+      axios.patch(`https://vocab-master-server.vercel.app/singleUser/users?email=${user.email}`, {
         diamond: userInfo[0].diamond
       })
       .then(data => {
