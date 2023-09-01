@@ -67,6 +67,7 @@ export default function WordChart() {
               setWords(data.data)
          })
     },[])
+    
   return (
     <AreaChart
       width={1000}
@@ -92,14 +93,14 @@ export default function WordChart() {
       />
       <Area
         type="monotone"
-        dataKey="pv"
+        dataKey="difficultyLevel"
         stackId="1"
         stroke="#82ca9d"
         fill="#82ca9d"
       />
       <Area
         type="monotone"
-        dataKey="amt"
+        dataKey="definition"
         stackId="1"
         stroke="#ffc658"
         fill="#ffc658"

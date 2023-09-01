@@ -74,7 +74,7 @@ export default function UserChart() {
     <AreaChart
       width={500}
       height={400}
-      data={data}
+      data={users}
       margin={{
         top: 10,
         right: 30,
@@ -83,7 +83,7 @@ export default function UserChart() {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="users" />
+      <XAxis dataKey="date" />
       <YAxis />
       <Tooltip />
       <Area type="monotone" dataKey="date" stroke="#8884d8" fill="#8884d8" />
