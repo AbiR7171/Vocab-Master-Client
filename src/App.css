@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
 
 .font-primary{
   font-family: 'Merriweather', serif;
 }
+
+.font-Sec{
+  font-family: 'Cormorant Garamond', serif;
+}
+
+
 
 .text-1xl{
   font-size: 18px;
@@ -12,4 +19,4 @@
 
 .space-y{
   letter-spacing: 1.2px;
-}
+} */

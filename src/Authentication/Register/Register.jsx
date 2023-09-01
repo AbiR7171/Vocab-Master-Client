@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
+import axios from 'axios';
 
 const Register = () => {
 
@@ -16,6 +17,7 @@ const Register = () => {
 
     const navigate = useNavigate();
 
+
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)
@@ -23,10 +25,33 @@ const Register = () => {
                 const userCreated = result.user;
                 console.log(userCreated);
                 reset();
-                Swal.fire('Registration Successfull');
+               
                 navigate("/allRouts/learn")
             })
-            .catch(error => console.log(error))
+            .catch(error => console.log(error)) 
+
+         axios.post("http://localhost:5000/users",
+         {
+            name:data.name,
+            email:data.email,
+            image:data.image,
+            season:1,
+            diamond:0,
+            role:"student"
+         })
+         .then(data => {
+            console.log(data);
+            if(data.data.insertedId){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Successfully Register',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+         })
+            
     };
 
 
@@ -67,6 +92,8 @@ const Register = () => {
                                 {errors.email && <span className='text-red-500'>This field is required</span>}
                             </div>
 
+                           
+
                             <div className="mt-5">
                                 <label className="label">
                                     <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">Password</span>
@@ -75,6 +102,14 @@ const Register = () => {
                                 {errors.password?.type === 'require' && <span className='text-red-500'>Passwored is required</span>}
                                 {errors.password?.type === 'minLength' && <span className='text-red-500'>passworde must be 6 cherecter</span>}
                                 {errors.password?.type === 'pattern' && <span className='text-red-500'>Must be at least one digit, one uppercase and lowerCase and one Special cherecter</span>}
+                            </div>
+
+                            <div className="mt-5">
+                                <label className="label">
+                                    <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">Your Image</span>
+                                </label>
+                                <input type="input" {...register("image", { required: true })} name='image' placeholder="" className="border-b-2 w-full" />
+                                {errors.email && <span className='text-red-500'>This field is required</span>}
                             </div>
 
                             {/* <div className="mt-5">

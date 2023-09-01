@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.33.0",
+    "axios": "^1.5.0",
     "firebase": "^10.1.0",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
@@ -18,13 +20,20 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
+    "react-particles": "^2.12.2",
     "react-router-dom": "^6.15.0",
     "sort-by": "^0.0.2",
     "sweetalert2": "^11.7.22",
     "swiper": "^10.2.0",
+<<<<<<< HEAD
     "tippy.js": "^6.3.7"
+=======
+    "tippy.js": "^6.3.7",
+    "tsparticles-slim": "^2.12.0"
+>>>>>>> 59baef0827d33b845d434ab9cebec86139a0e7ee
   },
   "devDependencies": {
+    "@iconify/react": "^4.1.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",

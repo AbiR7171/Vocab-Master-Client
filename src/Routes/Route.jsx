@@ -3,12 +3,22 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Authentication/Login/Login";
 import Register from "../Authentication/Register/Register";
+<<<<<<< HEAD
 // import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 // import AllRouts from "../AllRouts/AllRouts/AllRouts";
+=======
+
+import AllRouts from "../AllRouts/AllRouts/AllRouts";
+>>>>>>> 59baef0827d33b845d434ab9cebec86139a0e7ee
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
+import LessonOne from "../Pages/Home/Home/Learn/LessonONe/LessonOne";
+// import Session1 from "../Learn/session1";
 import Docs from "../components/Docs/Docs";
+import PrivateRoute from "../components/PrivateRoute";
+import LessonTwo from "../Pages/Home/Home/Learn/LessonTwo";
+import StepLessonOne from "../Pages/Home/Home/Learn/LessonONe/StepLessonOne";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +50,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/allRouts",
-    element: <LeftSideRoutes />,
+    element:<PrivateRoute> <LeftSideRoutes /></PrivateRoute>,
     children: [
       {
         path: "/allRouts/learn",
@@ -48,6 +58,26 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    
+      path:"/allRouts/learn/sesson1",
+      element:<LessonOne/>,
+      loader:()=> fetch("http://localhost:5000/lesson/category/TeaStall")
+    
+  },
+  {
+    path:"/allRouts/learn/lessonOneStep",
+    element:<StepLessonOne/>
+
+  },
+  {
+    path:"/allRouts/learn/sesson2",
+    element:<LessonTwo/>
+  },
+  {
+    path:"/docs",
+    element:<Docs/>
+  }
 ]);
 
 export default router;

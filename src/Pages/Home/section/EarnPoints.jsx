@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import animation from "../../../assets/LottieAnimation/earnPoints.json";
 import { LanguageContext } from "../../../context/Context";
+import TextToSpeechButton from "../../../components/TextToSpeech/TextToSpeechButton";
 
 const EarnPoints = () => {
   // language change feature
@@ -25,18 +26,21 @@ const EarnPoints = () => {
   };
   const { title, description } = textContent[language];
   // end
-
+  const textToSpeechContant = [title, description]
   return (
     <div className="mt-32 container mx-auto px-32 flex items-center">
       <div className="px-20 space-y-5">
-        <h2 className="text-5xl font-bold">{title}</h2>
+        <h2 className="text-5xl font-bold inline-block mr-5">{title}</h2>
+        <div className=" inline-block "><TextToSpeechButton paragraphs={textToSpeechContant}></TextToSpeechButton></div>
         <p className="text-gray-400 flex items-center justify-center space-y">
           {description}
         </p>
       </div>
+      
       <div className="w-full">
         <Lottie animationData={animation} loop={true} />
       </div>
+
     </div>
   );
 };
