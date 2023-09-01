@@ -3,8 +3,8 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Authentication/Login/Login";
 import Register from "../Authentication/Register/Register";
-import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
-import AllRouts from "../AllRouts/AllRouts/AllRouts";
+// import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+// import AllRouts from "../AllRouts/AllRouts/AllRouts";
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
