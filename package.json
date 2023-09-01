@@ -28,8 +28,12 @@
     "sort-by": "^0.0.2",
     "sweetalert2": "^11.7.22",
     "swiper": "^10.2.0",
+<<<<<<< HEAD
+    "tippy.js": "^6.3.7"
+=======
     "tippy.js": "^6.3.7",
     "tsparticles-slim": "^2.12.0"
+>>>>>>> 59baef0827d33b845d434ab9cebec86139a0e7ee
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
