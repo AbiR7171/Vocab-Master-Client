@@ -10,6 +10,7 @@ import animation3 from "../../../../assets/LottieAnimation/galaxy5.json";
 import animation4 from "../../../../assets/LottieAnimation/galaxy6.json";
 import animation5 from "../../../../assets/LottieAnimation/galaxy7.json";
 import animation6 from "../../../../assets/LottieAnimation/galaxy8.json";
+import quizGalaxy from  "../../../../assets/LottieAnimation/quizGalaxy.json";
 
 const Learn = () => {
   const [theme, setTheme] = useState(
@@ -28,11 +29,15 @@ const Learn = () => {
     <>
       <div className="  h-full w-full    bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
       
-          {/* Container */}
+          {/* Container */} 
+
+          <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  h-24 border border-black flex items-center justify-center">
+            <p className=" text-center font-Sec ms-52  text-red-600 font-bold font-Logo text-3xl">Welcome  <br /> To OUR Vocab Galaxy</p>
+          </div>
         
 
           {/* Get Started tooltip */}
-          <div className="text-center flex flex-col gap-5 items-center justify-center my-12  ">
+          <div className="text-center flex flex-col gap-5 items-center justify-center my-12  "> 
 
            <div className="text-center ms-64">
            <div 
@@ -48,6 +53,23 @@ const Learn = () => {
             </div>
            </div>
 
+
+
+
+           <div className=" mb-7 ">
+              <div
+                className="tooltip tooltip-open  tooltip-right tooltip-error  "
+                data-tip="Quiz Galaxy"
+              >
+                <Link to="/allRouts/learn/sesson2">
+                  <div className="w-32 ">
+                    <Lottie animationData={quizGalaxy} loop={true} />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+
             {/* Other buttons */}
             <div className="me-44 mt-7">
               <div
@@ -57,6 +79,21 @@ const Learn = () => {
                 <Link to="/allRouts/learn/sesson2">
                   <div className="w-32 ">
                     <Lottie animationData={animation1} loop={true} />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+
+
+            <div className="  ms-60 ">
+              <div
+                 className="tooltip tooltip-open  tooltip-right tooltip-error  "
+                 data-tip="Quiz Galaxy"
+              >
+                <Link to="/allRouts/learn/sesson2">
+                  <div className="w-32 ">
+                    <Lottie animationData={quizGalaxy} loop={true} />
                   </div>
                 </Link>
               </div>

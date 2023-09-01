@@ -4,11 +4,16 @@ import Lottie from "lottie-react";
 import animation from "../../../../../assets/LottieAnimation/LoveStar.json"
 import animation1 from "../../../../../assets/LottieAnimation/roundedStar.json"
 import animation2 from "../../../../../assets/LottieAnimation/locked.json"
+import useUsers from '../../../../../hooks/useUsers';
+import { Icon } from "@iconify/react";
 
 const StepLessonOne = () => {
 
   const level = localStorage.getItem("level")
   console.log(level);
+
+  const[userInfo]=useUsers()
+  console.log(userInfo);
 
     return (
         <div className='bg-Backs'>
@@ -20,10 +25,14 @@ const StepLessonOne = () => {
                 <h2 className="text-white fw-bold text-2xl">ইউনিট 1</h2>
     
                 <p className="text-white fw-bold">
-                  নিজের পরিচয় দেয়া, অন্যদের পরিচয়
+                  
                 </p>
               </div>
-              <button className="btn btn-outline"> Default</button>
+           
+      <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
+        <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo[0].diamond}</p>
+        </div>
+    
             </div>
           </div>
     
@@ -37,7 +46,7 @@ const StepLessonOne = () => {
              <Link to="/allRouts/learn/sesson1">
              <div
                 className="  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
-                onClick={() => window.my_modal_2.showModal()}
+               
               >
                    <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} />
               </div>
@@ -47,7 +56,7 @@ const StepLessonOne = () => {
             {/* Other buttons */}
             <div 
               className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
-              onClick={() => window.my_modal_2.showModal()}
+             
             > 
 
              {

@@ -1,25 +1,45 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { SwiperSlide } from "swiper/react";
 import Particles from "../../../../Paricels/Particels";
 import { Icon } from '@iconify/react';
-import TextToSpeechButton from "../../../../components/TextToSpeech/TextToSpeechButton";
+import useUsers from "../../../../hooks/useUsers";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { AuthContext } from "../../../../Authentication/Provider/AuthProvider";
 
-const LessOnSlider = ({ lesson, setNumber, number, index }) => {
+const LessOnSlider = ({ lesson,index }) => {
+  const {user}=useContext(AuthContext)
   const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
-  const [ans, setAns] = useState(null)
+  const[userInfo, refetch]=useUsers()
+  console.log(userInfo);
   console.log(selectedOption);
 
-  console.log(lesson);
+  console.log(lesson); 
+
+  
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
     setDisable(true);
 
     if (event.target.value == `${lesson.quiz.correctAnswer}`) {
-      setNumber(number + 1);
-      setAns(true)
+
+
+
+      axios.patch(`http://localhost:5000/singleUser/users?email=${user.email}`, {
+        diamond: userInfo[0].diamond
+      })
+      .then(data => {
+            console.log(data);
+            if(data.data.matchedCount > 0){
+              refetch()
+            }
+           
+      })
+   
+
       Swal.fire({
         position: "top-center",
         icon: "success",
@@ -145,7 +165,7 @@ const LessOnSlider = ({ lesson, setNumber, number, index }) => {
       </div>
 
 
-      <p className="text-center text-2xl text-red-600">Question : {lesson.quiz.question}</p>
+      <p className="text-center text-2xl text-red-600 font-bold">Question : {lesson.quiz.question}</p>
 
 
  
