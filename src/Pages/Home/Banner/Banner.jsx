@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import Lottie from "lottie-react";
-import banner from "../../../assets/LottieAnimation/Banner.json"
+import banner from "../../../assets/LottieAnimation/Banner.json";
 import { LanguageContext } from "../../../context/Context";
 import { Link } from "react-router-dom";
+
 
 
 const Banner = () => {
@@ -11,7 +12,7 @@ const Banner = () => {
 
   const textContent = {
     en: {
-      heading1: "The free, fun, and effective way to learn",
+      heading1: `The free, fun, and effective way to learn`,
       heading2: "Vocabulary!",
       getStartedButton: "Get started",
       alreadyHaveAccountButton: "I Already have an account",
@@ -40,19 +41,22 @@ const Banner = () => {
       </div>
 
       <div className="gap-4 flex flex-col items-center justify-center">
-        <p className="text-2xl">{heading1}</p>
+        <p className="text-2xl font-bold">{heading1}
+      
+        </p>
 
         <p className="text-2xl flex items-center justify-center">{heading2}</p>
 
-        <button className="uppercase bg-orange-700 w-9/12 py-4 text-white rounded-lg"><Link to='/register'>{ getStartedButton}</Link></button>
+        <button className="uppercase bg-orange-700 w-9/12 py-4 text-white rounded-lg">
+          <Link to="/register">{getStartedButton}</Link>
+        </button>
 
         <button className="uppercase bg-slate-200 w-9/12 py-4 text-black rounded-lg">
-        <Link to='//allRouts/learn'>{ alreadyHaveAccountButton}</Link>
+          <Link to="/allRouts/learn">{alreadyHaveAccountButton}</Link>
         </button>
       </div>
     </div>
   );
-
 };
 
 export default Banner;

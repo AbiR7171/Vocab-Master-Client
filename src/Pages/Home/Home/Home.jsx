@@ -4,14 +4,18 @@ import NavBar from '../../../Shared/NavBar';
 import Footer from '../../../Shared/Footer';
 import EarnPoints from '../section/EarnPoints';
 import QuizSection from '../section/QuizSection';
+import Sponsor from './Sponsor';
+
 
 const Home = () => {
     return (
-        <div>
+        <div style={{backgroundColor:'#4158D0',backgroundImage:'linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)'}}>
+
             <NavBar/>
             <Banner/>
             <EarnPoints/>
-            <QuizSection/>
+            <QuizSection />
+            <Sponsor></Sponsor>
             <Footer/>
         </div>
     );

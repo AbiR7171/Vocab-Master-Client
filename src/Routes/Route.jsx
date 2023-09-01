@@ -8,6 +8,38 @@ import AllRouts from "../AllRouts/AllRouts/AllRouts";
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
+import Session1 from "../Pages/Home/Home/Learn/session1";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <MainLayouts />,
+//     children: [
+//       {
+//         path: "/",
+//         element: <Home />,
+//       },
+//       {
+//         path: "login",
+//         element: <Login></Login>,
+//       },
+//       {
+//         path: "register",
+//         element: <Register></Register>,
+//       },
+//     ],
+//   },
+//   {
+//     path: "/allRouts",
+//     element: <LeftSideRoutes />,
+//     children: [
+//       {
+//         path: "/allRouts/learn",
+//         element: <Learn />,
+//       },
+//     ],
+//   },
+// ]);
 
 const router = createBrowserRouter([
   {
@@ -18,17 +50,17 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      // {
-      //     path: 'learn',
-      //     element:<Progress></Progress>
-
-      // },
       {
-        path: "login",
+        path: "/login",
+        element: <Login></Login>,
+      },
+
+      {
+        path: "/login",
         element: <Login></Login>,
       },
       {
-        path: "register",
+        path: "/register",
         element: <Register></Register>,
       },
     ],
@@ -42,6 +74,10 @@ const router = createBrowserRouter([
         element: <Learn />,
       },
     ],
+  },
+  {
+    path: "/learn/sesson1",
+    element: <Session1 />,
   },
 ]);
 

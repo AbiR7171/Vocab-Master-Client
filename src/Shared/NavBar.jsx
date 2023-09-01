@@ -21,14 +21,15 @@ const NavBar = () => {
   };
 
   return (
-    <div className="container mx-auto lg:px-16 flex items-center justify-between lg:gap-96 sticky top-0">
+    <div className="mx-auto flex justify-center items-center">
+          <div className="container lg:px-16 flex items-center justify-between lg:gap-96 sticky top-0">
       <h2 className="lg:text-2xl font-primary lg:ms-36">Vocab Master</h2>
 
-      <div className="flex items-center flex-1 font-primary text-gray-500 lg:text-1xl">
+      <div className="flex items-center flex-1 font-primary text-gray-500 lg:text-1xl max-w-[400px]">
         <p>{textContent[language].selectLanguage}</p>
 
         <select
-          className="select w-1/6 max-w-xs lg:text-1xl m-4"
+          className="select w-1/8 max-w-xs lg:text-1xl m-4"
           value={language} // Set the selected value based on the context
           onChange={handleLanguageChange} // Call the function to update the language
         >
@@ -38,6 +39,7 @@ const NavBar = () => {
         </select>
       </div>
     </div>
+</div>
   );
 };
 
