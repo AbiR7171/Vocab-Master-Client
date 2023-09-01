@@ -14,6 +14,9 @@ import Docs from "../components/Docs/Docs";
 import PrivateRoute from "../components/PrivateRoute";
 import LessonTwo from "../Pages/Home/Home/Learn/LessonTwo";
 import StepLessonOne from "../Pages/Home/Home/Learn/LessonONe/StepLessonOne";
+import AdminHome from "../Admin/AdminHome";
+import ManageUser from "../Admin/ManageUser";
+import WordReques from "../Admin/WordReques";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +54,18 @@ const router = createBrowserRouter([
         path: "/allRouts/learn",
         element: <Learn />,
       },
+      {
+        path:"/allRouts/adminHome",
+        element: <AdminHome/>
+      },
+      {
+        path:"/allRouts/manageUsers",
+        element: <ManageUser/>
+      },
+      {
+        path:"/allRouts/wordRequest",
+        element: <WordReques/>
+      }
     ],
   },
   {

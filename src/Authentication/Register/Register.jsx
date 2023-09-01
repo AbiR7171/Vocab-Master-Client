@@ -5,6 +5,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
 import axios from 'axios';
+import moment from 'moment/moment';
 
 const Register = () => {
 
@@ -37,7 +38,8 @@ const Register = () => {
             image:data.image,
             season:1,
             diamond:0,
-            role:"student"
+            role:"student",
+            date:moment().format("D,MM,yyyy")
          })
          .then(data => {
             console.log(data);
@@ -53,6 +55,9 @@ const Register = () => {
          })
             
     };
+
+
+    console.log(moment().format("D,MM,yyyy"));
 
 
     return (
