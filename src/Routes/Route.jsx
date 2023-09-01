@@ -45,7 +45,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/allRouts",
-    element:<PrivateRoute> <LeftSideRoutes /></PrivateRoute>,
+    element: <PrivateRoute> <LeftSideRoutes /></PrivateRoute>,
     children: [
       {
         path: "/allRouts/learn",
@@ -54,24 +54,25 @@ const router = createBrowserRouter([
     ],
   },
   {
-    
-      path:"/allRouts/learn/sesson1",
-      element:<LessonOne/>,
-      loader:()=> fetch("http://localhost:5000/lesson/category/TeaStall")
-    
-  },
-  {
-    path:"/allRouts/learn/lessonOneStep",
-    element:<StepLessonOne/>
+
+    path: "/allRouts/learn/sesson1",
+    element: <LessonOne />,
+    loader: () => fetch("http://localhost:5000/vocabs")
+    // loader:()=> fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall")
 
   },
   {
-    path:"/allRouts/learn/sesson2",
-    element:<LessonTwo/>
+    path: "/allRouts/learn/lessonOneStep",
+    element: <StepLessonOne />
+
   },
   {
-    path:"/docs",
-    element:<Docs/>
+    path: "/allRouts/learn/sesson2",
+    element: <LessonTwo />
+  },
+  {
+    path: "/docs",
+    element: <Docs />
   }
 ]);
 
