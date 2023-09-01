@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 .font-primary{
   font-family: 'Merriweather', serif;
@@ -16,7 +17,9 @@
 }
 
 .font-Logo{
-  font-family: 'Mr Dafoe', cursive;
+  font-family: 'Dancing Script', cursive;
+   font-style: italic;
+  
 }
 
 
