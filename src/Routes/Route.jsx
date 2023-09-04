@@ -3,13 +3,10 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Authentication/Login/Login";
 import Register from "../Authentication/Register/Register";
-<<<<<<< HEAD
 // import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 // import AllRouts from "../AllRouts/AllRouts/AllRouts";
-=======
 
 import AllRouts from "../AllRouts/AllRouts/AllRouts";
->>>>>>> 59baef0827d33b845d434ab9cebec86139a0e7ee
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
@@ -17,7 +14,7 @@ import LessonOne from "../Pages/Home/Home/Learn/LessonONe/LessonOne";
 // import Session1 from "../Learn/session1";
 import Docs from "../components/Docs/Docs";
 import PrivateRoute from "../components/PrivateRoute";
-import LessonTwo from "../Pages/Home/Home/Learn/LessonTwo";
+// import LessonTwo from "../Pages/Home/Home/Learn/LessonTwo";
 import StepLessonOne from "../Pages/Home/Home/Learn/LessonONe/StepLessonOne";
 import AdminHome from "../Admin/AdminHome";
 import ManageUser from "../Admin/ManageUser";
@@ -25,6 +22,7 @@ import WordReques from "../Admin/WordReques";
 // import AllWord from "../Admin/AllWord";
 import ManageWords from "../Admin/ManageWords";
 import EditWord from "../Admin/EditWord";
+import LessonOne1 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe1";
 
 const router = createBrowserRouter([
   {
@@ -96,12 +94,18 @@ const router = createBrowserRouter([
     path:"/allRouts/learn/lessonOneStep",
     element:<StepLessonOne/>
   },
-  {
+  // {
 
-    path: "/allRouts/learn/sesson1",
-    element: <LessonOne />,
-    loader: () => fetch("http://localhost:5000/vocabs")
-    // loader:()=> fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall")
+  //   path: "/allRouts/learn/sesson1",
+  //   element: <LessonOne />,
+  //   loader: () => fetch("https://vocab-master-server.vercel.app/vocabs")
+  //   // loader:()=> fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall")
+
+  // },
+  { 
+
+    path:"/allRouts/learn/season1.2",
+    element:<LessonOne1/>
 
   },
   {
@@ -111,7 +115,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/allRouts/learn/sesson2",
-    element: <LessonTwo />
+    // element: <LessonTwo />
   },
   {
     path: "/docs",

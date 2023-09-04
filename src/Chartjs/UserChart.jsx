@@ -68,7 +68,7 @@ export default function UserChart() {
               console.log(data.data);
               setUsers(data.data)
          })
-    },[])
+    },[users])
 
   return (
     <AreaChart

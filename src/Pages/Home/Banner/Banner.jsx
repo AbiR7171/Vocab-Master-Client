@@ -4,12 +4,15 @@ import banner from "../../../assets/LottieAnimation/Banner.json"
 import { LanguageContext } from "../../../context/Context";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 const Banner = () => {
   const { language} = useContext(LanguageContext);
   const {user}=useContext(AuthContext)
   console.log(language, user);
+
+  const [isAdmin]=useAdmin()
 
   const textContent = {
     en: {
@@ -46,10 +49,10 @@ const Banner = () => {
 
         <p className="text-2xl flex items-center justify-center">{heading2}</p>
 
-        <button className="uppercase bg-orange-700 w-9/12 py-4 text-white rounded-lg"><Link to={`${user ? "/allRouts/learn" : "/register"}`}>{ getStartedButton}</Link></button>
+        <button className="uppercase bg-orange-700 w-9/12 py-4 text-white rounded-lg"><Link to="/register">{ getStartedButton}</Link></button>
 
         <button className="uppercase bg-slate-200 w-9/12 py-4 text-black rounded-lg">
-        <Link to='//allRouts/learn'>{ alreadyHaveAccountButton}</Link>
+        <Link to={`${isAdmin ? "/allRouts/adminHome" : "/allRouts/learn"}`}>{ alreadyHaveAccountButton}</Link>
         </button>
       </div>
     </div>

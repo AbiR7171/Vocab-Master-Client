@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useWords from "../hooks/useWords";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -7,7 +7,27 @@ import { Link } from "react-router-dom";
 
 const ManageWords = () => {
 
-    const[words, refetch]=useWords();
+    // const[words, refetch]=useWords();
+
+    const[words, setWords]=useState([]);
+    const [searchvalue, setSearchvalue]=useState("")
+
+    const searhRef = useRef()
+
+
+
+
+
+    useEffect(()=>{
+          
+      axios.get(`https://vocab-master-server.vercel.app/quiz?search=${searchvalue}`)
+      .then( res => {
+              console.log(res.data);
+              setWords(res.data)
+      })
+    },[searchvalue])
+
+    
 
 
     const handleDeleteWord = word =>{
@@ -40,6 +60,23 @@ const ManageWords = () => {
             }
           })
         
+    } 
+
+
+    const handleSearch = () => {
+
+      console.log(searhRef.current.value);
+      setSearchvalue(searhRef.current.value);
+
+      // axios.get(`http://localhost:5000/quiz?search=${searchvalue}`)
+      // .then(res =>{
+      //       console.log(res.data);
+      //       setWords(res.data)
+      // })
+
+
+       
+
     }
 
 
@@ -47,12 +84,24 @@ const ManageWords = () => {
 
     console.log(words);
   return (
-    <div className="w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 ">
+    <div className="w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 "> 
 
-         <p className="text-center text-4xl font-Sec underline mt-4 text-red-600">
+
+     
+
+         <p className="text-center text-4xl font-Sec underline mt-4 text-red-600 mb-20">
           Manage Words
         </p>
-      <div className="container  mx-auto px-20 rounded-lg border border-black mt-5">
+
+          <div  className="w-full flex justify-end px-20">
+                  <input ref={searhRef} type="text" placeholder="   Search Word" className="h-14 p-2 rounded-lg border border-red-900 w-full max-w-xs" />
+                  <Icon onClick={handleSearch} icon="material-symbols:search" className="bg-red-800 h-14  w-14 rounded-lg absolute" />
+         </div>
+
+      <div className="container  mx-auto px-20 rounded-lg border border-black mt-20"> 
+
+        
+      
         
 
         <div className="overflow-x-auto">
