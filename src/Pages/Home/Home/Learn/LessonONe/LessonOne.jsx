@@ -9,12 +9,15 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import Swal from "sweetalert2";
 import LessOnSlider from "../LessOnSlider";
 import useUsers from "../../../../../hooks/useUsers";
+import axios from "axios";
 
 
 const LessonOne = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
   const [level, setLevel] = useState(0);
+  const [disable, setDisable] = useState(false);
+  
 
   const [userInfo] = useUsers()
   console.log(userInfo);
@@ -26,7 +29,7 @@ const LessonOne = () => {
   console.log(lessonsss);
 
 
-  const level1 = lessonsss?.filter(l => l.level === 1.1)
+  const level1 = lessonsss?.filter(l => l.level == 1.1)
 
   console.log(level1);
   // console.log(selectedOption);
@@ -36,7 +39,7 @@ const LessonOne = () => {
 
 
   console.log(level);
-  console.log(lessons);
+  // console.log(lessons);
 
   // useEffect(()=>{
 
@@ -70,16 +73,30 @@ const LessonOne = () => {
 
   const handleComplete = () => {
 
-    setLevel(1)
-    setDisable(true)
-    localStorage.setItem("level", level + 1)
-    Swal.fire({
-      position: 'top-center',
-      icon: 'success',
-      title: `Congratulations You Completed Your First Lesson <br> You Got ${number} out of 10`,
-      showConfirmButton: false,
-      timer: 1500
-    })
+
+
+      axios.patch(`http://localhost:5000/singleUser/users/level?email=${userInfo[0]?.email}`, {
+        season : 1.1
+      })
+      .then(res =>{
+               
+             console.log(res);
+             if(res.data.modifiedCount > 0){
+
+                 setDisable(true)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                         title: `Congratulations You Completed Your First Lesson`,
+                          showConfirmButton: false,
+                         timer: 1500
+                 })
+             }
+      })
+
+   
+   
+    
   }
 
 
@@ -105,7 +122,7 @@ const LessonOne = () => {
 
         <div className="flex justify-end  me-8 py-4 bg-black bg-opacity-80 p-2">
           <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
-            <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo[0].diamond}</p>
+            <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo[0]?.diamond}</p>
           </div>
 
 
@@ -133,7 +150,9 @@ const LessonOne = () => {
                 )
               }
               <SwiperSlide>
-                <button className="bg-red-600">COmpleterhfashfdsad</button>
+                      <div className="Container mx-auto px-96 h-full mt-40 px-auto">
+                          <button onClick={handleComplete} disabled={disable} className="bg-red-800  px-32 p-4 text-white rounded  ms-40">Completed</button>
+                      </div>
               </SwiperSlide>
             </Swiper>
           </div>

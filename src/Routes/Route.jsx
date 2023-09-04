@@ -3,13 +3,10 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Authentication/Login/Login";
 import Register from "../Authentication/Register/Register";
-<<<<<<< HEAD
 // import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 // import AllRouts from "../AllRouts/AllRouts/AllRouts";
-=======
 
 import AllRouts from "../AllRouts/AllRouts/AllRouts";
->>>>>>> 59baef0827d33b845d434ab9cebec86139a0e7ee
 
 import LeftSideRoutes from "../AllRouts/LeftSideRoutes/LeftSideRoutes";
 import Learn from "../Pages/Home/Home/Learn/Learn";
@@ -100,7 +97,7 @@ const router = createBrowserRouter([
 
     path: "/allRouts/learn/sesson1",
     element: <LessonOne />,
-    loader: () => fetch("http://localhost:5000/vocabs")
+    loader: () => fetch("https://vocab-master-server.vercel.app/vocabs")
     // loader:()=> fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall")
 
   },

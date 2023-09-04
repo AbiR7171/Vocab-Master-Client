@@ -7,7 +7,7 @@ const useWords = () => {
     const {data: words=[], refetch}=useQuery({
         queryKey:["words"],
         queryFn:async()=>{
-              const res = await axios.get("https://vocab-master-server.vercel.app/quiz");
+              const res = await axios.get("https://vocab-master-server.vercel.app/words");
               return res.data;
         }
     })

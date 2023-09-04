@@ -7,6 +7,7 @@ import useUsers from "../../../../hooks/useUsers";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../../Authentication/Provider/AuthProvider";
+import TextToSpeechButton from "../../../../components/TextToSpeech/TextToSpeechButton";
 
 const LessOnSlider = ({ lesson,index }) => {
   const {user}=useContext(AuthContext)
