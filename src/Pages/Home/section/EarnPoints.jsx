@@ -27,7 +27,7 @@ const EarnPoints = () => {
 
   const { title, description } = textContent[language];
   // end
-
+  const textToSpeechContant = [title, description]
   return (
     <div className="mt-32 container mx-auto lg:px-32 px-12 flex lg:flex-row flex-col-reverse items-center">
       <div className="px- space-y-5">
@@ -49,6 +49,7 @@ const EarnPoints = () => {
       <div className="lg:w-full w-[300px] lg:ms-[60px]">
         <Lottie animationData={animation} loop={true} />
       </div>
+
     </div>
   );
 };

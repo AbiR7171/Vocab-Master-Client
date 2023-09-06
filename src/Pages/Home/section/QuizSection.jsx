@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import animation from "../../../assets/LottieAnimation/quiz.json";
 import { LanguageContext } from "../../../context/Context";
+import TextToSpeechButton from "../../../components/TextToSpeech/TextToSpeechButton";
 
 const QuizSection = () => {
   // language change feature
@@ -26,7 +27,8 @@ const QuizSection = () => {
 
   const { title, description } = textContent[language];
   // end
-
+  // text to speach button will take a array as a prop, array elemnt can be static  or dynamic pragraph
+  const textToSpeechContant = [title, description]
   return (
     <div
       className="mt-32 container mx-auto lg:px-32 px-12 flex lg:flex-row flex-col-reverse items-center

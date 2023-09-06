@@ -3,10 +3,15 @@ import Lottie from "lottie-react";
 import banner from "../../../assets/LottieAnimation/Banner.json";
 import { LanguageContext } from "../../../context/Context";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
+import useAdmin from "../../../hooks/useAdmin";
 
 const Banner = () => {
-  const { language } = useContext(LanguageContext);
-  console.log(language);
+  const { language} = useContext(LanguageContext);
+  const {user}=useContext(AuthContext)
+  console.log(language, user);
+
+  const [isAdmin]=useAdmin()
 
   const textContent = {
     en: {
