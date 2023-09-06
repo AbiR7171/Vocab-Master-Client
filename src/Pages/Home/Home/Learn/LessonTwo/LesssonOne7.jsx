@@ -13,7 +13,7 @@ import axios from "axios";
 import useWords from "../../../../../hooks/useWords";
 
 
-const LessonOne = () => {
+const LessonOne7 = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
   const [level, setLevel] = useState(0);
@@ -39,14 +39,14 @@ const LessonOne = () => {
   console.log(words);
 
 
-  const level1 = words?.filter(l => l.level == 1.1)
+  const level3 = words?.filter(l => l.level == 1.7)
 
 
 
 
 
 
-  console.log(level1);
+  console.log(level3);
   // console.log(lessons);
 
   // useEffect(()=>{
@@ -84,7 +84,7 @@ const LessonOne = () => {
 
 
       axios.patch(`http://localhost:5000/singleUser/users/level?email=${userInfo[0]?.email}`, {
-        season : 1.2
+        season : 1.8
       })
       .then(res =>{
                
@@ -110,7 +110,7 @@ const LessonOne = () => {
 
 
   const backGroundStyle = {
-    backgroundImage: `url(${level1[0]?.categoryImage})`,
+    backgroundImage: `url(${level3[0]?.categoryImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -151,7 +151,7 @@ const LessonOne = () => {
               className="mySwiper"
             >
               {
-                level1?.map((lesson, index) =>
+                level3?.map((lesson, index) =>
                   <SwiperSlide key={lesson._id}>
                     <LessOnSlider lesson={lesson} setNumber={setNumber} number={number} index={index} ></LessOnSlider>
                   </SwiperSlide>
@@ -170,4 +170,4 @@ const LessonOne = () => {
   );
 };
 
-export default LessonOne;
+export default LessonOne7;

@@ -23,6 +23,14 @@ import WordReques from "../Admin/WordReques";
 import ManageWords from "../Admin/ManageWords";
 import EditWord from "../Admin/EditWord";
 import LessonOne1 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe1";
+import LessonOne2 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe2";
+import LessonOne3 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe3";
+import LessonOne4 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe4";
+import LessonOne5 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe5";
+import LessonOne6 from "../Pages/Home/Home/Learn/LessonTwo/LessonOne6";
+import LessonOne7 from "../Pages/Home/Home/Learn/LessonTwo/LesssonOne7";
+import LessonOne8 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe8";
+import LessonOne9 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe9";
 
 const router = createBrowserRouter([
   {
@@ -109,9 +117,36 @@ const router = createBrowserRouter([
 
   },
   {
-    path: "/allRouts/learn/lessonOneStep",
-    element: <StepLessonOne />
-
+    path:"/allRouts/learn/season1.3",
+    element:<LessonOne2/>
+  },
+  {
+    path:"/allRouts/learn/season1.4",
+    element:<LessonOne3/>
+  },
+  {
+    path:"/allRouts/learn/season1.5",
+    element:<LessonOne4/>
+  },
+  {
+    path:"/allRouts/learn/season1.6",
+    element:<LessonOne5/>
+  },
+  {
+    path:"/allRouts/learn/season1.7",
+    element:<LessonOne6/>
+  },
+  {
+    path:"/allRouts/learn/season1.8",
+    element:<LessonOne7/>
+  },
+  {
+    path:"/allRouts/learn/season1.9",
+    element:<LessonOne8/>
+  },
+  {
+    path:"/allRouts/learn/season1.10",
+    element:<LessonOne9/>
   },
   {
     path: "/allRouts/learn/sesson2",
