@@ -1,29 +1,42 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import SocialLogin from "../SocialLogin/SocialLogin";
+// import SocialLogin from "../SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import moment from "moment/moment";
+import svg from '../../../src/assets/register/undraw_welcome_re_h3d9.svg'
+import { useState } from "react";
+
 
 const Register = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm();
+  // const { register, handleSubmit, watch, reset, formState: {errors },} = useForm();
   const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState('')
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    createUser(data.email, data.password)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    const data = { name, email, password, photo }
+
+    console.log(data)
+
+    if (password.length < 6) {
+      setError(' Please enter 6 characters password')
+      return
+    }
+
+    createUser(email, password)
       .then((result) => {
         const userCreated = result.user;
         console.log(userCreated);
@@ -31,13 +44,15 @@ const Register = () => {
 
         navigate("/allRouts/learn");
       })
-      .catch((error) => console.log(error));
+      .catch(error => {
+        console.log(error);
+      })
 
     axios
       .post("https://vocab-master-server.vercel.app/users", {
-        name: data.name,
-        email: data.email,
-        image: data.image,
+        name: name,
+        email: email,
+        image: photo,
         season: 1,
         diamond: 0,
         role: "student",
@@ -53,173 +68,98 @@ const Register = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate("/allRouts/learn");
         }
       });
-  };
+
+  }
+
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  //   createUser(data.email, data.password)
+  //     .then((result) => {
+  //       const userCreated = result.user;
+  //       console.log(userCreated);
+  //       reset();
+
+  //       navigate("/allRouts/learn");
+  //     })
+  //     .catch((error) => console.log(error));
+
+  //   axios
+  //     .post("https://vocab-master-server.vercel.app/users", {
+  //       name: data.name,
+  //       email: data.email,
+  //       image: data.image,
+  //       season: 1,
+  //       diamond: 0,
+  //       role: "student",
+  //       date: moment().format("D,MM,yyyy"),
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.data.insertedId) {
+  //         Swal.fire({
+  //           position: "top-end",
+  //           icon: "success",
+  //           title: "Successfully Register",
+  //           showConfirmButton: false,
+  //           timer: 1500,
+  //         });
+  //       }
+  //     });
+  // };
 
   console.log(moment().format("D,MM,yyyy"));
 
   return (
     <div>
-      <h2 className="text-center text-[#69235B] text-[18px] md:text-[40px] font-[700]">
-        Please Register
-      </h2>
-      <div className="w-[293px] h-10 md:w-[440px] md:h-16 leading-[20px] md:leading-[30px] mx-auto text-[#69235B] mt-7 text-center">
-        <p className="font-[300] text-[14px] md:text-[24px]">
-          Welcome back! Sign Up using your social account or email to continue
-          us
-        </p>
-      </div>
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row">
 
-      <div className="mt-5">
-        <label className="label">
-          <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">
-            Password
-          </span>
-        </label>
-        <input
-          type="password"
-          {...register("password", {
-            required: true,
-            minLength: 6,
-            pattern: /(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/,
-          })}
-          name="password"
-          placeholder=""
-          className="border-b-2 w-full"
-        />
-        {errors.password?.type === "require" && (
-          <span className="text-red-500">Passwored is required</span>
-        )}
-        {errors.password?.type === "minLength" && (
-          <span className="text-red-500">passworde must be 6 cherecter</span>
-        )}
-        {errors.password?.type === "pattern" && (
-          <span className="text-red-500">
-            Must be at least one digit, one uppercase and lowerCase and one
-            Special cherecter
-          </span>
-        )}
-      </div>
+          <div className="flex justify-center lg:text-left">
+            <img className="w-4/6" src={svg} alt="" />
+          </div>
 
-      {/* -------------------registration info---------------- */}
-      <div className="">
-        <div className="md:w-[440px] mx-auto mt-5 md:mt-3">
-          <div className="w-full ">
-            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-              <div className="">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <h1 className="text-5xl text-slate-800 text-center font-bold font-serif p-5">Register</h1>
+
+            <form onSubmit={handleSubmit} className="card-body">
+              <div className="form-control">
                 <label className="label">
-                  <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">
-                    Your Name
-                  </span>
+                  <span className="label-text">Name</span>
                 </label>
-                <input
-                  type="text"
-                  {...register("name", { required: true })}
-                  name="name"
-                  placeholder=""
-                  className="border-b-2 w-full"
-                />
-                {errors.name && (
-                  <span className="text-red-500">This field is required</span>
-                )}
+                <input type="text" name='name' placeholder="Name" className="input input-bordered" />
               </div>
 
-              <div className="mt-5">
+              <div className="form-control">
                 <label className="label">
-                  <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">
-                    Your Email
-                  </span>
+                  <span className="label-text">Email</span>
                 </label>
-                <input
-                  type="email"
-                  {...register("email", { required: true })}
-                  name="email"
-                  placeholder=""
-                  className="border-b-2 w-full"
-                />
-                {errors.email && (
-                  <span className="text-red-500">This field is required</span>
-                )}
+                <input type="text" name='email' placeholder="email" className="input input-bordered" />
               </div>
 
-              <div className="mt-5">
+              <div className="form-control">
                 <label className="label">
-                  <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">
-                    Password
-                  </span>
+                  <span className="label-text">Password</span>
                 </label>
-                <input
-                  type="password"
-                  {...register("password", {
-                    required: true,
-                    minLength: 6,
-                    pattern: /(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/,
-                  })}
-                  name="password"
-                  placeholder=""
-                  className="border-b-2 w-full"
-                />
-                {errors.password?.type === "require" && (
-                  <span className="text-red-500">Passwored is required</span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <span className="text-red-500">
-                    passworde must be 6 cherecter
-                  </span>
-                )}
-                {errors.password?.type === "pattern" && (
-                  <span className="text-red-500">
-                    Must be at least one digit, one uppercase and lowerCase and
-                    one Special cherecter
-                  </span>
-                )}
+                <input type="password" name='password' placeholder="password" className="input input-bordered" />
               </div>
 
-              <div className="mt-5">
+              <div className="form-control">
                 <label className="label">
-                  <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">
-                    Your Image
-                  </span>
+                  <span className="label-text">Photo url</span>
                 </label>
-                <input
-                  type="input"
-                  {...register("image", { required: true })}
-                  name="image"
-                  placeholder=""
-                  className="border-b-2 w-full"
-                />
-                {errors.email && (
-                  <span className="text-red-500">This field is required</span>
-                )}
+                <input name='photo' type="text" placeholder="photo url" className="input input-bordered" />
+
               </div>
-
-              {/* <div className="mt-5">
-                                <label className="label">
-                                    <span className="text-[#69235B] font-[500] text-[14px] md:text-[20px]">Confirm Password</span>
-                                </label>
-                                <input type="password" name="confirmPassword" ref={register({required: true,
-                                        validate: (value) => value === watch('password')
-                                    })}
-                                /> {errors.confirmPassword && <p>Passwords do not match</p>}
-                            </div> */}
-
-              <div className="form-control mt-7">
-                <input
-                  className="bg-[#FFC746] h-[54px] rounded-md text-[#69235B] font-[500] text-[20px] cursor-pointer"
-                  type="submit"
-                  value="Create an Account"
-                />
-
-                <p className="text-center text-[--text-color] font-[400] text-[15px]">
-                  Already have an Account?
-                  <Link to="/login" className="text-[#FFC746]">
-                    Login
-                  </Link>
-                </p>
+              <div className="form-control mt-6">
+                <button className="btn btn-primary">Register</button>
               </div>
             </form>
+            <p className='my-5 mx-5 text-black'>already have an account ? <Link className='text-lime-800 font-bold' to='/login'>logIn</Link></p>
           </div>
+          <p className='text-error text-center mt-5'>{error}</p>
         </div>
       </div>
     </div>

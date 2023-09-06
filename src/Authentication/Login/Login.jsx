@@ -1,78 +1,109 @@
 import React, { useContext } from 'react';
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { AuthContext } from '../Provider/AuthProvider';
+import { useState } from 'react';
+import svg from '../../assets/register/undraw_login_re_4vu2.svg'
+
 
 const Login = () => {
 
-    const {signin} = useContext(AuthContext)
+    const { signin } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/allRouts/learn";
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    const onSubmit = data => {
+    // const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const data = { email, password }
         console.log(data)
-        signin(data.email, data.password)
+
+        signin(email, password)
             .then(result => {
-                const logedUser = result.user;
-                console.log(logedUser)
+                const loggedUser = result.user;
+                console.log(loggedUser)
                 reset()
                 Swal.fire('Login successfull')
                 navigate(from, { replace: true })
 
             })
+            .catch(error => {
+                // console.log(error);
+                if (error) {
+                    setError('Your email / password is incorrect... ')
+                    return
+                }
+            })
     }
+
+
+
+    // const onSubmit = data => {
+    //     console.log(data)
+    //     signin(data.email, data.password)
+    //         .then(result => {
+    //             const logedUser = result.user;
+    //             console.log(logedUser)
+    //             reset()
+    //             Swal.fire('Login successfull')
+    //             navigate(from, { replace: true })
+
+    //         })
+    // }
 
     return (
         <div>
-
-            <h2 className='text-center text-[#69235B] text-[18px] md:text-[40px] font-[700]'>Please Login!!</h2>
-            <div className='w-[293px] h-10 md:w-[440px] md:h-16 leading-[20px] md:leading-[30px] mx-auto text-[#69235B] mt-7 text-center'>
-                <p className='font-[300] text-[14px] md:text-[24px]'>Welcome back! Sign in using your social account or email to continue us</p>
-            </div>
-
-            {/* --------------------Social Login------------------------- */}
-            <div className='md:mt-20'>
-                <SocialLogin></SocialLogin>
-            </div>
-
-            <div className="divider w-[293px] md:w-[440px]   mx-auto">OR</div>
-
-            {/* -------------login related work------------------- */}
-
-            <div className="px-5">
-
-                <div className="md:w-[440px] mx-auto mt-10">
-                    <div className=" w-full">
-
-                        <form onSubmit={handleSubmit(onSubmit)} className="">
-                            <div className="">
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content flex-col lg:flex-row">
+                    <div className="text-center lg:text-left">
+                        <img src={svg} alt="" />
+                    </div>
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <form onSubmit={handleSubmit} className="card-body">
+                            <div className="form-control">
                                 <label className="label">
-                                    <span className=" text-[#69235B] font-[500] text-[14px] md:text-[20px]">Your Email</span>
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="email"{...register("email", { required: true })} name='email' placeholder="" className="border-b-2 w-full" />
+                                <input type="text" name='email' placeholder="email" className="input input-bordered" />
                             </div>
-                            <div className="mt-5">
+                            <div className="form-control">
                                 <label className="label">
-                                    <span className=" text-[#69235B] font-[500] text-[14px] md:text-[20px]">Your Password</span>
+                                    <span className="label-text">Password</span>
                                 </label>
-                                <input type="password"{...register("password", { required: true })} name='password' placeholder="" className="border-b-2 w-full" />
-
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                                <label className="label">
+                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
                             </div>
-                            <div className="form-control mt-16">
-                                <input className="bg-[#FFC746] h-[54px] rounded-md text-[#69235B] font-[500] text-[20px] cursor-pointer" type="submit" value="Login" />
-                                <p className='text-center text-[--text-color] font-[400] text-[15px]'>Don't have an Account?<Link to="/register" className='text-[#FFC746]'>Register</Link></p>
+                            <div className="form-control mt-3">
+                                <button className="btn btn-primary">Login</button>
                             </div>
-
                         </form>
+                        
 
+                        <div className="mt-6">
+                            <p><SocialLogin></SocialLogin></p>
+                        </div>
+
+                        <p className=' mx-5 my-5 text-black'>Don't have account ? <Link className='text-lime-800 font-bold' to='/register'>Sign up</Link></p>
                     </div>
                 </div>
+
+                <p className='text-error text-center mt-10'>{error}</p>
+
             </div>
         </div>
+
     );
 };
 
