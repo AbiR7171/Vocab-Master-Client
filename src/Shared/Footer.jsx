@@ -1,37 +1,81 @@
-import React from 'react';
-
+import React from "react";
+import { BiHash } from "react-icons/bi";
+import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
+import Typewriter from "typewriter-effect";
 const Footer = () => {
-    return (
-      <footer className="bg-secondary-100 text-center dark:bg-secondary-600">
-      {/*Sign-up form section*/}
-      <div className="px-6 pt-6">
-        <form action>
-          <div className="gird-cols-1 grid items-center justify-center gap-4 md:grid-cols-3">
-            <div className="md:mb-6 md:ml-auto">
-              <p className="text-secondary-800 dark:text-secondary-200">
-                <strong>Sign up for our newsletter</strong>
-              </p>
-            </div>
-            <div className="relative md:mb-6" data-te-input-wrapper-init>
-              <input type="text" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-secondary-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInput1" placeholder="Email address" />
-              <label htmlFor="exampleFormControlInput1" className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-secondary-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-secondary-200 dark:peer-focus:text-secondary-200">Email address
-              </label>
-            </div>
-            <div className="mb-6 md:mr-auto">
-              <button type="button" className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" data-te-ripple-init data-te-ripple-color="light">
-                Subscribe
-              </button>
-            </div>
+  return (
+    <div className="mt-20 container mx-auto rounded-lg">
+      <footer className="footer p-10 bg-transparent bg-opacity-50 text-white">
+        <div>
+          base-co
+          <BiHash className="text-4xl"></BiHash>
+          <h2 className=" font-primary mb-4 lg:mb-0 text-3xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-yellow-300">
+            𝓥𝓸𝓬𝓪𝓫𝓜𝓪𝓼𝓽𝓮𝓻
+          </h2>
+          <p>Providing reliable teach since 1992</p>
+        </div>
+
+        <div>
+          <span className="footer-title">Services</span>
+          <a className="link link-hover">Branding</a>
+          <a className="link link-hover">Design</a>
+          <a className="link link-hover">Marketing</a>
+          <a className="link link-hover">Advertisement</a>
+        </div>
+
+        <div>
+          <span className="footer-title">Company</span>
+          <a className="link link-hover">About us</a>
+          <a className="link link-hover">Contact</a>
+          <a className="link link-hover">Jobs</a>
+          <a className="link link-hover">Press kit</a>
+        </div>
+
+        <div>
+          <span className="footer-title">Legal</span>
+          <a className="link link-hover">Terms of use</a>
+          <a className="link link-hover">Privacy policy</a>
+          <a className="link link-hover">Cookie policy</a>
+        </div>
+
+        <div className="">
+          <span className="footer-title">Social</span>
+          <div className="grid grid-flow-col gap-4 mt-8 ">
+            <a href="">
+              <FaTwitter className="text-xl"></FaTwitter>
+            </a>
+
+            <a href="">
+              <FaFacebookF className="text-xl"></FaFacebookF>
+            </a>
+
+            <a href="">
+              <FaYoutube className="text-xl"></FaYoutube>
+            </a>
           </div>
-        </form>
-      </div>
-      {/*Copyright section*/}
-      <div className="bg-secondary-200 p-4 text-center text-secondary-700 dark:bg-secondary-700 dark:text-secondary-200">
-        © 2023 Copyright:
-        <a className="text-secondary-800 dark:text-secondary-400" href="https://tailwind-elements.com/">Tailwind Elements</a>
-      </div>
-    </footer>
-    );
+        </div>
+      </footer>
+      <footer className="footer footer-center p-4 bg-gradient-to-br from-blue-500 via-purple-500 to-yellow-100 rounded-lg mt-12">
+        <div className="text-center">
+          <Typewriter
+            options={{
+              strings: "Copyright © 2023 - All right reserved by VOCABMASTER",
+              autoStart: true,
+              loop: true,
+              cursor: "_",
+            }}
+            onInit={(typewriter) => {
+              typewriter
+                .pauseFor(500)
+                .deleteAll()
+                .typeString(" ")
+                .start();
+            }}
+          />
+        </div>
+      </footer>
+    </div>
+  );
 };
 
 export default Footer;

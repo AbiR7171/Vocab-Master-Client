@@ -3,45 +3,43 @@ import Lottie from "lottie-react";
 import animation from "../../../assets/LottieAnimation/quiz.json";
 import { LanguageContext } from "../../../context/Context";
 
-
 const QuizSection = () => {
-
   // language change feature
   const { language } = useContext(LanguageContext);
   const textContent = {
     en: {
       title: "Special Quiz.",
       description:
-        "Learning with Duolingo is fun. With quick, bite-sized lessons, you’ll earn points and unlock new levels while gaining real-world communication skills.",
+        "Enhance your vocabulary with VocabMaster! Learning here is engaging and effective. Through quick, bite-sized lessons, you'll accumulate points and unlock new levels while gaining practical communication skills.",
     },
     bn: {
       title: "বিশেষ কুইজ।",
       description:
-        "Duolingo-এর সাথে শেখা মজাদার, দ্রুত, কামড়ের আকারের পাঠের সাথে, আপনি তা করবেন পয়েন্ট অর্জন করুন এবং বাস্তব-বিশ্ব অর্জন করার সময় নতুন স্তর আনলক করুন যোগাযোগ দক্ষতা",
+        "VocabMaster দিয়ে আপনার শব্দভান্ডার দ্বারা আপনার শব্দকোষ উন্নত করুন! এখানে শেখা মজাদার এবং কার্যকর। দ্রুত, আঘাতকর পাঠের মাধ্যমে, আপনি পয়েন্ট সংগ্রহ করবেন এবং নতুন স্তর আনলক করবেন, যাদের সাথে আপনি বাস্তব যোগাযোগ দক্ষতা অর্জন করতে যাচ্ছেন।",
     },
     hi: {
       title: "विशेष क्विज।",
       description:
-        "डुओलिंगो के साथ सीखना मजेदार है। तेज़, छोटे पाठों के साथ, आप पॉइंट्स कमा सकते हैं और नए स्तरों को खोल सकते हैं जबकि आप वास्तविक दुनिया में संवाद कौशल प्राप्त कर रहे हैं।",
+        "VocabMaster के साथ अपने शब्दावली को बढ़ाएं! यहाँ सीखना मनोरंजनपूर्ण और प्रभावी है। तेज़, छोटे पाठों के माध्यम से, आप अंक जमा करेंगे और नए स्तरों को खोलेंगे, जबकि आप प्रैक्टिकल संवाद कौशल प्राप्त कर रहे हैं।",
     },
   };
+
   const { title, description } = textContent[language];
   // end
 
   return (
     <div
-      className="mt-32 container mx-auto px-20
-        flex items-center flex-row-reverse
+      className="mt-32 container mx-auto lg:px-32 px-12 flex lg:flex-row flex-col-reverse items-center
         "
     >
-      <div className="px-20 space-y-5">
+      <div className="px-auto space-y-5">
         <h2 className="text-5xl font-bold">{title}</h2>
         <p className="text-gray-400 flex items-center justify-center space-y">
           {description}
         </p>
       </div>
 
-      <div className="">
+      <div className="lg:w-auto w-[500px]">
         <Lottie animationData={animation} loop={true} />
       </div>
     </div>

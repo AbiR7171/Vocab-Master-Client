@@ -4,8 +4,6 @@ import banner from "../../../assets/LottieAnimation/Banner.json";
 import { LanguageContext } from "../../../context/Context";
 import { Link } from "react-router-dom";
 
-
-
 const Banner = () => {
   const { language } = useContext(LanguageContext);
   console.log(language);
@@ -36,22 +34,20 @@ const Banner = () => {
 
   return (
     <div className="container mx-auto lg:px-28 mt-20 lg:flex items-center justify-around gap-5 font-primary">
-      <div>
+      <div className="lg:w-auto w-[300px] flex items-center justify-center mx-auto">
         <Lottie animationData={banner} loop={true} />
       </div>
 
       <div className="gap-4 flex flex-col items-center justify-center">
-        <p className="text-2xl font-bold">{heading1}
-      
-        </p>
+        <p className="text-2xl font-bold text-center mx-12">{heading1}</p>
 
         <p className="text-2xl flex items-center justify-center">{heading2}</p>
 
-        <button className="uppercase bg-orange-700 w-9/12 py-4 text-white rounded-lg">
+        <button className="uppercase bg-orange-700 lg:w-9/12 w-6/12 py-4 text-white rounded-lg">
           <Link to="/register">{getStartedButton}</Link>
         </button>
 
-        <button className="uppercase bg-slate-200 w-9/12 py-4 text-black rounded-lg">
+        <button className="uppercase bg-slate-200 lg:w-9/12 w-6/12 py-4 text-black rounded-lg">
           <Link to="/allRouts/learn">{alreadyHaveAccountButton}</Link>
         </button>
       </div>
