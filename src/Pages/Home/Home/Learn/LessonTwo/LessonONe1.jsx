@@ -84,7 +84,7 @@ const LessonOne1 = () => {
 
 
       axios.patch(`http://localhost:5000/singleUser/users/level?email=${userInfo[0]?.email}`, {
-        season : 1.1
+        season : 1.3
       })
       .then(res =>{
                

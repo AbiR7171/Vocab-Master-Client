@@ -49,7 +49,6 @@ const LessOnSlider = ({ lesson,index }) => {
         timer: 1500,
       });
     } else {
-      setAns(false)
       Swal.fire({
         icon: "error",
         title: "Oops... <br> Wrong Answer",

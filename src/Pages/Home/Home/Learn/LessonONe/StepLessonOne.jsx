@@ -63,7 +63,7 @@ const StepLessonOne = () => {
             > 
 
              {
-               userInfo[0]?.season == 1.1 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+               userInfo[0]?.season >= 1.1 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
 
              }
@@ -74,29 +74,135 @@ const StepLessonOne = () => {
                  
            </Link>
             
-            <div
-              className=" bg-[#E5E5E5]  w-24 h-24 b rounded-full flex border- border-[#7e7b7b] border-b-8 mx-auto my-3"
-              onClick={() => window.my_modal_2.showModal()}
-            >
-              
-             {
-               userInfo[0]?.season == 1.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
-               :    <Lottie animationData={animation2}  className='flex justify-center items-center w-32 ' loop={true} />
+           <Link to="/allRouts/learn/season1.3">
+                        
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }
+                           
+                           
+                         </div>
+             
+                              
+                        </Link>
 
-             }
-            </div>
+                        <Link to="/allRouts/learn/season1.4">
+                        <div
+                         
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 "
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.3 ? <Lottie animationData={animation}  className=' flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}     className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
 
-            <div
-              className=" bg-[#E5E5E5]  w-24 h-24 b rounded-full flex border- border-[#7e7b7b] border-b-8 mx-auto my-3"
-              onClick={() => window.my_modal_2.showModal()}
-            >
-              
-             {
-               level == 1.4 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
-               :    <Lottie animationData={animation2}  className='flex justify-center items-center w-32 ' loop={true} />
 
-             }
-            </div>
+                        <Link to="/allRouts/learn/season1.5">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.4 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.6">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.7">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.6 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.8">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.7 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+                        <Link to="/allRouts/learn/season1.9">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.8 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.10">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.9 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
           </div>
     
           {/* Modal */}
