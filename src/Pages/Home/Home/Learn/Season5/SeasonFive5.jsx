@@ -13,10 +13,10 @@ import axios from "axios";
 import useWords from "../../../../../hooks/useWords";
 
 
-const LessonOne5 = () => {
+const SeasonFive5 = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
-  const [level, setLevel] = useState(0);
+//   const [level, setLevel] = useState(0);
   const [disable, setDisable] = useState(false);
   
 
@@ -39,14 +39,14 @@ const LessonOne5 = () => {
   console.log(words);
 
 
-  const level3 = words?.filter(l => l.level == 1.5)
+  const level = words?.filter(l => l.level == 5.5)
 
 
 
 
 
 
-  console.log(level3);
+//   console.log(level1);
   // console.log(lessons);
 
   // useEffect(()=>{
@@ -65,26 +65,13 @@ const LessonOne5 = () => {
     navigate(-1);
   };
 
-  const handleLevel = () => {
-    setLevel(level + 1);
-    setDisable(true);
-    localStorage.setItem("level", level + 1);
-    Swal.fire({
-      position: "top-center",
-      icon: "success",
-      title: "Completed",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  };
-
 
   const handleComplete = () => {
 
 
 
       axios.patch(`https://vocab-master-server.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
-        season : 1.6
+        season : 5.6
       })
       .then(res =>{
                
@@ -110,7 +97,7 @@ const LessonOne5 = () => {
 
 
   const backGroundStyle = {
-    backgroundImage: `url(${level3[0]?.categoryImage})`,
+    backgroundImage: `url(${level[0]?.categoryImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -151,7 +138,7 @@ const LessonOne5 = () => {
               className="mySwiper"
             >
               {
-                level3?.map((lesson, index) =>
+                level?.map((lesson, index) =>
                   <SwiperSlide key={lesson._id}>
                     <LessOnSlider lesson={lesson} setNumber={setNumber} number={number} index={index} ></LessOnSlider>
                   </SwiperSlide>
@@ -170,4 +157,4 @@ const LessonOne5 = () => {
   );
 };
 
-export default LessonOne5;
+export default SeasonFive5;
