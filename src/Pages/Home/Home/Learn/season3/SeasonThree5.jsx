@@ -70,8 +70,8 @@ const SeasonThree5 = () => {
 
 
 
-      axios.patch(`http://localhost:5000/singleUser/users/level?email=${userInfo[0]?.email}`, {
-        season : 2.2
+      axios.patch(`https://vocab-master-server.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
+        season : 3.6
       })
       .then(res =>{
                

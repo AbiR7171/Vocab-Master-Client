@@ -51,6 +51,7 @@ import SeasonThree6 from "../Pages/Home/Home/Learn/season3/SeasonThree6";
 import SeasonThree7 from "../Pages/Home/Home/Learn/season3/SeasonThree7";
 import SeasonThree8 from "../Pages/Home/Home/Learn/season3/SeasonThree8";
 import SeasonThree9 from "../Pages/Home/Home/Learn/season3/SeasonThree9";
+import StepSeasonFour from "../Pages/Home/Home/Learn/seasonFour/StepSeasonFour";
 
 const router = createBrowserRouter([
   {
@@ -265,6 +266,10 @@ const router = createBrowserRouter([
   {
        path: "/allRouts/learn/season3.9",
        element:<SeasonThree9/>
+  },
+  {
+      path:"/allRouts/learn/stepSeasonFour",
+      element:<StepSeasonFour/>
   },
   {
     path: "/docs",

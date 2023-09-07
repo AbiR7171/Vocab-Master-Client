@@ -13,7 +13,7 @@ import axios from "axios";
 import useWords from "../../../../../hooks/useWords";
 
 
-const SeasonThree6 = () => {
+const SeasonFour4 = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
 //   const [level, setLevel] = useState(0);
@@ -39,7 +39,7 @@ const SeasonThree6 = () => {
   console.log(words);
 
 
-  const level = words?.filter(l => l.level == 3.6)
+  const level = words?.filter(l => l.level == 4.4)
 
 
 
@@ -71,7 +71,7 @@ const SeasonThree6 = () => {
 
 
       axios.patch(`https://vocab-master-server.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
-        season : 3.7
+        season : 4.5
       })
       .then(res =>{
                
@@ -157,4 +157,4 @@ const SeasonThree6 = () => {
   );
 };
 
-export default SeasonThree6;
+export default SeasonFour4;

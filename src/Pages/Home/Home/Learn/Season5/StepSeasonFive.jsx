@@ -7,7 +7,7 @@ import animation2 from "../../../../../assets/LottieAnimation/locked.json"
 import useUsers from '../../../../../hooks/useUsers';
 import { Icon } from "@iconify/react";
 
-const StepSeasonThree = () => {
+const StepSeasonFive = () => {
 
   const level = localStorage.getItem("level")
   console.log(level);
@@ -50,7 +50,7 @@ const StepSeasonThree = () => {
                
               >
                      {
-               userInfo[0]?.season >= 3 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+               userInfo[0]?.season >= 5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
 
              }
@@ -67,7 +67,7 @@ const StepSeasonThree = () => {
             > 
 
              {
-               userInfo[0]?.season >= 3.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+               userInfo[0]?.season >= 5.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
 
              }
@@ -86,7 +86,7 @@ const StepSeasonThree = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 3.3 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 5.3 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }
@@ -105,7 +105,7 @@ const StepSeasonThree = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 3.4 ? <Lottie animationData={animation}  className=' flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 5.4 ? <Lottie animationData={animation}  className=' flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}     className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -121,7 +121,7 @@ const StepSeasonThree = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 3.5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 5.5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -137,7 +137,7 @@ const StepSeasonThree = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 3.6 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 5.6 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -153,7 +153,7 @@ const StepSeasonThree = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 3.7 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 5.7 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -169,7 +169,7 @@ const StepSeasonThree = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 3.8 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 5.8 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -184,7 +184,7 @@ const StepSeasonThree = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 3.9 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 5.9 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -212,4 +212,4 @@ const StepSeasonThree = () => {
       );
 }; 
 
-export default StepSeasonThree;
+export default StepSeasonFive;
