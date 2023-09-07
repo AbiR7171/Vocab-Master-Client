@@ -7,8 +7,10 @@ import useUsers from "../../../../hooks/useUsers";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../../Authentication/Provider/AuthProvider";
+import TextToSpeechButton from "../../../../components/TextToSpeech/TextToSpeechButton";
 
 const LessOnSlider = ({ lesson,index }) => {
+  const [isSpeaking, setIsSpeaking] = useState(false);
   const {user}=useContext(AuthContext)
   const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
@@ -28,7 +30,7 @@ const LessOnSlider = ({ lesson,index }) => {
 
 
 
-      axios.patch(`http://localhost:5000/singleUser/users?email=${user.email}`, {
+      axios.patch(`https://vocab-master-server.vercel.app/singleUser/users?email=${user.email}`, {
         diamond: userInfo[0].diamond
       })
       .then(data => {
@@ -85,7 +87,7 @@ const LessOnSlider = ({ lesson,index }) => {
       <div className="flex justify-between items-center text-gray-500">
         <p className="text-2xl font-bold">Word No. {index + 1}</p>
         <p className="text-2xl font-bold">Level: {lesson.level}</p>
-        <TextToSpeechButton paragraphs={textToSpeachContant} ></TextToSpeechButton>
+        <TextToSpeechButton paragraphs={textToSpeachContant} isSpeaking={isSpeaking} setIsSpeaking={setIsSpeaking} ></TextToSpeechButton>
         
         <p className="text-2xl font-bold ">
           Defficulty level:{" "}

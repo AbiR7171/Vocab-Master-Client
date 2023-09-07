@@ -15,17 +15,17 @@ const LessonTwo = () => {
   const [level, setLevel] = useState(0);
   const [disable, setDisable] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [number, setNumber]=useState(0)
-  
+  const [number, setNumber] = useState(0)
+
   console.log(selectedOption);
 
- 
+
 
   const handleOptionChange = (event) => {
 
     setSelectedOption(event.target.value);
 
-    if(event.target.value == `d`){
+    if (event.target.value == `d`) {
       setNumber(number + 1)
       Swal.fire({
         position: 'top-end',
@@ -35,17 +35,17 @@ const LessonTwo = () => {
         timer: 1500
       })
     }
-    else{
+    else {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Wrong Answer',
-        
+
       })
     }
   };
 
- 
+
   console.log(level);
   console.log(lessons);
 
@@ -77,29 +77,29 @@ const LessonTwo = () => {
   };
 
 
-   const handleComplete = ()=> {
-             
-                setLevel(1) 
-                setDisable(true)
-                localStorage.setItem("level", level + 1)
-                Swal.fire({
-                  position: 'top-center',
-                  icon: 'success',
-                  title: `Congratulations You Completed Your First Lesson <br> You Got ${number} out of 10`,
-                  showConfirmButton: false,
-                  timer: 1500
-                })
-   }
+  const handleComplete = () => {
+
+    setLevel(1)
+    setDisable(true)
+    localStorage.setItem("level", level + 1)
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: `Congratulations You Completed Your First Lesson <br> You Got ${number} out of 10`,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 
   return (
     <div className=" bg-zinc-200 h-full ">
-     <div className="bg-black w-full h-20  bg-opacity-70">
-     <button
-        onClick={handleBack}
-        className="text-red-400 text-3xl absolute top-0  ms-4 mt-6"
-      >
-        <Icon icon="solar:round-arrow-left-bold" />
-      </button> 
+      <div className="bg-black w-full h-20  bg-opacity-70">
+        <button
+          onClick={handleBack}
+          className="text-red-400 text-3xl absolute top-0  ms-4 mt-6"
+        >
+          <Icon icon="solar:round-arrow-left-bold" />
+        </button>
         <div className="flex items-center justify-end container mx-auto">
           <Icon icon="material-symbols:diamond" className="text-3xl text-white mt-5" /> <p className="text-2xl mt-3 text-red-400">({number})</p>
         </div>
@@ -174,9 +174,9 @@ const LessonTwo = () => {
                           {lesson.Meaning}
                         </p>
                       </div>
-                    </div> 
+                    </div>
                     <p className="font-Sec text-2xl">Select The correct answer</p>
-                    <form  className="flex gap-2 mt-4 mb-10 text-2xl font-Sec"> 
+                    <form className="flex gap-2 mt-4 mb-10 text-2xl font-Sec">
 
                       <label className="block mb-2">
                         <input
@@ -194,7 +194,7 @@ const LessonTwo = () => {
                           type="radio"
                           name="option"
                           value="b"
-                          checked={selectedOption === `b` }
+                          checked={selectedOption === `b`}
                           onChange={handleOptionChange}
                           className="mr-2"
                         />
@@ -224,14 +224,14 @@ const LessonTwo = () => {
                       </label>
                     </form>
                   </div>
-                </SwiperSlide> 
+                </SwiperSlide>
               );
             })}
 
-             <SwiperSlide> <div className="w-full flex justify-center items-center py-52">
-                           <button disabled={disable} onClick={handleComplete} className="bg-red-600 btn px-20 text-white">Complete</button>
-              </div></SwiperSlide>
-       
+            <SwiperSlide> <div className="w-full flex justify-center items-center py-52">
+              <button disabled={disable} onClick={handleComplete} className="bg-red-600 btn px-20 text-white">Complete</button>
+            </div></SwiperSlide>
+
           </Swiper>
         </div>
       </div>

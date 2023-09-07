@@ -57,8 +57,8 @@ const router = createBrowserRouter([
 
     path: "/allRouts/learn/sesson1",
     element: <LessonOne />,
-    loader: () => fetch("http://localhost:5000/vocabs")
-    // loader:()=> fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall")
+    loader: () => fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall"),
+    // loader: () => fetch("http://localhost:5000/vocabs")
 
   },
   {

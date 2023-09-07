@@ -30,7 +30,7 @@ const StepLessonOne = () => {
               </div>
            
       <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
-        <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo[0].diamond}</p>
+        <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo.length !== 0 && userInfo[0].diamond}</p>
         </div>
     
             </div>
