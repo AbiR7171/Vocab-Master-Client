@@ -2,42 +2,51 @@ import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import animation from "../../../assets/LottieAnimation/earnPoints.json";
 import { LanguageContext } from "../../../context/Context";
-import TextToSpeechButton from "../../../components/TextToSpeech/TextToSpeechButton";
+import Typewriter from "typewriter-effect";
 
 const EarnPoints = () => {
   // language change feature
   const { language } = useContext(LanguageContext);
   const textContent = {
     en: {
-      title: "free. fun. effective.",
+      title: ["Free", "Fun", "Effective"],
       description:
-        "Learning with Duolingo is fun. With quick, bite-sized lessons, you’ll earn points and unlock new levels while gaining real-world communication skills.",
+        "Learning with VocabMaster is free, fun, and highly effective. Our quick, bite-sized lessons will help you earn points and unlock new levels, all while gaining real-world communication skills.",
     },
     bn: {
-      title: "শব্দকোষ শেখার জন্য বিনামূল্যে, মজার এবং কার্যকর উপায়!",
+      title: ["বিনামূল্যে", "মজার", "কার্যকর"],
       description:
-        "Duolingo-এর সাথে শেখা মজাদার, দ্রুত, কামড়ের আকারের পাঠের সাথে, আপনি তা করবেন পয়েন্ট অর্জন করুন এবং বাস্তব-বিশ্ব অর্জন করার সময় নতুন স্তর আনলক করুন যোগাযোগ দক্ষতা",
+        "VocabMaster দিয়ে শেখা বিনামূল্যে, মজার, এবং অত্যন্ত কার্যকর। আমাদের দ্রুত, ছোট পর্যাপ্ত পাঠ আপনাকে পয়েন্ট সংগ্রহ করতে এবং নতুন স্তর আনলক করতে সাহায্য করবে, সবটি সম্পর্ক দক্ষতা অর্জন করার সাথে.",
     },
     hi: {
-      title: "मुफ्त। मजेदार। प्रभावी।",
+      title: ["मुफ्त।", "मजेदार।", "प्रभावी।"],
       description:
-        "डुओलिंगो के साथ सीखना मजेदार है। तेज़, छोटे पाठों के साथ, आप पॉइंट्स कमा सकते हैं और नए स्तरों को खोल सकते हैं जबकि आप वास्तविक दुनिया में संवाद कौशल प्राप्त कर रहे हैं।",
+        "VocabMaster के साथ सीखना मुफ्त, मजेदार, और बेहद प्रभावी है। हमारे तेज़, छोटे पाठ आपको पॉइंट्स कमाने और नए स्तरों को खोलने में मदद करेंगे, साथ ही आप वास्तविक दुनिया में संवाद कौशल प्राप्त कर रहे हैं।",
     },
   };
+
   const { title, description } = textContent[language];
   // end
   const textToSpeechContant = [title, description]
   return (
-    <div className="mt-32 container mx-auto px-32 flex items-center">
-      <div className="px-20 space-y-5">
-        <h2 className="text-5xl font-bold inline-block mr-5">{title}</h2>
-        <div className=" inline-block "><TextToSpeechButton paragraphs={textToSpeechContant}></TextToSpeechButton></div>
+    <div className="mt-32 container mx-auto lg:px-32 px-12 flex lg:flex-row flex-col-reverse items-center">
+      <div className="px- space-y-5">
+        <h2 className="text-5xl font-bold">
+          The
+          <Typewriter
+            options={{
+              strings: [...title],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+          way to learn
+        </h2>
         <p className="text-gray-400 flex items-center justify-center space-y">
           {description}
         </p>
       </div>
-      
-      <div className="w-full">
+      <div className="lg:w-full w-[300px] lg:ms-[60px]">
         <Lottie animationData={animation} loop={true} />
       </div>
 
