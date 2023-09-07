@@ -30,7 +30,11 @@ const StepLessonOne = () => {
               </div>
            
       <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
+<<<<<<< HEAD
         <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo.length !== 0 && userInfo[0].diamond}</p>
+=======
+        <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo[0]?.diamond}</p>
+>>>>>>> c487ed887bd6a312fb60f91d3209ee41276d76c2
         </div>
     
             </div>
@@ -44,7 +48,8 @@ const StepLessonOne = () => {
             >
               {/* active button */}
              <Link to="/allRouts/learn/sesson1">
-             <div
+             <div 
+               
                 className="  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
                
               >
@@ -53,43 +58,155 @@ const StepLessonOne = () => {
              </Link>
             </div>
     
-            {/* Other buttons */}
-            <div 
+            {/* Other buttons */}  
+           <Link to="/allRouts/learn/season1.2">
+                        
+           <div 
               className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
              
             > 
 
              {
-               level == 1.1 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
-               :    <Lottie animationData={animation2}  className='flex justify-center items-center w-32 ' loop={true} />
+               userInfo[0]?.season >= 1.1 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+               :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
 
              }
               
               
             </div>
+
+                 
+           </Link>
             
-            <div
-              className=" bg-[#E5E5E5]  w-24 h-24 b rounded-full flex border- border-[#7e7b7b] border-b-8 mx-auto my-3"
-              onClick={() => window.my_modal_2.showModal()}
-            >
-              
-             {
-               level == 1.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
-               :    <Lottie animationData={animation2}  className='flex justify-center items-center w-32 ' loop={true} />
+           <Link to="/allRouts/learn/season1.3">
+                        
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }
+                           
+                           
+                         </div>
+             
+                              
+                        </Link>
 
-             }
-            </div>
-            <div
-              className=" bg-[#E5E5E5]  w-24 h-24 b rounded-full flex border- border-[#7e7b7b] border-b-8 mx-auto my-3"
-              onClick={() => window.my_modal_2.showModal()}
-            >
-              
-             {
-               level == 1.4 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
-               :    <Lottie animationData={animation2}  className='flex justify-center items-center w-32 ' loop={true} />
+                        <Link to="/allRouts/learn/season1.4">
+                        <div
+                         
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 "
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.3 ? <Lottie animationData={animation}  className=' flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}     className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
 
-             }
-            </div>
+
+                        <Link to="/allRouts/learn/season1.5">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.4 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.6">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.7">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.6 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.8">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.7 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+                        <Link to="/allRouts/learn/season1.9">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.8 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
+
+
+                        <Link to="/allRouts/learn/season1.10">
+                        <div 
+                           className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+                          
+                         > 
+             
+                          {
+                            userInfo[0]?.season >= 1.9 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
+             
+                          }     
+                           
+                         </div>   
+                        </Link>
           </div>
     
           {/* Modal */}
