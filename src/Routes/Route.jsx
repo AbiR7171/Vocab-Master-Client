@@ -41,6 +41,16 @@ import SeasonTwo6 from "../Pages/Home/Home/Learn/Season2/SeasonTwo6";
 import SeasonTwo7 from "../Pages/Home/Home/Learn/Season2/SeasonTwo7";
 import SeasonTwo8 from "../Pages/Home/Home/Learn/Season2/SeasonTwo8";
 import SeasonTwo9 from "../Pages/Home/Home/Learn/Season2/SeasonTwo9";
+import StepSeasonThree from "../Pages/Home/Home/Learn/season3/StepSeasonThree";
+import SeasonThree1 from "../Pages/Home/Home/Learn/season3/SeasonThree1";
+import SeasonThree2 from "../Pages/Home/Home/Learn/season3/SeasonThree2";
+import SeasonThree3 from "../Pages/Home/Home/Learn/season3/SeasonThree3";
+import SeasonThree4 from "../Pages/Home/Home/Learn/season3/SeasonThree4";
+import SeasonThree5 from "../Pages/Home/Home/Learn/season3/SeasonThree5";
+import SeasonThree6 from "../Pages/Home/Home/Learn/season3/SeasonThree6";
+import SeasonThree7 from "../Pages/Home/Home/Learn/season3/SeasonThree7";
+import SeasonThree8 from "../Pages/Home/Home/Learn/season3/SeasonThree8";
+import SeasonThree9 from "../Pages/Home/Home/Learn/season3/SeasonThree9";
 
 const router = createBrowserRouter([
   {
@@ -215,6 +225,46 @@ const router = createBrowserRouter([
     path:"/allRouts/learn/season2.9",
     element:<SeasonTwo9/>
 
+  },
+  {
+    path:"/allRouts/learn/stepSeasonThree",
+    element: <StepSeasonThree/>
+  },
+  {
+       path: "/allRouts/learn/season3",
+       element:<SeasonThree1/>
+  },
+  {
+       path: "/allRouts/learn/season3.1",
+       element:<SeasonThree2/>
+  },
+  {
+       path: "/allRouts/learn/season3.3",
+       element:<SeasonThree3/>
+  },
+  {
+       path: "/allRouts/learn/season3.4",
+       element:<SeasonThree4/>
+  },
+  {
+       path: "/allRouts/learn/season3.5",
+       element:<SeasonThree5/>
+  },
+  {
+       path: "/allRouts/learn/season3.6",
+       element:<SeasonThree6/>
+  },
+  {
+       path: "/allRouts/learn/season3.7",
+       element:<SeasonThree7/>
+  },
+  {
+       path: "/allRouts/learn/season3.8",
+       element:<SeasonThree8/>
+  },
+  {
+       path: "/allRouts/learn/season3.9",
+       element:<SeasonThree9/>
   },
   {
     path: "/docs",

@@ -7,7 +7,7 @@ import animation2 from "../../../../../assets/LottieAnimation/locked.json"
 import useUsers from '../../../../../hooks/useUsers';
 import { Icon } from "@iconify/react";
 
-const StepSeasonTwo = () => {
+const StepSeasonThree = () => {
 
   const level = localStorage.getItem("level")
   console.log(level);
@@ -22,7 +22,7 @@ const StepSeasonTwo = () => {
             {/* Unit 1 */}
             <div className="bg-black bg-opacity-30 w-full rounded p-6 flex justify-between">
               <div>
-                <h2 className="text-white fw-bold text-2xl">ইউনিট 2</h2>
+                <h2 className="text-white fw-bold text-2xl">ইউনিট 3</h2>
     
                 <p className="text-white fw-bold">
                   
@@ -43,7 +43,7 @@ const StepSeasonTwo = () => {
               data-tip="GET STARTED"
             >
               {/* active button */}
-             <Link to="/allRouts/learn/season2">
+             <Link to="/allRouts/learn/season3">
              <div 
                
                 className="  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
@@ -59,7 +59,7 @@ const StepSeasonTwo = () => {
             </div>
     
             {/* Other buttons */}  
-           <Link to="/allRouts/learn/season2.2">
+           <Link to="/allRouts/learn/season3.2">
                         
            <div 
               className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
@@ -78,7 +78,7 @@ const StepSeasonTwo = () => {
                  
            </Link>
             
-           <Link to="/allRouts/learn/season2.3">
+           <Link to="/allRouts/learn/season3.3">
                         
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
@@ -97,7 +97,7 @@ const StepSeasonTwo = () => {
                               
                         </Link>
 
-                        <Link to="/allRouts/learn/season2.4">
+                        <Link to="/allRouts/learn/season3.4">
                         <div
                          
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 "
@@ -114,7 +114,7 @@ const StepSeasonTwo = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season2.5">
+                        <Link to="/allRouts/learn/season3.5">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
                           
@@ -130,7 +130,7 @@ const StepSeasonTwo = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season2.6">
+                        <Link to="/allRouts/learn/season3.6">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
                           
@@ -146,7 +146,7 @@ const StepSeasonTwo = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season2.7">
+                        <Link to="/allRouts/learn/season3.7">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
                           
@@ -162,7 +162,7 @@ const StepSeasonTwo = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season2.8">
+                        <Link to="/allRouts/learn/season3.8">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
                           
@@ -177,7 +177,7 @@ const StepSeasonTwo = () => {
                          </div>   
                         </Link>
 
-                        <Link to="/allRouts/learn/season2.9">
+                        <Link to="/allRouts/learn/season3.9">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
                           
@@ -212,4 +212,4 @@ const StepSeasonTwo = () => {
       );
 }; 
 
-export default StepSeasonTwo;
+export default StepSeasonThree;
