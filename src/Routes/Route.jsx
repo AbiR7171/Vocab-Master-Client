@@ -31,6 +31,16 @@ import LessonOne6 from "../Pages/Home/Home/Learn/LessonTwo/LessonOne6";
 import LessonOne7 from "../Pages/Home/Home/Learn/LessonTwo/LesssonOne7";
 import LessonOne8 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe8";
 import LessonOne9 from "../Pages/Home/Home/Learn/LessonTwo/LessonONe9";
+import StepSeasonTwo from "../Pages/Home/Home/Learn/Season2/StepSeasonTwo";
+import SeasonTwo1 from "../Pages/Home/Home/Learn/Season2/SeasoneTwo1";
+import SeasonTwo2 from "../Pages/Home/Home/Learn/Season2/SeasonTwo2";
+import SeasonTwo3 from "../Pages/Home/Home/Learn/Season2/SeasonTwo3";
+import SeasonTwo4 from "../Pages/Home/Home/Learn/Season2/SeasonTwo4";
+import SeasonTwo5 from "../Pages/Home/Home/Learn/Season2/SeasonTwo5";
+import SeasonTwo6 from "../Pages/Home/Home/Learn/Season2/SeasonTwo6";
+import SeasonTwo7 from "../Pages/Home/Home/Learn/Season2/SeasonTwo7";
+import SeasonTwo8 from "../Pages/Home/Home/Learn/Season2/SeasonTwo8";
+import SeasonTwo9 from "../Pages/Home/Home/Learn/Season2/SeasonTwo9";
 
 const router = createBrowserRouter([
   {
@@ -149,8 +159,62 @@ const router = createBrowserRouter([
     element:<LessonOne9/>
   },
   {
-    path: "/allRouts/learn/sesson2",
-    // element: <LessonTwo />
+    path: "/allRouts/learn/stepSeasonTwo",
+    element: <StepSeasonTwo/>
+  },
+  { 
+
+    path:"/allRouts/learn/season2",
+    element:<SeasonTwo1/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.2",
+    element:<SeasonTwo2/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.3",
+    element:<SeasonTwo3/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.4",
+    element:<SeasonTwo4/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.5",
+    element:<SeasonTwo5/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.6",
+    element:<SeasonTwo6/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.7",
+    element:<SeasonTwo7/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.8",
+    element:<SeasonTwo8/>
+
+  },
+  { 
+
+    path:"/allRouts/learn/season2.9",
+    element:<SeasonTwo9/>
+
   },
   {
     path: "/docs",
