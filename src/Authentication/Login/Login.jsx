@@ -6,6 +6,8 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { AuthContext } from '../Provider/AuthProvider';
 import { useState } from 'react';
 import svg from '../../assets/register/undraw_login_re_4vu2.svg'
+import galaxy from '../../assets/images/Background1.jpg'
+
 
 
 const Login = () => {
@@ -63,12 +65,12 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-[url('https://i.ibb.co/nRYQHYz/space-galaxy-background.jpg')]">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div className="text-center lg:text-left">
+                    {/* <div className="text-center lg:text-left">
                         <img src={svg} alt="" />
-                    </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    </div> */}
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 bg-opacity-50">
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -89,7 +91,7 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
-                        
+
 
                         <div className="mt-6">
                             <p><SocialLogin></SocialLogin></p>
