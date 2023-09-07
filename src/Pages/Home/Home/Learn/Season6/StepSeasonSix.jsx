@@ -7,7 +7,7 @@ import animation2 from "../../../../../assets/LottieAnimation/locked.json"
 import useUsers from '../../../../../hooks/useUsers';
 import { Icon } from "@iconify/react";
 
-const StepSeasonFive = () => {
+const StepSeasonSix = () => {
 
   const level = localStorage.getItem("level")
   console.log(level);
@@ -43,14 +43,14 @@ const StepSeasonFive = () => {
               data-tip="GET STARTED"
             >
               {/* active button */}
-             <Link to="/allRouts/learn/season5">
+             <Link to="/allRouts/learn/season6">
              <div 
                
                 className="  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
                
               >
                      {
-               userInfo[0]?.season >= 5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+               userInfo[0]?.season >= 6 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
 
              }
@@ -59,7 +59,7 @@ const StepSeasonFive = () => {
             </div>
     
             {/* Other buttons */}  
-           <Link to="/allRouts/learn/season5.2">
+           <Link to="/allRouts/learn/season6.2">
                         
            <div 
               className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
@@ -67,7 +67,7 @@ const StepSeasonFive = () => {
             > 
 
              {
-               userInfo[0]?.season >= 5.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+               userInfo[0]?.season >= 6.2 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
 
              }
@@ -78,7 +78,7 @@ const StepSeasonFive = () => {
                  
            </Link>
             
-           <Link to="/allRouts/learn/season5.3">
+           <Link to="/allRouts/learn/season6.3">
                         
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
@@ -86,7 +86,7 @@ const StepSeasonFive = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 5.3 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 6.3 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }
@@ -97,7 +97,7 @@ const StepSeasonFive = () => {
                               
                         </Link>
 
-                        <Link to="/allRouts/learn/season5.4">
+                        <Link to="/allRouts/learn/season6.4">
                         <div
                          
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 "
@@ -105,7 +105,7 @@ const StepSeasonFive = () => {
                          > 
              
                           {
-                            userInfo[0]?.season >= 5.4 ? <Lottie animationData={animation}  className=' flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 6.4 ? <Lottie animationData={animation}  className=' flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}     className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -114,14 +114,14 @@ const StepSeasonFive = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season5.5">
+                        <Link to="/allRouts/learn/season6.5">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
                           
                          > 
              
                           {
-                            userInfo[0]?.season >= 5.5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 6.5 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -130,14 +130,14 @@ const StepSeasonFive = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season5.6">
+                        <Link to="/allRouts/learn/season6.6">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
                           
                          > 
              
                           {
-                            userInfo[0]?.season >= 5.6 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 6.6 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -146,14 +146,14 @@ const StepSeasonFive = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season5.7">
+                        <Link to="/allRouts/learn/season6.7">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
                           
                          > 
              
                           {
-                            userInfo[0]?.season >= 5.7 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 6.7 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -162,14 +162,14 @@ const StepSeasonFive = () => {
                         </Link>
 
 
-                        <Link to="/allRouts/learn/season5.8">
+                        <Link to="/allRouts/learn/season6.8">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
                           
                          > 
              
                           {
-                            userInfo[0]?.season >= 5.8 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 6.8 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -177,14 +177,14 @@ const StepSeasonFive = () => {
                          </div>   
                         </Link>
 
-                        <Link to="/allRouts/learn/season5.9">
+                        <Link to="/allRouts/learn/season6.9">
                         <div 
                            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
                           
                          > 
              
                           {
-                            userInfo[0]?.season >= 5.9 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
+                            userInfo[0]?.season >= 6.9 ? <Lottie animationData={animation}  className='flex justify-center items-center w-32 ' loop={true} /> 
                             :    <Lottie animationData={animation2}   className='flex justify-center items-center w-32 ' loop={true} />
              
                           }     
@@ -212,4 +212,4 @@ const StepSeasonFive = () => {
       );
 }; 
 
-export default StepSeasonFive;
+export default StepSeasonSix;

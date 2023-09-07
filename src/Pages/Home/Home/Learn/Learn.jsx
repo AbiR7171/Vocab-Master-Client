@@ -163,13 +163,45 @@ const Learn = () => {
                 // className="tooltip tooltip-open tooltip-error  "
                 // data-tip="CLICK THE GALAXY TO START"
               >
-                <Link to="/allRouts/learn/sesson2">
+                <Link to="/allRouts/learn/stepSeasonFive">
                   <div className="w-44 ">
                     <Lottie animationData={animation5} loop={true} />
                   </div>
                 </Link>
               </div>
             </div>
+
+
+            
+            <div className=" ms-[600px] ">
+              <div
+                 className="tooltip tooltip-open  tooltip-right tooltip-error  "
+                 data-tip="Quiz Galaxy"
+              >
+                <Link to="/allRouts/learn/stepSeasonTwo">
+                  <div className="w-32 ">
+                    <Lottie animationData={quizGalaxy} loop={true} />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+
+
+            
+            <div className="">
+              <div
+                // className="tooltip tooltip-open tooltip-error  "
+                // data-tip="CLICK THE GALAXY TO START"
+              >
+                <Link to="/allRouts/learn/stepSeasonSix">
+                  <div className="w-52 ">
+                    <Lottie animationData={animation6} loop={true} />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
 
 
 

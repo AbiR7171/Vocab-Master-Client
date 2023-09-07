@@ -52,6 +52,35 @@ import SeasonThree7 from "../Pages/Home/Home/Learn/season3/SeasonThree7";
 import SeasonThree8 from "../Pages/Home/Home/Learn/season3/SeasonThree8";
 import SeasonThree9 from "../Pages/Home/Home/Learn/season3/SeasonThree9";
 import StepSeasonFour from "../Pages/Home/Home/Learn/seasonFour/StepSeasonFour";
+import SeasonFive1 from "../Pages/Home/Home/Learn/Season5/SeasonFive1";
+import SeasonFour1 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour1";
+import SeasonFour2 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour2";
+import SeasonFour3 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour3";
+import SeasonFour4 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour4";
+import SeasonFour5 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour5";
+import SeasonFour6 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour6";
+import SeasonFour7 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour7";
+import SeasonFour8 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour8";
+import SeasonFour9 from "../Pages/Home/Home/Learn/seasonFour/SeasonFour9";
+import StepSeasonFive from "../Pages/Home/Home/Learn/Season5/StepSeasonFive";
+import SeasonFive2 from "../Pages/Home/Home/Learn/Season5/SeasonFive2";
+import SeasonFive3 from "../Pages/Home/Home/Learn/Season5/SeasonFive3";
+import SeasonFive4 from "../Pages/Home/Home/Learn/Season5/SeasonFive4";
+import SeasonFive5 from "../Pages/Home/Home/Learn/Season5/SeasonFive5";
+import SeasonFive6 from "../Pages/Home/Home/Learn/Season5/SeasonFive6";
+import SeasonFive7 from "../Pages/Home/Home/Learn/Season5/SeasonFive7";
+import SeasonFive8 from "../Pages/Home/Home/Learn/Season5/SeasonFive8";
+import SeasonFive9 from "../Pages/Home/Home/Learn/Season5/SeasonFive9";
+import StepSeasonSix from "../Pages/Home/Home/Learn/Season6/StepSeasonSix";
+import SeasonSix1 from "../Pages/Home/Home/Learn/Season6/SeasonSix1";
+import SeasonSix2 from "../Pages/Home/Home/Learn/Season6/SeasonSix2";
+import SeasonSix3 from "../Pages/Home/Home/Learn/Season6/SeasonSix3";
+import SeasonSix4 from "../Pages/Home/Home/Learn/Season6/SeasonSix4";
+import SeasonSix5 from "../Pages/Home/Home/Learn/Season6/SeasonSix5";
+import SeasonSix6 from "../Pages/Home/Home/Learn/Season6/SeasonSix6";
+import SeasonSix7 from "../Pages/Home/Home/Learn/Season6/SeasonSix7";
+import SeasonSix8 from "../Pages/Home/Home/Learn/Season6/SeasonSix8";
+import SeasonSix9 from "../Pages/Home/Home/Learn/Season6/SeasonSix9";
 
 const router = createBrowserRouter([
   {
@@ -270,6 +299,141 @@ const router = createBrowserRouter([
   {
       path:"/allRouts/learn/stepSeasonFour",
       element:<StepSeasonFour/>
+  },
+  {
+     
+    path: "/allRouts/learn/season4",
+    element:<SeasonFour1/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.2",
+    element:<SeasonFour2/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.3",
+    element:<SeasonFour3/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.4",
+    element:<SeasonFour4/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.5",
+    element:<SeasonFour5/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.6",
+    element:<SeasonFour6/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.7",
+    element:<SeasonFour7/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.8",
+    element:<SeasonFour8/>
+
+  },
+  {
+     
+    path: "/allRouts/learn/season4.9",
+    element:<SeasonFour9/>
+
+  },
+  {
+     path:"/allRouts/learn/stepSeasonFive",
+     element: <StepSeasonFive/>
+  },
+  {
+     path:"/allRouts/learn/season5",
+     element: <SeasonFive1/>
+  },
+  {
+     path:"/allRouts/learn/season5.2",
+     element: <SeasonFive2/>
+  },
+  {
+     path:"/allRouts/learn/season5.3",
+     element: <SeasonFive3/>
+  },
+  {
+     path:"/allRouts/learn/season5.4",
+     element: <SeasonFive4/>
+  },
+  {
+     path:"/allRouts/learn/season5.5",
+     element: <SeasonFive5/>
+  },
+  {
+     path:"/allRouts/learn/season5.6",
+     element: <SeasonFive6/>
+  },
+  {
+     path:"/allRouts/learn/season5.7",
+     element: <SeasonFive7/>
+  },
+  {
+     path:"/allRouts/learn/season5.8",
+     element: <SeasonFive8/>
+  },
+  {
+     path:"/allRouts/learn/season5.9",
+     element: <SeasonFive9/>
+  },
+  {
+     path:"/allRouts/learn/stepSeasonSix",
+     element:<StepSeasonSix/>
+
+  },
+  {
+      path:"/allRouts/learn/season6",
+      element:<SeasonSix1/>
+  },
+  {
+      path:"/allRouts/learn/season6.2",
+      element:<SeasonSix2/>
+  },
+  {
+      path:"/allRouts/learn/season6.3",
+      element:<SeasonSix3/>
+  },
+  {
+      path:"/allRouts/learn/season6.4",
+      element:<SeasonSix4/>
+  },
+  {
+      path:"/allRouts/learn/season6.5",
+      element:<SeasonSix5/>
+  },
+  {
+      path:"/allRouts/learn/season6.6",
+      element:<SeasonSix6/>
+  },
+  {
+      path:"/allRouts/learn/season6.7",
+      element:<SeasonSix7/>
+  },
+  {
+      path:"/allRouts/learn/season6.8",
+      element:<SeasonSix8/>
+  },
+  {
+      path:"/allRouts/learn/season6.9",
+      element:<SeasonSix9/>
   },
   {
     path: "/docs",
