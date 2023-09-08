@@ -6,6 +6,7 @@ import UserSeasonChart from "../Chartjs/UserSeasonChart";
 import WordReques from "./WordReques";
 import WordChart from "../Chartjs/WordChart";
 import axios from "axios";
+import useWords from "../hooks/useWords";
 
 const AdminHome = () => {
 
@@ -54,6 +55,31 @@ const AdminHome = () => {
   
   console.log(avgSeason);
 
+
+  const[words]=useWords();
+
+  console.log(words);
+
+  const category = words.map(word => word.category);
+  console.log(category);
+
+   
+   const uniqueWords = {};
+   const newArray = [];
+
+
+   for(const word of category){
+
+         if(!uniqueWords[word]){
+                      uniqueWords[word] = true;
+                      newArray.push(word);
+         };
+         
+         ;
+         
+   }
+
+    console.log(newArray);
 
 
   return (
@@ -112,7 +138,35 @@ const AdminHome = () => {
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="w-full">
+            <div className="w-full"> 
+
+            <div className="px-32 mb-10 mt-10 flex gap-4">
+
+<div className="w-64 h-32 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg shadow-lg p-2">
+  {/* Content goes here */}
+  <p className="text-white text-2xl uppercase font-bold font-serif text-center">TOTAL words</p> 
+  <p className="text-center text-7xl">{words?.length}</p>
+</div>
+
+<div className="w-64 h-32 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg shadow-lg p-2">
+  {/* Content goes here */}
+  <p className="text-white text-2xl uppercase font-bold font-serif text-center">total Season</p> 
+  <p className="text-center text-7xl">7</p>
+</div>
+
+<div className="w-64 h-32 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg shadow-lg p-2">
+  {/* Content goes here */}
+  <p className="text-white text-2xl uppercase font-bold font-serif text-center">Total category</p> 
+  <p className="text-center text-7xl">{newArray?.length}</p>
+</div>
+
+{/* <div className="w-56 h-32 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg shadow-lg p-2">
+ 
+  <p className="text-white text-2xl uppercase font-bold font-serif text-center">TOTAL USER</p> 
+  <p className="text-center text-7xl">{users?.length}</p>
+</div> */}
+
+</div>
               <div>
                 <li className="text-2xl  text-red-600 ms-20 font-Sec">
                   Words Chart
