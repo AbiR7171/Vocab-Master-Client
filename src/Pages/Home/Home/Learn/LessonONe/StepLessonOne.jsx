@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
 import animation from "../../../../../assets/LottieAnimation/LoveStar.json"
@@ -6,14 +6,40 @@ import animation1 from "../../../../../assets/LottieAnimation/roundedStar.json"
 import animation2 from "../../../../../assets/LottieAnimation/locked.json"
 import useUsers from '../../../../../hooks/useUsers';
 import { Icon } from "@iconify/react";
+import SpeechRecognitionComponent from "../../../../../components/Features/SpeechRecognitionComponent"
 
 const StepLessonOne = () => {
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
   const level = localStorage.getItem("level")
   console.log(level);
 
   const[userInfo]=useUsers()
   console.log(userInfo);
+
+      //text to speech features (meraj)
+      const paragraphs = [
+        'This is season one',
+        'There are 9 category in this season',
+        'First of all you have to learn level 1.1',
+        'For start your learning command me: go to level 1.1',
+        'Thank you'
+    ]
+
+    useEffect(() => {
+        if (isSpeaking) {
+            const utterances = paragraphs.map(content => {
+                const utterance = new SpeechSynthesisUtterance(content);
+                return utterance;
+            });
+
+            utterances.forEach(utterance => speechSynthesis.speak(utterance));
+            setIsSpeaking(true);
+        } else {
+            speechSynthesis.cancel();
+            setIsSpeaking(false);
+        }
+    }, [isSpeaking])
 
     return (
         <div className='bg-Backs'>
@@ -23,7 +49,8 @@ const StepLessonOne = () => {
             <div className="bg-black bg-opacity-30 w-full rounded p-6 flex justify-between">
               <div>
                 <h2 className="text-white fw-bold text-2xl">ইউনিট 1</h2>
-    
+                <p>{isSpeaking? 'Speaking...' : 'Mute'}</p>
+                    <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking}></SpeechRecognitionComponent>
                 <p className="text-white fw-bold">
                   
                 </p>

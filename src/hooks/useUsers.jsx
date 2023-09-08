@@ -21,4 +21,4 @@ export default useUsers;
 
 
 
-// http://localhost:5000/singleUser/users?email=nani@nana58.com
+// https://vocab-master-server.vercel.app/singleUser/users?email=nani@nana58.com
