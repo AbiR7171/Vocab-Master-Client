@@ -61,7 +61,7 @@ const Learn = () => {
                 className="tooltip tooltip-open  tooltip-right tooltip-error  "
                 data-tip="Quiz Galaxy"
               >
-                <Link to="">
+                <Link to="/allRouts/seasonOneQuiz">
                   <div className="w-32 ">
                     <Lottie animationData={quizGalaxy} loop={true} />
                   </div>
