@@ -84,7 +84,7 @@ const ManageWords = () => {
 
     console.log(words);
   return (
-    <div className="w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 "> 
+    <div className="w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 px-20 "> 
 
 
      
@@ -93,22 +93,22 @@ const ManageWords = () => {
           Manage Words
         </p>
 
-          <div  className="w-full flex justify-end px-20">
+          <div  className="w-full flex justify-end px-20 text-black">
                   <input ref={searhRef} type="text" placeholder="   Search Word" className="h-14 p-2 rounded-lg border border-red-900 w-full max-w-xs" />
                   <Icon onClick={handleSearch} icon="material-symbols:search" className="bg-red-800 h-14  w-14 rounded-lg absolute" />
          </div>
 
-      <div className="container  mx-auto px-20 rounded-lg border border-black mt-20"> 
+      <div className="container  mx-auto  rounded-lg border border-black bg-gradient-to-r from-red-800 via-yellow-600 to-yellow-500  mt-20"> 
 
         
       
         
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto px-20 p-4">
           <table className="table table-zebra">
             {/* head */}
             <thead>
-              <tr className="text-white text-1xl font-Sec">
+              <tr className="text-white text-1xl font-Sec ">
                 <th></th>
                 <th>word</th>
                 <th>Meaning</th>
@@ -116,12 +116,12 @@ const ManageWords = () => {
                 {/* <th>Level</th> */}
               </tr>
             </thead>
-            <tbody>
+            <tbody >
               {words.map((word, index) =>{
-                return  <tr className="text-1xl font-Sec text-gray-400">
+                return  <tr className="text-1xl font-Sec text-black     ">
                 <th>{index + 1}</th>
-                <td>{word.word}</td>
-                <td>{word.meaning.originalBangla[1]}</td>
+                <td className="font-bold">{word.word}</td>
+                <td>{word.meaning.originalBangla[0]}</td>
                 <td>{word.category}</td>
                 <td><button onClick={()=>handleDeleteWord(word)} className="bg-red-700 p-4 rounded-lg text-white" >DELETE</button></td>
                 <td><Link to={`/allRouts/editWord/${word._id}`}><button  className="bg-red-700 p-4 rounded-lg text-white" ><Icon icon="dashicons:edit-page" /></button></Link></td>

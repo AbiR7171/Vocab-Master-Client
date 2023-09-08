@@ -48,12 +48,12 @@ const LeftSideRoutes = () => {
                     :
                     <>
 
-                    <li className='ms-5 text-xl font-semibold'><Link to="/allRouts/learn"><FcHome></FcHome> শিখুন</Link></li>
-                    <li className='ms-5 text-xl font-semibold'><Link><FaUsers></FaUsers> লিডারবোর্ড</Link></li>
-                    <li className='ms-5 text-xl font-semibold'><Link><GiSaloonDoors></GiSaloonDoors> অভিযান</Link></li>
+                    <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/learn"><FcHome></FcHome> Home</Link></li>
+                    <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/leaderBoard"><FaUsers></FaUsers> Leaderboard</Link></li>
+                    <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/sentWordRequest"><GiSaloonDoors></GiSaloonDoors> Word Request</Link></li>
                     <li className='ms-5 text-xl font-semibold'><Link><FaCartShopping></FaCartShopping> শপ</Link></li>
-                    <li className='ms-5 text-xl font-semibold'><Link><CgProfile></CgProfile> প্রোফাইল</Link></li>
-                    <li className='ms-5 text-xl font-semibold'><Link to="/"><PiDotsThreeCircle></PiDotsThreeCircle> হোম</Link></li>
+                    <li className='ms-5 text-xl font-semibold uppercase'><Link><CgProfile></CgProfile> profile</Link></li>
+                    <li className='ms-5 text-xl font-semibold'><Link to="/"><PiDotsThreeCircle></PiDotsThreeCircle> Home</Link></li>
                     </>
                  }
                     

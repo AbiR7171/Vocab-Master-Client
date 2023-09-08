@@ -81,6 +81,9 @@ import SeasonSix6 from "../Pages/Home/Home/Learn/Season6/SeasonSix6";
 import SeasonSix7 from "../Pages/Home/Home/Learn/Season6/SeasonSix7";
 import SeasonSix8 from "../Pages/Home/Home/Learn/Season6/SeasonSix8";
 import SeasonSix9 from "../Pages/Home/Home/Learn/Season6/SeasonSix9";
+import LeaderBoard from "../Users/LeaderBoard";
+import WordRequest from "../Users/WordRequest";
+import SeasonONeQuiz from "../Pages/Home/Home/Learn/QuizGalaxy/SeasonONeQuiz";
 
 const router = createBrowserRouter([
   {
@@ -117,6 +120,15 @@ const router = createBrowserRouter([
       {
         path: "/allRouts/learn",
         element: <Learn />,
+      },
+      {
+        path:"/allRouts/leaderBoard",
+        element:<LeaderBoard/>
+
+      },
+      {
+            path: "/allRouts/sentWordRequest",
+            element:<WordRequest/>
       },
       {
         path:"/allRouts/adminHome",
@@ -435,6 +447,10 @@ const router = createBrowserRouter([
       path:"/allRouts/learn/season6.9",
       element:<SeasonSix9/>
   },
+  {
+    path:"/allRouts/seasonOneQuiz",
+    element: <SeasonONeQuiz/>
+ },
   {
     path: "/docs",
     element: <Docs />
