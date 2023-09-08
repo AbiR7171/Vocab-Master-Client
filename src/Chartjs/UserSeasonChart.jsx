@@ -1,92 +1,64 @@
-
+// import "./styles.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip
-} from "recharts";
+import { PieChart, Pie, Legend, Tooltip } from "recharts";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100
-  }
+const data01 = [
+  { name: "Group A", value: 400 },
+  { name: "Group B", value: 300 },
+  { name: "Group C", value: 300 },
+  { name: "Group D", value: 200 },
+  { name: "Group E", value: 278 },
+  { name: "Group F", value: 189 }
 ];
 
-export default function UserSeasonChart() {
+const data02 = [
+  { name: "Group A", value: 2400 },
+  { name: "Group B", value: 4567 },
+  { name: "Group C", value: 1398 },
+  { name: "Group D", value: 9800 },
+  { name: "Group E", value: 3908 },
+  { name: "Group F", value: 4800 }
+];
+
+export default function UseSeasonChart() {
 
 
-    const [users, setUsers]=useState([])
+  const [users, setUsers]=useState([])
 
 
     
-    useEffect(()=>{
-         axios.get("https://vocab-master-server.vercel.app/users")
-         .then(data =>{
-              console.log(data.data);
-              setUsers(data.data)
-         })
-    },[users])
-
+  useEffect(()=>{
+       axios.get("https://vocab-master-server.vercel.app/users")
+       .then(data =>{
+            // console.log(data.data);
+            setUsers(data.data)
+       })
+  },[users])
   return (
-    <AreaChart
-      width={500}
-      height={400}
-      data={users}
-      margin={{
-        top: 10,
-        right: 30,
-        left: 0,
-        bottom: 0
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="season" />
-      <YAxis />
+    <PieChart width={1000} height={400}>
+      <Pie
+        dataKey="season"
+        isAnimationActive={false}
+        data={users}
+        cx={200}
+        cy={200}
+        outerRadius={80}
+        fill="#8884d8"
+        label
+      />
+
+<Pie
+        dataKey="diamond"
+        data={users}
+        cx={500}
+        cy={200}
+        innerRadius={40}
+        outerRadius={80}
+        fill="#82ca9d"
+      />
+      
       <Tooltip />
-      <Area type="monotone" dataKey="season" stroke="#8884d8" fill="#8884d8" />
-    </AreaChart>
+    </PieChart>
   );
 }

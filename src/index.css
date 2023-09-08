@@ -63,5 +63,6 @@ body {
 
 body,html{
    overflow-x: hidden;
+   overflow-y: scroll;
   
 }

@@ -7,13 +7,18 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { useState } from 'react';
 import svg from '../../assets/register/undraw_login_re_4vu2.svg'
 import galaxy from '../../assets/images/Background1.jpg'
+import useAdmin from '../../hooks/useAdmin';
 
 
 
 const Login = () => {
 
     const { signin } = useContext(AuthContext);
-    const [error, setError] = useState('');
+    // const [error, setError] = useState('');
+
+    const [isAdmin]=useAdmin();
+
+    console.log(isAdmin);
 
 
     const navigate = useNavigate();
@@ -34,17 +39,16 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                reset()
+                form.reset()
                 Swal.fire('Login successfull')
-                navigate(from, { replace: true })
+                navigate(`${isAdmin ? "/allRouts/adminHome" : "/allRouts/learn"}`)
 
             })
             .catch(error => {
                 // console.log(error);
-                if (error) {
-                    setError('Your email / password is incorrect... ')
-                    return
-                }
+
+                Swal.fire(`${error.message}`)
+               
             })
     }
 
@@ -71,7 +75,7 @@ const Login = () => {
                         <img src={svg} alt="" />
                     </div> */}
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 bg-opacity-50">
-                        <form onSubmit={handleSubmit} className="card-body">
+                        <form onSubmit={handleSubmit} className="card-body text-black">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -101,7 +105,7 @@ const Login = () => {
                     </div>
                 </div>
 
-                <p className='text-error text-center mt-10'>{error}</p>
+                {/* <p className='text-error text-center mt-10'>{error}</p> */}
 
             </div>
         </div>
