@@ -65,16 +65,29 @@ export default function UserChart() {
     useEffect(()=>{
          axios.get("https://vocab-master-server.vercel.app/users")
          .then(data =>{
-              console.log(data.data);
+              // console.log(data.data);
               setUsers(data.data)
          })
-    },[users])
+    },[users]);
+
+
+    const userCountByDate = users.reduce((acc, user) => {
+      const date = user.date;
+      acc[date] = (acc[date] || 0) + 1;
+      return acc;
+    }, {});
+ 
+    const chartData = Object.keys(userCountByDate).map(date => ({
+      date,
+      count: userCountByDate[date],
+    }));
+
 
   return (
     <AreaChart
-      width={500}
+      width={1000}
       height={400}
-      data={users}
+      data={chartData}
       margin={{
         top: 10,
         right: 30,
@@ -83,10 +96,10 @@ export default function UserChart() {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" />
-      <YAxis />
+      <XAxis dataKey="date"  />
+      <YAxis tickCount={3}/>
       <Tooltip />
-      <Area type="monotone" dataKey="date" stroke="#8884d8" fill="#8884d8" />
+      <Area type="monotone" dataKey="count" stroke="#8884d8" fill="#8884d8" activeDot={{ r: 8 }} />
     </AreaChart>
   );
 }
