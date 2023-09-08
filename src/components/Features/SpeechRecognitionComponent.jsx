@@ -29,14 +29,28 @@ const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
         },
 
         {
-            command: 'next',
+            command: 'go to learn',
             callback: () => {
-                navigate('/learn')
+                navigate('/allRouts/learn')
                 return setIsSpeaking(false)
             }
         },
         {
-            command: 'previous',
+            command: 'go to season 1',
+            callback: () => {
+                navigate('/allRouts/learn/lessonOneStep')
+                return setIsSpeaking(false)
+            }
+        },
+        {
+            command: 'go to level 1.1',
+            callback: () => {
+                navigate('/allRouts/learn/sesson1')
+                return setIsSpeaking(false)
+            }
+        },
+        {
+            command: 'back to home',
             callback: () => {
                 navigate("/")
                return setIsSpeaking(false)
