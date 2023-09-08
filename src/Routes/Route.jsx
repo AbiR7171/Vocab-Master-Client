@@ -154,7 +154,7 @@ const router = createBrowserRouter([
         loader:({params})=> fetch(`https://vocab-master-server.vercel.app/word/${params.id}`)
       },
       {
-        path:"/allRouts/issue",
+        path:"/allRouts/Adminissue",
         element:<AdminIssue/>
       }
     ],
