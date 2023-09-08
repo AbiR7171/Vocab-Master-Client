@@ -84,6 +84,8 @@ import SeasonSix9 from "../Pages/Home/Home/Learn/Season6/SeasonSix9";
 import LeaderBoard from "../Users/LeaderBoard";
 import WordRequest from "../Users/WordRequest";
 import SeasonONeQuiz from "../Pages/Home/Home/Learn/QuizGalaxy/SeasonONeQuiz";
+import Issue from "../Users/Issue";
+import AdminIssue from "../Admin/AdminIssue";
 
 const router = createBrowserRouter([
   {
@@ -150,6 +152,10 @@ const router = createBrowserRouter([
         path: "/allRouts/editWord/:id",
         element:<EditWord/>,
         loader:({params})=> fetch(`https://vocab-master-server.vercel.app/word/${params.id}`)
+      },
+      {
+        path:"/allRouts/issue",
+        element:<AdminIssue/>
       }
     ],
   },
@@ -450,6 +456,10 @@ const router = createBrowserRouter([
   {
     path:"/allRouts/seasonOneQuiz",
     element: <SeasonONeQuiz/>
+ },
+ {
+     path: "/allRouts/issue",
+     element: <Issue/>
  },
   {
     path: "/docs",
