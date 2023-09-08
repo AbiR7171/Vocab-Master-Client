@@ -4,7 +4,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 
 const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
     const navigate = useNavigate()
-    // const site = "google.com"
+    
     const commands = [
         {
             command: 'reset',
@@ -23,8 +23,8 @@ const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
             callback: () => SpeechRecognition.stopListening()
         },
         {
-            command: `Open`,
-            callback: () => window.open('https://www.google.com')
+            command: `Open *`,
+            callback: (site) => window.open('https://'+site)
 
         },
 
