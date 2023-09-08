@@ -7,6 +7,7 @@ import { FaCartShopping} from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { PiDotsThreeCircle } from "react-icons/pi";
 import useAdmin from '../../hooks/useAdmin';
+import { Icon } from '@iconify/react';
 
 const LeftSideRoutes = () => {
 
@@ -40,6 +41,7 @@ const LeftSideRoutes = () => {
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageUsers">Manage User</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/wordRequest">Word Request</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageWords">Manage Words</Link></li>
+                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/issue">Manage Issue</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/">Home</Link></li>
                   
                     </>
@@ -51,7 +53,7 @@ const LeftSideRoutes = () => {
                     <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/learn"><FcHome></FcHome> Home</Link></li>
                     <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/leaderBoard"><FaUsers></FaUsers> Leaderboard</Link></li>
                     <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/sentWordRequest"><GiSaloonDoors></GiSaloonDoors> Word Request</Link></li>
-                    <li className='ms-5 text-xl font-semibold'><Link><FaCartShopping></FaCartShopping> শপ</Link></li>
+                    <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/issue"><Icon icon="pajamas:issue-block" />Issue</Link></li>
                     <li className='ms-5 text-xl font-semibold uppercase'><Link><CgProfile></CgProfile> profile</Link></li>
                     <li className='ms-5 text-xl font-semibold'><Link to="/"><PiDotsThreeCircle></PiDotsThreeCircle> Home</Link></li>
                     </>
