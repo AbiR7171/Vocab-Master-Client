@@ -21,7 +21,6 @@ const app = initializeApp(firebaseConfig);
 export default app;
 
 
-
 // apiKey: import.meta.env.VITE_apiKey,
 // authDomain: import.meta.env.VITE_authDomain,
 // projectId: import.meta.env.VITE_projectId,
