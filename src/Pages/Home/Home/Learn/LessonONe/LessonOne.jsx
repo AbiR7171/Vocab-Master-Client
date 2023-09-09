@@ -167,7 +167,7 @@ const LessonOne = () => {
         </div>
       </div>
     </div>
-  );
+      );
 };
 
-export default LessonOne;
+      export default LessonOne;

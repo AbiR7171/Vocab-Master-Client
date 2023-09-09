@@ -86,6 +86,7 @@ import WordRequest from "../Users/WordRequest";
 import SeasonONeQuiz from "../Pages/Home/Home/Learn/QuizGalaxy/SeasonONeQuiz";
 import Issue from "../Users/Issue";
 import AdminIssue from "../Admin/AdminIssue";
+import Feedback from "../Users/Feedback";
 
 const router = createBrowserRouter([
   {
@@ -156,6 +157,10 @@ const router = createBrowserRouter([
       {
         path:"/allRouts/Adminissue",
         element:<AdminIssue/>
+      },
+      {
+        path: "/allRouts/feedback",
+        element: <Feedback/>
       }
     ],
   },

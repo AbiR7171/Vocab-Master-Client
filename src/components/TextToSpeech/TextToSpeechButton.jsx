@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
-const TextToSpeechButton = ({ paragraphs }) => {
-  const [isSpeaking, setIsSpeaking] = useState(false);
+const TextToSpeechButton = ({ paragraphs, isSpeaking, setIsSpeaking }) => {
+  // const [isSpeaking, setIsSpeaking] = useState(false);
 
   const handleSpeak = () => {
     if (!isSpeaking) {

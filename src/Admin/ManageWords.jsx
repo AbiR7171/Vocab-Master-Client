@@ -68,7 +68,7 @@ const ManageWords = () => {
       console.log(searhRef.current.value);
       setSearchvalue(searhRef.current.value);
 
-      // axios.get(`http://localhost:5000/quiz?search=${searchvalue}`)
+      // axios.get(`https://vocab-master-server.vercel.app/quiz?search=${searchvalue}`)
       // .then(res =>{
       //       console.log(res.data);
       //       setWords(res.data)
