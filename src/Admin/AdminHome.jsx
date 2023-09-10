@@ -38,6 +38,7 @@ const AdminHome = () => {
 
 
   const avgDiamond = totalDiamond / users.length;
+  const diamondFixed = avgDiamond.toFixed(2)
 
   
  
@@ -111,7 +112,7 @@ const AdminHome = () => {
                 <div className="w-64 h-32 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg shadow-lg p-2">
                   {/* Content goes here */}
                   <p className="text-white text-2xl uppercase font-bold font-serif text-center">avg diamond</p> 
-                  <p className="text-center text-7xl">{avgDiamond}</p>
+                  <p className="text-center text-7xl">{diamondFixed}</p>
                 </div>
 
                 {/* <div className="w-56 h-32 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-lg shadow-lg p-2">
