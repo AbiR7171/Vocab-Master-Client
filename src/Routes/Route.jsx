@@ -84,11 +84,13 @@ import SeasonSix9 from "../Pages/Home/Home/Learn/Season6/SeasonSix9";
 import LeaderBoard from "../Users/LeaderBoard";
 import WordRequest from "../Users/WordRequest";
 import SeasonONeQuiz from "../Pages/Home/Home/Learn/QuizGalaxy/SeasonONeQuiz";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
