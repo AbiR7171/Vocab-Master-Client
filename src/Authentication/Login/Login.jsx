@@ -23,7 +23,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || "/allRouts/learn";
+    // const from = location.state?.from?.pathname || "/allRouts/learn";
 
     // const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const handleSubmit = (event) => {
@@ -41,7 +41,7 @@ const Login = () => {
                 console.log(loggedUser)
                 form.reset()
                 Swal.fire('Login successfull')
-                navigate(`${isAdmin ? "/allRouts/adminHome" : "/allRouts/learn"}`)
+                navigate(`${!isAdmin ? "/allRouts/learn" : "/allRouts/adminHome"}`)
 
             })
             .catch(error => {

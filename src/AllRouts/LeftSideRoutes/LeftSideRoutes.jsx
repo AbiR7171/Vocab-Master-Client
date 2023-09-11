@@ -84,7 +84,7 @@ const LeftSideRoutes = () => {
                                 <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/sentWordRequest"><GiSaloonDoors></GiSaloonDoors> Word Request</Link></li>
                                 <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/issue"><Icon icon="pajamas:issue-block" />Issue</Link></li>
                                 <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/feedback"> <Icon icon="fluent-mdl2:feedback" /> Feedback</Link></li>
-                                <li className='ms-5 text-xl font-semibold uppercase'><Link><CgProfile></CgProfile> profile</Link></li>
+                                <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/userProfile"><CgProfile></CgProfile> profile</Link></li>
                                 <li className='ms-5 text-xl font-semibold'><Link to="/"><PiDotsThreeCircle></PiDotsThreeCircle> Home</Link></li>
                             </>
                     }

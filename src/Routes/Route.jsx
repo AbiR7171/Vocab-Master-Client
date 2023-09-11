@@ -87,6 +87,7 @@ import SeasonONeQuiz from "../Pages/Home/Home/Learn/QuizGalaxy/SeasonONeQuiz";
 import Issue from "../Users/Issue";
 import AdminIssue from "../Admin/AdminIssue";
 import Feedback from "../Users/Feedback";
+import Profile from "../Users/Profile";
 
 const router = createBrowserRouter([
   {
@@ -161,6 +162,10 @@ const router = createBrowserRouter([
       {
         path: "/allRouts/feedback",
         element: <Feedback/>
+      },
+      {
+        path: "/allRouts/userProfile",
+        element: <Profile/>
       }
     ],
   },
