@@ -26,7 +26,7 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.value;
+    const photo = form.photo.value || "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
     const data = { name, email, password, photo }
 
     console.log(data)
