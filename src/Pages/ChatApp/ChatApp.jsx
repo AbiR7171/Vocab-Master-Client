@@ -5,6 +5,9 @@ import { Icon } from '@iconify/react';
 import useUsers from '../../hooks/useUsers';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import ChatContent from './ChatContent';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 // theme.palette.background.paper ||
@@ -15,8 +18,31 @@ const ChatApp = () => {
 
     console.log(userInfo);
 
-    const theme = useTheme();
-    console.log(theme);
+    const themes = useTheme();
+    console.log(themes);
+
+    const[theme, setTheme]=useState(localStorage.getItem("themes") ? localStorage.getItem("themes"): "dark");
+
+
+
+    const handleToggle = e => {
+
+      if(e.target.checked){
+           setTheme("light");
+      }
+      else{
+         setTheme("dark")
+      }
+          
+    }
+
+
+    useEffect(()=>{
+         
+            localStorage.setItem("themes", theme);
+            const localTheme = localStorage.getItem("themes");
+            document.querySelector("html").setAttribute("data-theme", localTheme)
+    },[theme])
     return (
         <div>
 
@@ -24,7 +50,7 @@ const ChatApp = () => {
               <div className="drawer lg:drawer-open">
               <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
              <div className="drawer-content flex flex-col items-center justify-center">
-               {/* Page content here */}
+               {/* Page content here */} <ChatContent/>
              <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   
              </div> 
@@ -39,9 +65,9 @@ const ChatApp = () => {
 
          <div>
 <Box sx={{
-    background:"black", boxShadow:"0px 0px 2px rgba(0, 0, 0, 0.25)", height:"100vh", 
+   boxShadow:"0px 0px 2px rgba(0, 0, 0, 0.25)", height:"100vh", 
     padding:"4px",
-    color:"red",
+    color:"black",
     width:"90%",
 
     
@@ -67,7 +93,7 @@ const ChatApp = () => {
 
       <div className='mt-auto'> 
 
-      <input type="checkbox" className="toggle"  />
+      <input type="checkbox" className="toggle" onChange={handleToggle} />
 
 
      <div>
@@ -100,7 +126,7 @@ const ChatApp = () => {
 
          <Link>
 
-             <div className='flex items-center gap-2 mt-4 mb-4'>
+             <div className='flex items-center gap-2 mt-4 mb-4 border border-sky-600 p-2 rounded bg-sky-700'>
 
                 <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
 
@@ -117,7 +143,7 @@ const ChatApp = () => {
 
          <Link>
 
-<div className='flex items-center gap-2 mb-4'>
+<div className='flex items-center gap-2 mb-4 border border-sky-600 p-2 rounded bg-sky-700'>
 
    <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
 
@@ -134,7 +160,7 @@ const ChatApp = () => {
 
 <Link>
 
-<div className='flex items-center gap-2'>
+<div className='flex items-center gap-2 border border-sky-600 p-2 rounded bg-sky-700'>
 
    <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
 
