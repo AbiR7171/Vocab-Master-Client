@@ -71,6 +71,7 @@ const LeftSideRoutes = () => {
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/wordRequest">Word Request</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageWords">Manage Words</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminIssue">Manage Issue</Link></li>
+                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminfeedback">Manage Feedback</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/">Home</Link></li>
                   
                 

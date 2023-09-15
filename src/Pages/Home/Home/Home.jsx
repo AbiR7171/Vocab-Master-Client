@@ -6,6 +6,7 @@ import EarnPoints from "../section/EarnPoints";
 import QuizSection from "../section/QuizSection";
 import Sponsor from "./Sponsor";
 import SpeechRecognitionComponent from "../../../components/Features/SpeechRecognitionComponent";
+import HomeFeedback from "../Banner/HomeFeedback";
 
 
 
@@ -55,6 +56,7 @@ const Home = () => {
       <EarnPoints />
       <QuizSection />
       <Sponsor></Sponsor>
+      <HomeFeedback/>
       <Footer />
     </div>
   );

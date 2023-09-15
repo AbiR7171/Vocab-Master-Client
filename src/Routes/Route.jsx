@@ -89,6 +89,7 @@ import AdminIssue from "../Admin/AdminIssue";
 import Feedback from "../Users/Feedback";
 import Profile from "../Users/Profile";
 import ChatApp from "../Pages/ChatApp/ChatApp";
+import ManageFeedback from "../Admin/ManageFeedback";
 
 const router = createBrowserRouter([
   {
@@ -167,6 +168,10 @@ const router = createBrowserRouter([
       {
         path: "/allRouts/userProfile",
         element: <Profile/>
+      },
+      {
+        path:"/allRouts/adminfeedback",
+        element:<ManageFeedback/>
       }
     ],
   },
