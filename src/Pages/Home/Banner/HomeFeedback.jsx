@@ -45,7 +45,7 @@ const HomeFeedback = () => {
                               <div className='flex justify-center items-center'>
                               <Rating
                            style={{ maxWidth: 280 }}
-                           value={feedback.star}
+                           value={feedback?.star}
                            readOnly
                             />
                               </div> 
@@ -55,7 +55,7 @@ const HomeFeedback = () => {
                                    <p><Icon icon="mdi:comma" rotate={2} className='text-5xl text-black'  /></p>
                               </div>
 
-                              <p className='text-center mt-3 text-yellow-500'>{feedback.feedback}</p>
+                              <p className='text-center mt-3 text-yellow-500'>{feedback?.feedback}</p>
                              
                           </div>
                   
