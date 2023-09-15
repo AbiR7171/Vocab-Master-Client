@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
+const SpeechRecognitionComponent = ({handleSpeak,setIsSpeaking }) => {
     const navigate = useNavigate()
     
     const commands = [
@@ -11,13 +11,16 @@ const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
             callback: ({ resetTranscript }) => resetTranscript()
         },
         {
-            command: 'speak please',
-            callback: () => setIsSpeaking(true)
+            command: 'master',
+            callback: () => {
+             handleSpeak()
+             return setIsSpeaking(true);
+            }
         },
-        {
-            command: 'stop speaking',
-            callback: () => setIsSpeaking(false)
-        },
+        // {
+        //     command: 'stop speaking',
+        //     callback: () => setIsSpeaking(false)
+        // },
         {
             command: 'stop',
             callback: () => SpeechRecognition.stopListening()
@@ -27,7 +30,6 @@ const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
             callback: (site) => window.open('https://'+site)
 
         },
-
         {
             command: 'go to learn',
             callback: () => {
@@ -46,14 +48,14 @@ const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
             command: 'go to level 1.1',
             callback: () => {
                 navigate('/allRouts/learn/sesson1')
-                return setIsSpeaking(false)
+                return setIsSpeaking(true)
             }
         },
         {
             command: 'back to home',
             callback: () => {
                 navigate("/")
-               return setIsSpeaking(false)
+               return setIsSpeaking(true)
             }
         }
 
@@ -80,9 +82,12 @@ const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
     }
 
     useEffect(() => {
-        SpeechRecognition.startListening({ continuous: true })
+        window.addEventListener('keydown', handleKeyDown);
 
-    }, [listening])
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        }
+    }, [])
 
     // const handleAssestent = () => {
     //     SpeechRecognition.startListening({ continuous: true })
@@ -91,10 +96,19 @@ const SpeechRecognitionComponent = ({ setIsSpeaking }) => {
 
     console.log(transcript);
 
+    const handleKeyDown = event => {
+        if(event.key === "Enter"){
+            console.log("Enter key pressed");
+            SpeechRecognition.startListening()
+        }
+    }
+
     return (
-        <div>
+        <div >
             {/* <p>Microphone: {listening ? 'on' : 'off'}</p> */}
-            {/* <button onClick={() => SpeechRecognition.startListening({ continuous: true })}> Start </button> */}
+            
+            {/* <button className='mx-2' onClick={() => SpeechRecognition.startListening()}> Start </button> */}
+            <button onKeyDown={handleKeyDown} >{listening ? "on" : "off"} </button>
             {/* <button disabled onClick={() => SpeechRecognition.stopListening()}>Stop</button> */}
             {/* <button disabled onClick={resetTranscript}>Reset</button> */}
             {/* <p>{transcript}</p> */}
