@@ -7,6 +7,9 @@ import QuizSection from "../section/QuizSection";
 import Sponsor from "./Sponsor";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import SpeechRecognitionComponent from "../../../components/Features/SpeechRecognitionComponent";
+import HomeFeedback from "../Banner/HomeFeedback";
+
+
 import { Contact } from "../contact/Contact";
 
 const Home = () => {
@@ -65,6 +68,8 @@ const Home = () => {
       <EarnPoints />
       <QuizSection />
       <Sponsor></Sponsor>
+      <HomeFeedback/>
+      <Footer />
       <Contact></Contact>
       <div id="contact">
         {" "}
