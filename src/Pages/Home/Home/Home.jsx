@@ -69,7 +69,6 @@ const Home = () => {
       <QuizSection />
       <Sponsor></Sponsor>
       <HomeFeedback/>
-      <Footer />
       <Contact></Contact>
       <div id="contact">
         {" "}
