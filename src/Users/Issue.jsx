@@ -51,7 +51,7 @@ const Issue = () => {
 
     
     return (
-        <div className='bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-[200vh] p-2'> 
+        <div  className='bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-[200vh] p-2'> 
 
 
          <div onClick={()=> navigate(-1)} className='mt-10 ms-20'>

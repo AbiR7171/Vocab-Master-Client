@@ -88,6 +88,7 @@ import Issue from "../Users/Issue";
 import AdminIssue from "../Admin/AdminIssue";
 import Feedback from "../Users/Feedback";
 import Profile from "../Users/Profile";
+import ChatApp from "../Pages/ChatApp/ChatApp";
 
 const router = createBrowserRouter([
   {
@@ -474,6 +475,10 @@ const router = createBrowserRouter([
   {
     path: "/docs",
     element: <Docs />
+  },
+  {
+    path:"/allRouts/users/message",
+    element:<ChatApp/>
   }
 ]);
 
