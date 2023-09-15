@@ -30,7 +30,7 @@ const HomeFeedback = () => {
 
     
     return (
-        <div className='container mx-auto px-52 mt-20 bg-white rounded p-5'>
+        <div className='container mx-auto px-52 mt-20 '>
 
 
        <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> 
@@ -40,7 +40,7 @@ const HomeFeedback = () => {
           feedbacks.map(feedback => {
                return  <SwiperSlide>
                           
-                          <div>
+                          <div className='bg-white rounded-lg p-5'>
 
                               <div className='flex justify-center items-center'>
                               <Rating
@@ -50,12 +50,14 @@ const HomeFeedback = () => {
                             />
                               </div> 
 
+
                               <div className='flex justify-center mt-3'>
                                    <p><Icon icon="mdi:comma" rotate={2} className='text-5xl text-black' /></p>
                                    <p><Icon icon="mdi:comma" rotate={2} className='text-5xl text-black'  /></p>
                               </div>
 
-                              <p className='text-center mt-3 text-yellow-500'>{feedback?.feedback}</p>
+                              <p className='text-center mt-3 text-black'>{feedback?.feedback}</p>
+                               <p className='text-center text-yellow-600 mt-2'>{feedback?.name}</p>
                              
                           </div>
                   
