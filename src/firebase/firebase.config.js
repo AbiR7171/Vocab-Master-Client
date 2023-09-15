@@ -11,16 +11,13 @@ const firebaseConfig = {
   projectId: "vocab-master-af25f",
   storageBucket: "vocab-master-af25f.appspot.com",
   messagingSenderId: "878922724755",
-  appId: "1:878922724755:web:b8cbf15317cb4c7356a466"
-
+  appId: "1:878922724755:web:b8cbf15317cb4c7356a466",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export default app;
-
-
 
 // apiKey: import.meta.env.VITE_apiKey,
 // authDomain: import.meta.env.VITE_authDomain,

@@ -5,6 +5,8 @@ import Footer from "../../../Shared/Footer";
 import EarnPoints from "../section/EarnPoints";
 import QuizSection from "../section/QuizSection";
 import Sponsor from "./Sponsor";
+import { Contact } from "../contact/Contact";
+
 
 const Home = () => {
   return (
@@ -20,7 +22,9 @@ const Home = () => {
       <EarnPoints />
       <QuizSection />
       <Sponsor></Sponsor>
-      <Footer />
+      <Contact></Contact>
+  <div id="contact">    <Footer /></div>
+
     </div>
   );
 };
