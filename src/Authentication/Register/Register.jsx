@@ -25,8 +25,8 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.value;
-    const data = { name, email, password, photo };
+    const photo = form.photo.value || "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
+    const data = { name, email, password, photo }
 
     console.log(data);
 
@@ -147,8 +147,8 @@ const Register = () => {
               Register
             </h1>
 
-            <form onSubmit={handleSubmit} className="card-body">
-              <div className="form-control">
+            <form onSubmit={handleSubmit} className="card-body text-black">
+              <div className="form-control text-black">
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>

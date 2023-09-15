@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { SwiperSlide } from "swiper/react";
 import Particles from "../../../../Paricels/Particels";
@@ -7,17 +7,19 @@ import useUsers from "../../../../hooks/useUsers";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../../Authentication/Provider/AuthProvider";
-import TextToSpeechButton from "../../../../components/TextToSpeech/TextToSpeechButton";
+import SpeechRecognitionComponent from "../../../../components/Features/SpeechRecognitionComponent";
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
 const LessOnSlider = ({ lesson, index }) => {
+  const [isSpeaking, setIsSpeaking] = useState(false);
   const { user } = useContext(AuthContext);
   const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
   const [userInfo, refetch] = useUsers();
-  console.log(userInfo);
-  console.log(selectedOption);
+  // console.log(userInfo);
+  // console.log(selectedOption);
 
-  console.log(lesson);
+  // console.log(lesson);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -32,7 +34,7 @@ const LessOnSlider = ({ lesson, index }) => {
           }
         )
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.data.matchedCount > 0) {
             refetch();
           }
@@ -54,7 +56,8 @@ const LessOnSlider = ({ lesson, index }) => {
     }
   };
 
-  const textToSpeachContant = [
+  //text to speech features (meraj)
+  const paragraphs = [
     `Welcome to Your  Vocabulary Lesson`,
     `this is word number ${index + 1}`,
     `level: ${lesson?.level}`,
@@ -76,29 +79,86 @@ const LessOnSlider = ({ lesson, index }) => {
     `please,select the correct option and move to the next word, thank you`,
   ];
 
-  return (
-    <div className="container mx-auto px-40 font-Sec  space-y-3">
-      {/* <img src={lesson.categoryImage} alt="" /> */}
-      {/* example section start */}
-      <div>
-        {" "}
-        <div className="flex justify-between items-center text-gray-500">
-          <p className="text-2xl font-bold">Word No. {index + 1}</p>
-          <p className="text-2xl font-bold">Level: {lesson.level}</p>
-          <TextToSpeechButton
-            paragraphs={textToSpeachContant}
-          ></TextToSpeechButton>
+  const content = "hi there, how are you ?";
 
-          <p className="text-2xl font-bold ">
-            Defficulty level:{" "}
+  const handleSpeak = () => {
+    if (isSpeaking === false) {
+      const utterances = paragraphs.map((content) => {
+        const utterance = new SpeechSynthesisUtterance(content);
+        return utterance;
+      });
+
+      utterances.forEach((utterance) => speechSynthesis.speak(utterance));
+      setIsSpeaking(true);
+    } else {
+      speechSynthesis.cancel();
+      setIsSpeaking(false);
+    }
+  };
+
+  //previous code--------------
+  // if (!isSpeaking) {
+  //   const utterance = new SpeechSynthesisUtterance(content);
+  //   speechSynthesis.speak(utterance);
+  //   setIsSpeaking(true);
+  // } else {
+  //   speechSynthesis.cancel();
+  //   setIsSpeaking(false);
+  // }
+
+  // useEffect(() => {
+  //   if (isSpeaking === true) {
+  //     const utterances = paragraphs.map(content => {
+  //       const utterance = new SpeechSynthesisUtterance(content);
+  //       return utterance;
+  //     });
+
+  //     utterances.forEach(utterance => speechSynthesis.speak(utterance));
+  //     setIsSpeaking(true);
+  //   } else {
+  //     speechSynthesis.cancel();
+  //     setIsSpeaking(false);
+  //   }
+  // }, [isSpeaking])
+  //-------------------------------------------
+  return (
+    <div className="container px-20 lg:flex justify-between items-center gap-20 font-Sec  space-y-3 ">
+      {/* <img src={lesson.categoryImage} alt="" /> */}
+
+      {/*--------------- main content part start--------------- */}
+      <div className="w-full mg:w-2/3 ">
+        <div className="flex justify-between items-center text-gray-500">
+          <p className="text-lg md:text-2xl font-bold">Word No. {index + 1}</p>
+          <p className="text-lg md:text-2xl font-bold">Level: {lesson.level}</p>
+
+          <p className="text-lg md:text-2xl font-bold ">
+            Defficulty level:
             <span className="uppercase text-1xl ">
               {lesson?.difficultyLevel}
             </span>
           </p>
         </div>
+
+        {/* ------------voce command component------------- */}
+        <button onClick={handleSpeak}>
+          {isSpeaking ? (
+            <FaVolumeUp size={32} title="Mute"></FaVolumeUp>
+          ) : (
+            <FaVolumeMute title="Speak" size={32}></FaVolumeMute>
+          )}
+        </button>
+        <div className="">
+          <SpeechRecognitionComponent
+            setIsSpeaking={setIsSpeaking}
+            handleSpeak={handleSpeak}
+          ></SpeechRecognitionComponent>
+        </div>
+        {/* ------------end voice comand part-------------- */}
+
         <p className="text-4xl mt-4 font-bold text-red-600 ">
           Word: {lesson?.word}
         </p>
+
         <div className="flex justify-between  items-center text-green-600 ">
           <div className="flex items-center">
             <p className="text-2xl font-semibold ">Meaning :</p>
@@ -115,6 +175,7 @@ const LessOnSlider = ({ lesson, index }) => {
             <p className="text-2xl ms-2">{lesson.partsOfSpeech}</p>
           </div>
         </div>
+
         <div className="flex justify-between">
           <div className="flex items-center text-gray-300">
             <p className="text-2xl font-semibold ">Antonyms :</p>
@@ -134,9 +195,11 @@ const LessOnSlider = ({ lesson, index }) => {
             </ul>
           </div>
         </div>
+
         <p className="text-2xl text-yellow-300 font-serif">
           Definition: {lesson.definition}
         </p>
+
         <div className="flex gap-2 items-center text-gray-300 ">
           <p className="text-2xl font-semibold -mt-14 ">Examples :</p>
 
@@ -146,11 +209,16 @@ const LessOnSlider = ({ lesson, index }) => {
             <li className="ms-2">3.{lesson.examples[2]}</li>
           </ul>
         </div>
+      </div>
+      {/* -----------------end the main content part------------- */}
+
+      {/* -----------------------quize start-------------------- */}
+      <div className="w-full mg-w-1/3">
         <div className="flex items-center justify-center gap-2 ">
-          <p className="text-center text-3xl text-orange-400 mt-10">Quiz</p>
-          <Icon icon="twemoji:party-popper" className="text-5xl mt-10" />
+          <p className="text-center text-3xl text-orange-400 ">Quiz</p>
+          <Icon icon="twemoji:party-popper" className="text-5xl " />
         </div>
-        {/* quiz section start */}
+
         <p className="text-center text-2xl text-red-600 font-bold">
           Question : {lesson.quiz.question}
         </p>
@@ -158,7 +226,7 @@ const LessOnSlider = ({ lesson, index }) => {
         <p className="font-Sec text-2xl text-yellow-300">
           Select The correct answer
         </p>
-        <form className="flex gap-4 mt-4 mb-10 text-2xl font-Sec">
+        <form className=" gap-4 mt-4 mb-10 text-2xl font-Sec">
           <label className="block mb-2 text-green-500">
             <input
               type="radio"
@@ -197,7 +265,7 @@ const LessOnSlider = ({ lesson, index }) => {
           </label>
         </form>
       </div>
-      <div className="bg-red-800"></div>
+      {/* --------------end the quize */}
     </div>
   );
 };

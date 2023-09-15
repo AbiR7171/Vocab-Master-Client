@@ -86,6 +86,14 @@ import { Contact } from "../Pages/Home/contact/Contact";
 import TermsAndConditions from "../AboutUs/TermsAndConditions";
 import PrivacyPolicy from "../AboutUs/PrivacyPolicy";
 import CookiesPolicy from "../AboutUs/CookiesPolicy";
+import LeaderBoard from "../Users/LeaderBoard";
+import WordRequest from "../Users/WordRequest";
+import SeasonONeQuiz from "../Pages/Home/Home/Learn/QuizGalaxy/SeasonONeQuiz";
+import Issue from "../Users/Issue";
+import AdminIssue from "../Admin/AdminIssue";
+import Feedback from "../Users/Feedback";
+import Profile from "../Users/Profile";
+import ChatApp from "../Pages/ChatApp/ChatApp";
 
 const router = createBrowserRouter([
   {
@@ -161,8 +169,17 @@ const router = createBrowserRouter([
         element: <Learn />,
       },
       {
-        path: "/allRouts/adminHome",
-        element: <AdminHome />,
+        path:"/allRouts/leaderBoard",
+        element:<LeaderBoard/>
+
+      },
+      {
+            path: "/allRouts/sentWordRequest",
+            element:<WordRequest/>
+      },
+      {
+        path:"/allRouts/adminHome",
+        element: <AdminHome/>
       },
       {
         path: "/allRouts/manageUsers",
@@ -178,10 +195,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/allRouts/editWord/:id",
-        element: <EditWord />,
-        loader: ({ params }) =>
-          fetch(`https://vocab-master-server.vercel.app/word/${params.id}`),
+        element:<EditWord/>,
+        loader:({params})=> fetch(`https://vocab-master-server.vercel.app/word/${params.id}`)
       },
+      {
+        path:"/allRouts/Adminissue",
+        element:<AdminIssue/>
+      },
+      {
+        path: "/allRouts/feedback",
+        element: <Feedback/>
+      },
+      {
+        path: "/allRouts/userProfile",
+        element: <Profile/>
+      }
     ],
   },
   {
@@ -439,9 +467,21 @@ const router = createBrowserRouter([
     element: <SeasonSix9 />,
   },
   {
+    path:"/allRouts/seasonOneQuiz",
+    element: <SeasonONeQuiz/>
+ },
+ {
+     path: "/allRouts/issue",
+     element: <Issue/>
+ },
+  {
     path: "/docs",
-    element: <Docs />,
+    element: <Docs />
   },
+  {
+    path:"/allRouts/users/message",
+    element:<ChatApp/>
+  }
 ]);
 
 export default router;

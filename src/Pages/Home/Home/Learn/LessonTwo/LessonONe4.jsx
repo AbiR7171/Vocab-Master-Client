@@ -110,7 +110,7 @@ const LessonOne4 = () => {
 
 
   const backGroundStyle = {
-    backgroundImage: `url(${level2[0]?.categoryImage})`,
+    backgroundImage: `url(${level3[0]?.categoryImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
