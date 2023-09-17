@@ -108,7 +108,7 @@ const SpeechRecognitionComponent = ({handleSpeak,setIsSpeaking }) => {
             {/* <p>Microphone: {listening ? 'on' : 'off'}</p> */}
             
             {/* <button className='mx-2' onClick={() => SpeechRecognition.startListening()}> Start </button> */}
-            <button onKeyDown={handleKeyDown} >{listening ? "on" : "off"} </button>
+            <button onKeyDown={handleKeyDown} >Command:{listening ? "on" : "off"} </button>
             {/* <button disabled onClick={() => SpeechRecognition.stopListening()}>Stop</button> */}
             {/* <button disabled onClick={resetTranscript}>Reset</button> */}
             {/* <p>{transcript}</p> */}

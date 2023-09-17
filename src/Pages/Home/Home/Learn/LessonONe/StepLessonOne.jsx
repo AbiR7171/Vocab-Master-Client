@@ -49,13 +49,15 @@ const StepLessonOne = () => {
       {/* Container */}
       <div className="  lg:flex items-center justify-around gap-5 font-primary w-full h-full">
         {/* Unit 1 */}
-        <div className="bg-black bg-opacity-30 w-full rounded p-6 flex justify-between">
+        <div className="bg-black bg-opacity-30 w-full rounded px-6 flex justify-between">
           <div>
-            <h2 className="text-white fw-bold text-2xl">ইউনিট 1</h2>
+            <h2 className="text-white fw-bold text-2xl">Season 1</h2>
             {/* ------------voce command component------------- */}
-            <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
-            <div className="">
-              <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+            <div className='flex gap-2 justify-between items-center bg-green-500 rounded-lg px-2'>
+              <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
+              <div>
+                <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+              </div>
             </div>
             {/* ------------end voice comand part-------------- */}
             <p className="text-white fw-bold">

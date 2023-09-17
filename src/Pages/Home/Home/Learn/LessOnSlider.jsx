@@ -18,12 +18,45 @@ const LessOnSlider = ({ lesson, index }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
   const [userInfo, refetch] = useUsers()
-  // console.log(userInfo);
-  // console.log(selectedOption);
+
+  console.log(userInfo);
+  console.log(selectedOption);
 
   // console.log(lesson);
 
+  // const handleOptionChange = (event) => {
+  //   setSelectedOption(event.target.value);
+  //   console.log("the select value:", event.target.value)
+  //   setDisable(true);
 
+  //   if (event.target.value === `${lesson.quiz.correctAnswer}`) {
+  //     console.log('right answer')
+  //     axios
+  //       .patch(`https://vocab-master-server.vercel.app/singleUser/users?email=${user.email}`, {
+  //         diamond: userInfo[0].diamond,
+  //       })
+  //       .then((data) => {
+  //         if (data.data.matchedCount > 0) {
+  //           refetch();
+  //         }
+  //       });
+
+  //     Swal.fire({
+  //       position: 'top-center',
+  //       icon: 'success',
+  //       title: 'Awesome! Correct Answer',
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   } else {
+  //     console.log('wrong answer')
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops... Wrong Answer',
+  //       html: `Correct Answer is: ${lesson.quiz.correctAnswer}`,
+  //     });
+  //   }
+  // };
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -104,31 +137,9 @@ const LessOnSlider = ({ lesson, index }) => {
     }
   }
 
-  //previous code--------------
-  // if (!isSpeaking) {
-  //   const utterance = new SpeechSynthesisUtterance(content);
-  //   speechSynthesis.speak(utterance);
-  //   setIsSpeaking(true);
-  // } else {
-  //   speechSynthesis.cancel();
-  //   setIsSpeaking(false);
-  // }
 
 
-  // useEffect(() => {
-  //   if (isSpeaking === true) {
-  //     const utterances = paragraphs.map(content => {
-  //       const utterance = new SpeechSynthesisUtterance(content);
-  //       return utterance;
-  //     });
 
-  //     utterances.forEach(utterance => speechSynthesis.speak(utterance));
-  //     setIsSpeaking(true);
-  //   } else {
-  //     speechSynthesis.cancel();
-  //     setIsSpeaking(false);
-  //   }
-  // }, [isSpeaking])
   //-------------------------------------------
   return (
     <div className="container px-20 lg:flex justify-between items-center gap-20 font-Sec  space-y-3 ">
@@ -149,7 +160,7 @@ const LessOnSlider = ({ lesson, index }) => {
         {/* ------------voce command component------------- */}
         <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
         <div className="">
-        <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+          <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
         </div>
         {/* ------------end voice comand part-------------- */}
 
@@ -221,6 +232,34 @@ const LessOnSlider = ({ lesson, index }) => {
       {/* -----------------end the main content part------------- */}
 
       {/* -----------------------quize start-------------------- */}
+
+      {/* <div className="relative overflow-hidden bg-opacity-40 bg-white bg-blur-md p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105">
+      <div className="mb-4">
+        <h2 className="text-2xl font-bold">{lesson.quiz.question}</h2>
+      </div>
+      <div className="grid grid-cols-1 gap-4">
+        {lesson.quiz.options.map((option, index) => (
+          <label
+            key={index}
+            className="relative flex items-center p-4 bg-gray-200 rounded-lg cursor-pointer hover:bg-gray-300 transition"
+          >
+            <input
+              type="radio"
+              name="name"
+              className="absolute opacity-0 w-0 h-0"
+              value={option}
+              checked={selectedOption === option}
+              onChange={handleOptionChange}
+              disabled={disable}
+            />
+            <span className="ml-2 text-gray-800">{option}</span>
+          </label>
+        ))}
+      </div>
+      <div className="absolute top-0 left-0 w-full h-full border-2 border-blue-500 animate-pulse opacity-50"></div>
+    </div> */}
+
+      {/* previous */}
       <div className="w-full mg-w-1/3">
         <div className="flex items-center justify-center gap-2 ">
           <p className="text-center text-3xl text-orange-400 ">Quiz</p>
@@ -237,7 +276,7 @@ const LessOnSlider = ({ lesson, index }) => {
               type="radio"
               name="option"
               value={lesson.quiz.options[0]}
-              checked={selectedOption === `$`}
+              checked={selectedOption === `a`}
               onChange={handleOptionChange}
               disabled={disable}
               className="mr-2"
