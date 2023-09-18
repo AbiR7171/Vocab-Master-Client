@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import useUsers from '../../hooks/useUsers';
 import { Icon } from '@iconify/react';
+import axios from 'axios';
 
 const ChatContent = () => {
 
     const [userInfo]=useUsers();
 
+
+
+  
+
     return (
         <div className='h-screen w-full text-black flex flex-col p-2'>
            
-           <nav className='flex  justify-between px-10 w-[70%] border-b p-2 fixed'> 
+           <nav className='flex  justify-between px-10 w-[70%] border-2'> 
 
               <div className='flex items-center gap-3'>
                    <img src={userInfo[0]?.image} className='w-12 h-12 rounded-full' alt="" /> 
@@ -31,18 +36,31 @@ const ChatContent = () => {
                 
            </nav> 
 
-           <div className=' overflow-y-scroll'> 
+           <div className='h-screen border overflow-y-scroll'> 
 
                 <div className='h-[1000px]'>
 
-                    <div className='w-80  rounded-lg bg-white text-black  absolute bottom-52  p-2'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
-
-                    <div className='w-80  rounded-lg bg-white text-black  absolute bottom-96  p-2'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
-                    
-                    <div className='w-80  rounded-lg bg-sky-700 ml-auto absolute  bottom-0 mb-20 right-0   me-10 p-2'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
-
-                    <div className='w-80  rounded-lg bg-sky-700 ml-auto absolute  bottom-44 mb-20 right-0   me-10 p-2'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
                      
+                    <div className=' max-w-[40%] bg-white rounded-tr-xl p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+
+                    <div className='max-w-[40%] bg-sky-700 rounded-tl-xl ml-auto p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+                    
+                    <div className=' max-w-[40%] bg-white rounded-tr-xl p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+
+                    <div className='max-w-[40%] bg-sky-700 rounded-tl-xl ml-auto p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+                    
+                    <div className=' max-w-[40%] bg-white rounded-tr-xl p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+
+                    <div className='max-w-[40%] bg-sky-700 rounded-tl-xl ml-auto p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+                    
+                    <div className=' max-w-[40%] bg-white rounded-tr-xl p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+
+                    <div className='max-w-[40%] bg-sky-700 rounded-tl-xl ml-auto p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+                    
+                    <div className=' max-w-[40%] bg-white rounded-tr-xl p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+
+                    <div className='max-w-[40%] bg-sky-700 rounded-tl-xl ml-auto p-4 rounded-b-xl mb-6'> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, enim?</div>
+                    
                 </div>
                 
            </div>
