@@ -47,9 +47,12 @@
 
 import React, { useContext } from "react";
 import { LanguageContext } from "../context/Context";
+import AuthProvider from "../Authentication/Provider/AuthProvider";
 
 const NavBar = () => {
   const { language, setLanguage } = useContext(LanguageContext);
+  // const { user } = useContext(AuthProvider);
+  // console.log(user)
 
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
@@ -88,6 +91,9 @@ const NavBar = () => {
             <option value="bn">বাংলা</option>
             <option value="hi">Hindi</option>
           </select>
+
+          {/* user Photo */}
+          
         </div>
       </div>
     </div>

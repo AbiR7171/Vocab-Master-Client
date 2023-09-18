@@ -40,7 +40,7 @@ const Register = () => {
       .then((result) => {
         const userCreated = result.user;
         console.log(userCreated);
-        reset();
+        // reset();
 
         navigate("/allRouts/learn");
       })
@@ -114,7 +114,7 @@ const Register = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-[url('https://i.ibb.co/nRYQHYz/space-galaxy-background.jpg')]">
+      <div className="hero min-h-screen bg-[url('https://i.ibb.co/ByfNYR6/Back-Ground2.jpg')]">
         <div className="hero-content flex-col lg:flex-row">
 
           {/* <div className="flex justify-center lg:text-left">

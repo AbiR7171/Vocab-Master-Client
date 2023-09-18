@@ -84,6 +84,11 @@ import SeasonSix9 from "../Pages/Home/Home/Learn/Season6/SeasonSix9";
 import LeaderBoard from "../Users/LeaderBoard";
 import WordRequest from "../Users/WordRequest";
 import SeasonONeQuiz from "../Pages/Home/Home/Learn/QuizGalaxy/SeasonONeQuiz";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
+import AdminIssue from "../Admin/AdminIssue";
+import Feedback from "../Users/Feedback";
+import Issue from "../Users/Issue";
+import Loader from "../components/Loader";
 
 const router = createBrowserRouter([
   {
@@ -111,6 +116,10 @@ const router = createBrowserRouter([
       {
         path: "docs",
         element: <Docs></Docs>,
+      },
+      {
+        path: "loader",
+        element: <Loader></Loader>,
       },
     ],
   },

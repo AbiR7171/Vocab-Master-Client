@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
 import useAdmin from "../../../hooks/useAdmin";
 
+
+
 const Banner = () => {
-  const { language} = useContext(LanguageContext);
-  const {user}=useContext(AuthContext)
+  const { language } = useContext(LanguageContext);
+  const { user } = useContext(AuthContext)
   console.log(language, user);
 
-  const [isAdmin]=useAdmin()
+  const [isAdmin] = useAdmin()
 
   const textContent = {
     en: {
@@ -44,17 +46,21 @@ const Banner = () => {
       </div>
 
       <div className="gap-4 flex flex-col items-center justify-center">
-        <p className="text-2xl font-bold text-center mx-12">{heading1}</p>
 
-        <p className="text-2xl flex items-center justify-center">{heading2}</p>
+        <p className="text-4xl shadow-sm text-slate-800 flex items-center justify-center">{heading2}</p>
 
-        <button className="uppercase bg-orange-700 lg:w-9/12 w-6/12 py-4 text-white rounded-lg">
-          <Link to="/register">{getStartedButton}</Link>
-        </button>
+        <p className="font-bold shadow-lg text-slate-800 text-center mx-12">{heading1}</p>
 
-        <button className="uppercase bg-slate-200 lg:w-9/12 w-6/12 py-4 text-black rounded-lg">
-          <Link to="/allRouts/learn">{alreadyHaveAccountButton}</Link>
-        </button>
+        <div className="grid grid-cols-3 gap-5">
+          <button className="uppercase bg-orange-700 px-3 py-4 text-white rounded-lg">
+            <Link to="/register">{getStartedButton}</Link>
+          </button>
+
+          <button className="uppercase bg-slate-200   py-4 text-black rounded-lg text-sm col-span-2">
+            <Link to="/allRouts/learn">{alreadyHaveAccountButton}</Link>
+          </button>
+        </div>
+
       </div>
     </div>
   );
