@@ -25,23 +25,24 @@ const Learn = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
+  // from-slate-900 via-purple-900 to-slate-900  border border-black
   return (
     <>
-      <div className="  h-full w-full    bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
+      <div className="  h-full w-full  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  ">
       
           {/* Container */} 
 
-          <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  h-24 border border-black flex items-center justify-center">
-            <p className=" text-center font-Sec ms-52  text-red-600 font-bold font-Logo text-3xl">Welcome  <br /> To OUR Vocab Galaxy</p>
+          <div className="bg-gradient-to-r  mb-10 md:mb-20">
+            <p className=" text-center font-Sec md:ms-52 text-red-600 font-bold font-Logo text-lg md:text-3xl">Welcome  <br /> To OUR Vocab Galaxy</p>
           </div>
         
 
           {/* Get Started tooltip */}
           <div className="text-center flex flex-col gap-5 items-center justify-center my-12  "> 
 
-           <div className="text-center ms-64">
+           <div className="text-center md:ms-64">
            <div 
-              className="tooltip tooltip-open tooltip-error"
+              className="tooltip tooltip-open  md:tooltip-right tooltip-error"
               data-tip="CLICK THE GALAXY TO START"
             >
               {/* active button */}
@@ -56,7 +57,7 @@ const Learn = () => {
 
 
 
-           <div className=" mb-7 ">
+           <div className=" me-40 md:me-72 mb-10 ">
               <div
                 className="tooltip tooltip-open  tooltip-right tooltip-error  "
                 data-tip="Quiz Galaxy"
@@ -71,7 +72,7 @@ const Learn = () => {
 
 
             {/* Other buttons */}
-            <div className="me-44 mt-7">
+            <div className="md:ms-[600px] ms-40 mb-10">
               <div
                 // className="tooltip tooltip-open tooltip-error  "
                 // data-tip="CLICK THE GALAXY TO START"
@@ -86,7 +87,7 @@ const Learn = () => {
 
 
 
-            <div className="  ms-60 ">
+            <div className=" me-80 mb-10 md:ms-60 ">
               <div
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
@@ -99,7 +100,7 @@ const Learn = () => {
               </div>
             </div>
 
-            <div className="ms-[700px] ">
+            <div className="md:ms-[700px] ms-40 mb-10 ">
               <div  
                           // className="tooltip tooltip-open tooltip-error step step-primary "
                           // data-tip="CLICK THE GALAXY TO START"
@@ -115,7 +116,7 @@ const Learn = () => {
 
 
             
-            <div className="  ms-60 ">
+            <div className=" me-40 mb-10 md:me-72 ">
               <div
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
@@ -129,7 +130,7 @@ const Learn = () => {
             </div>
 
 
-             <div className="-ms-44 -mt-10">
+             <div className="md:ms-[600px] ms-40 mb-10">
                <div  
                           // className="tooltip tooltip-open tooltip-error step step-primary "
                           // data-tip="CLICK THE GALAXY TO START"
@@ -143,7 +144,7 @@ const Learn = () => {
               </div>
             </div>
 
-              <div className=" me-[600px] ">
+              <div className=" md:me-80 me-40 mb-10 ">
               <div
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
@@ -158,7 +159,7 @@ const Learn = () => {
 
 
 
-            <div className="">
+            <div className="md:ms-[600px] ms-40 mb-10 ">
               <div
                 // className="tooltip tooltip-open tooltip-error  "
                 // data-tip="CLICK THE GALAXY TO START"
@@ -173,7 +174,7 @@ const Learn = () => {
 
 
             
-            <div className=" ms-[600px] ">
+            <div className=" md:me-80 me-40 mb-10 ">
               <div
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
@@ -189,7 +190,7 @@ const Learn = () => {
 
 
             
-            <div className="">
+            <div className="md:ms-[600px] ms-40 mb-10">
               <div
                 // className="tooltip tooltip-open tooltip-error  "
                 // data-tip="CLICK THE GALAXY TO START"

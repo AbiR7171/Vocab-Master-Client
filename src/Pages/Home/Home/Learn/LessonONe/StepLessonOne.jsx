@@ -53,11 +53,11 @@ const StepLessonOne = () => {
           <div>
             <h2 className="text-white fw-bold text-2xl">Season 1</h2>
             {/* ------------voce command component------------- */}
-            <div className='flex gap-2 justify-between items-center bg-green-500 rounded-lg px-2'>
-              <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
+            <div className='flex gap-2 w-48 mx-2 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
               <div>
                 <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
               </div>
+              <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
             </div>
             {/* ------------end voice comand part-------------- */}
             <p className="text-white fw-bold">
