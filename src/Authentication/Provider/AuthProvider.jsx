@@ -33,6 +33,14 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  //update user------------------------
+  const updateUser = (name, photo) => {
+
+    return updateProfile(auth.currentUser, {
+      displayName: name, photoURL: photo
+    })
+  }
+
   //for login--------------------------
   const signin = (email, password) => {
     setLoading(true);
@@ -60,8 +68,9 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
-      setUser(loggedUser);
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+      setUser(currentUser);
+      console.log('current user:', currentUser);
       setLoading(false);
     });
     return () => {
@@ -78,6 +87,7 @@ const AuthProvider = ({ children }) => {
     googleSignIn,
     appleSignIn,
     facebookSignIn,
+    updateUser
   };
 
   return (

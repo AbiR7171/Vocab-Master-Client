@@ -9,15 +9,18 @@ import moment from "moment/moment";
 import svg from "../../../src/assets/register/undraw_welcome_re_h3d9.svg";
 import { useState } from "react";
 
+const image_key = 'aa7196d954be91dd4579589ce42d0536'
 const Register = () => {
   // const { register, handleSubmit, watch, reset, formState: {errors },} = useForm();
-  const { createUser, user,  } = useContext(AuthContext);
+  const { createUser, user, updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
 
+  const image_host_url = `https://api.imgbb.com/1/upload?key=${image_key}`
+  // "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -25,9 +28,9 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.value || "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
-    const data = { name, email, password, photo }
+    const photo = form.photo.files[0];
 
+    const data = { name, email, password, photo }
     console.log(data);
 
     if (password.length < 6) {
@@ -35,104 +38,77 @@ const Register = () => {
       return;
     }
 
-    //   createUser(data.email, data.password).then((result) => {
-    //     const loggedUser = result.user;
+    const formData = new FormData()
+    formData.append('image', photo)
 
-    //     const user = {
-    //       name: data.name,
-    //       email: data.email,
-    //       url: data.photo,
-    //       position: "student",
-    //     };
-    //     fetch("https://assignment-12-server-silk-beta.vercel.app/users", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(user),
-    //     })
-    //       .then((res) => res.json())
-    //       .then((result) => {})
-    //       .catch((err) => {});
-    //     navigate("/");
-    //     updateUserProfile(data.name, data.photo).then(() => {});
-    //   });
-    // };
+    fetch(image_host_url, {
+      method: "POST",
+      body: formData
+    })
+      .then(res => res.json())
+      .then(imageData => {
+        if (imageData.success) {
+          const image_url = imageData.data.display_url;
+          console.log('Image BB url', image_url);
 
-    createUser(email, password)
-      .then((result) => {
-        const userCreated = result.user;
-        console.log(userCreated);
-        reset();
+          createUser(email, password)
+            .then((result) => {
+              const userCreated = result.user;
+              console.log('user created', userCreated);
 
-        navigate("/allRouts/learn");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+              updateUser(name, image_url)
+                .then(() => {
+                  console.log('upadte done');
 
-    axios
-      .post("https://vocab-master-server.vercel.app/users", {
-        name: name,
-        email: email,
-        image: photo,
-        season: 1,
-        diamond: 0,
-        role: "student",
-        date: moment().format("D,MM,yyyy"),
-      })
-      .then((data) => {
-        console.log(data);
-        if (data.data.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Successfully Register",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+                  axios
+                    .post("https://vocab-master-server.vercel.app/users", {
+                      name: name,
+                      email: email,
+                      image: image_url,
+                      season: 1,
+                      diamond: 0,
+                      role: "student",
+                      date: moment().format("D,MM,yyyy"),
+                    })
+                    .then((data) => {
+                      console.log(data);
+                      if (data.data.insertedId) {
+                        Swal.fire({
+                          position: "center",
+                          icon: "success",
+                          title: "Successfully Register",
+                          showConfirmButton: false,
+                          timer: 1500,
+                        });
+                        navigate("/allRouts/learn");
+                      }
+                    })
+                    .catch(err => console.log(err))
+
+                })
+                .catch(err => {
+                  console.log(err);
+                })
+
+            })
+            .catch((error) => {
+              console.log(error);
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.message,
+              })
+            });
+
+
+
         }
-        navigate(form);
-      });
+      })
+      .catch(err => console.log(err))
+
   };
 
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   createUser(data.email, data.password)
-  //     .then((result) => {
-  //       const userCreated = result.user;
-  //       console.log(userCreated);
-  //       reset();
 
-  //       navigate("/allRouts/learn");
-  //     })
-  //     .catch((error) => console.log(error));
-
-  //   axios
-  //     .post("https://vocab-master-server.vercel.app/users", {
-  //       name: data.name,
-  //       email: data.email,
-  //       image: data.image,
-  //       season: 1,
-  //       diamond: 0,
-  //       role: "student",
-  //       date: moment().format("D,MM,yyyy"),
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       if (data.data.insertedId) {
-  //         Swal.fire({
-  //           position: "top-end",
-  //           icon: "success",
-  //           title: "Successfully Register",
-  //           showConfirmButton: false,
-  //           timer: 1500,
-  //         });
-  //       }
-  //     });
-  // };
-
-  // console.log(moment().format("D,MM,yyyy"));
 
   return (
     <div>
@@ -190,9 +166,9 @@ const Register = () => {
                 </label>
                 <input
                   name="photo"
-                  type="text"
+                  type="file"
                   placeholder="photo url"
-                  className="input input-bordered"
+                  className="input input-bordered file-input file-input-ghost"
                 />
               </div>
               <div className="form-control mt-6">
