@@ -60,9 +60,11 @@ const LeftSideRoutes = () => {
             </div>
             <div className="drawer-side z-50">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className={`menu p-4 md:p-4 w-60 md:w-80 h-full  fixed  space-y-1 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white border border-black `}>
+                <ul className={`menu p-4 md:p-4 w-60 md:w-72 h-full  fixed  space-y-1 bg-black opacity-50  `}>
                     {/* Sidebar content here */}
-                    <h2 className='ms-5 text-3xl text-emerald-500 font-bold mb-5 font-Logo  '>Vocab Master</h2>
+                    <h2 className=" font-primary mb-4 lg:mb-0 text-3xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-yellow-300">
+                        𝓥𝓸𝓬𝓪𝓫𝓜𝓪𝓼𝓽𝓮𝓻
+                    </h2>
                     {/* ------------voce command component------------- */}
                     <div className='flex gap-2 w-48 mx-2 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
                         <div>
@@ -77,16 +79,16 @@ const LeftSideRoutes = () => {
                             <>
 
 
-                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminHome">Admin Home</Link></li>
-                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageUsers">Manage User</Link></li>
-                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/wordRequest">Word Request</Link></li>
-                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageWords">Manage Words</Link></li>
-                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminIssue">Manage Issue</Link></li>
-                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminfeedback">Manage Feedback</Link></li>
-                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/">Home</Link></li>
-                  
-                
-                              
+                                <li className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminHome">Admin Home</Link></li>
+                                <li className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageUsers">Manage User</Link></li>
+                                <li className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/wordRequest">Word Request</Link></li>
+                                <li className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageWords">Manage Words</Link></li>
+                                <li className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminIssue">Manage Issue</Link></li>
+                                <li className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminfeedback">Manage Feedback</Link></li>
+                                <li className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/">Home</Link></li>
+
+
+
 
 
                             </>

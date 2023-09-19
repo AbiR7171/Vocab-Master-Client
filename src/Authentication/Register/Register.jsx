@@ -10,6 +10,7 @@ import svg from "../../../src/assets/register/undraw_welcome_re_h3d9.svg";
 import { useState } from "react";
 
 const image_key = 'aa7196d954be91dd4579589ce42d0536'
+
 const Register = () => {
   // const { register, handleSubmit, watch, reset, formState: {errors },} = useForm();
   const { createUser, user, updateUser } = useContext(AuthContext);
@@ -21,6 +22,7 @@ const Register = () => {
 
   const image_host_url = `https://api.imgbb.com/1/upload?key=${image_key}`
   // "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -28,7 +30,7 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.files[0];
+    const photo = form.photo.files[0] 
 
     const data = { name, email, password, photo }
     console.log(data);
@@ -112,7 +114,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="hero w-full min-h-screen bg-Back">
+      <div className="hero w-full min-h-screen bg-Backs">
         <div className="card w-95/100 md:w-1/3 md:mx-auto md:px-10 shadow-2xl bg-base-100 bg-opacity-50">
           <h1 className="text-5xl text-slate-800 text-center font-bold font-serif p-5">
             Register
