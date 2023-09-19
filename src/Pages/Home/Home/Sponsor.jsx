@@ -2,7 +2,7 @@ import React from "react";
 
 const Sponsor = () => {
   return (
-    <div className="font-mono lg:py-12 py-8">
+    <div className="font-mono lg:py-12 py-8 my-12">
       <div className="py-8" />
       <div className="sm:max-w-4xl pt-8 rounded-xl bg-white mx-4 sm:mx-8 md:mx-auto">
         <div className="w-11/12 sm:w-2/3 mx-auto mb-10">

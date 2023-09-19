@@ -46,7 +46,7 @@ const SocialLogin = () => {
                     <FaGoogle></FaGoogle>
                 </button> */}
                 <div className='flex justify-center items-center gap-4 text-[32px] text-white mt-[-50px]'>
-                    <button onClick={handelFacebookSignIn} ><img src={faceBook} alt="" className='w-[50px] h-[50px] border-solid border-[#A8B0AF] border-[1px] rounded-full p-2' /></button>
+                    <button onClick={handelFacebookSignIn} ><img src={faceBook} alt="" className='w-[50px] h-[50px] border-solid border-[#A8B0AF] border-[1px] rounded-full p-2 ' /></button>
                     <button onClick={handelGoogleSignIn} className=' border-solid border-[#A8B0AF] border-[1px] rounded-full p-2'><FcGoogle></FcGoogle></button>
                     <button onClick={handelAppleSignIn} className=' border-solid border-[#A8B0AF] border-[1px] text-black rounded-full p-2'><FaApple></FaApple></button>
                 </div>
