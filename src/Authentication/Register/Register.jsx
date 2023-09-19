@@ -111,81 +111,79 @@ const Register = () => {
 
 
   return (
-    <div>
-      <div className="hero min-h-screen bg-Back">
-        <div className="hero-content flex-col lg:flex-row">
-          {/* <div className="flex justify-center lg:text-left">
-            <img className="w-4/6" src={svg} alt="" />
-          </div> */}
+    <>
+      <div className="hero w-full min-h-screen bg-Back">
+        <div className="card w-95/100 md:w-1/3 md:mx-auto md:px-5 shadow-2xl bg-base-100 bg-opacity-50">
+          <h1 className="text-5xl text-slate-800 text-center font-bold font-serif p-5">
+            Register
+          </h1>
 
-          <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100 bg-opacity-50">
-            <h1 className="text-5xl text-slate-800 text-center font-bold font-serif p-5">
-              Register
-            </h1>
+          <form onSubmit={handleSubmit} className="w-full text-black">
+            <div className="form-control text-black">
+              <label className="label">
+                <span className="label-text ">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+                className="input input-bordered "
+              />
+            </div>
 
-            <form onSubmit={handleSubmit} className="card-body text-black">
-              <div className="form-control text-black">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  className="input input-bordered"
-                />
-              </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text ">Email</span>
+              </label>
+              <input
+                type="text"
+                name="email"
+                placeholder="email"
+                required
+                className="input input-bordered "
+              />
+            </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="email"
-                  className="input input-bordered"
-                />
-              </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text ">Password</span>
+              </label>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                required
+                className="input input-bordered "
+              />
+            </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                />
-              </div>
-
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo url</span>
-                </label>
-                <input
-                  name="photo"
-                  type="file"
-                  placeholder="photo url"
-                  className="input input-bordered file-input file-input-ghost"
-                />
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary ">Register</button>
-              </div>
-            </form>
-            <p className="my-5 mx-5 text-black">
-              already have an account ?{" "}
-              <Link className="text-lime-800 font-bold" to="/login">
-                logIn
-              </Link>
-            </p>
-          </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text ">Photo url</span>
+              </label>
+              <input
+                name="photo"
+                type="file"
+                placeholder="photo url"
+                required
+                className="input input-bordered  file-input file-input-ghost"
+              />
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary ">Register</button>
+            </div>
+          </form>
+          <p className="py-5 text-center md:px-10 text-black">
+            already have an account ?{" "}
+            <Link className="text-lime-800 font-bold" to="/login">
+              logIn
+            </Link>
+          </p>
           <p className="text-error text-center mt-5">{error}</p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
