@@ -8,6 +8,7 @@ import moment from 'moment';
 import ChatContent from './ChatContent';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import axios from 'axios';
 
 
 // theme.palette.background.paper ||
@@ -16,10 +17,12 @@ const ChatApp = () => {
 
     const[userInfo]=useUsers();
 
+    const[conversations, setConversation]=useState([]);
+
     console.log(userInfo);
 
     const themes = useTheme();
-    console.log(themes);
+   //  console.log(themes);
 
     const[theme, setTheme]=useState(localStorage.getItem("themes") ? localStorage.getItem("themes"): "dark");
 
@@ -42,7 +45,23 @@ const ChatApp = () => {
             localStorage.setItem("themes", theme);
             const localTheme = localStorage.getItem("themes");
             document.querySelector("html").setAttribute("data-theme", localTheme)
-    },[theme])
+    },[theme]);
+
+
+    useEffect(()=>{
+             
+           axios.get(`http://localhost:5000/message/conversation/${userInfo[0]._id}`)
+           .then(res => {
+             console.log(res.data);
+             setConversation(res.data)
+           })
+        
+                
+    },[])
+
+
+
+     
     return (
         <div>
 
@@ -90,7 +109,7 @@ const ChatApp = () => {
      <p><Icon icon="uiw:setting" className='text-3xl' /></p>
 
       </div> 
-
+ 
       <div className='mt-auto'> 
 
       <input type="checkbox" className="toggle" onChange={handleToggle} />
@@ -124,56 +143,32 @@ const ChatApp = () => {
           <hr className='border-b border-sky-700 ' />
 
 
-         <Link>
+       
 
-             <div className='flex items-center gap-2 mt-4 mb-4 border border-sky-600 p-2 rounded bg-sky-700'>
+       {
+         conversations?.map(({conversationId, user}) => {
+                     return  <Link>
 
-                <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
+                        <div className='flex items-center gap-2 border border-sky-600 p-2 rounded bg-sky-700'>
+                     
+                         <img src={user.image} className='w-10 h-10 rounded-full' alt="" />
+                     
+                        <div>
+                             <p>{user.name}</p>
+                             <p> { moment().subtract(1, 'days').calendar() } </p>
+                        </div>
+                       
+                     
+                     
+                     </div>
+                     
+                     </Link>
+         })
+       }
 
-                <div>
-                     <p>Yasin</p>
-                     <p> { moment().subtract(1, 'days').calendar() } </p>
-                </div>
-               
-
-            
-            </div>
-
-         </Link>
-
-         <Link>
-
-<div className='flex items-center gap-2 mb-4 border border-sky-600 p-2 rounded bg-sky-700'>
-
-   <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
-
-   <div>
-        <p>Yasin</p>
-        <p> { moment().subtract(1, 'days').calendar() } </p>
-   </div>
-  
+    
 
 
-</div>
-
-</Link>
-
-<Link>
-
-<div className='flex items-center gap-2 border border-sky-600 p-2 rounded bg-sky-700'>
-
-   <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
-
-   <div>
-        <p>Yasin</p>
-        <p> { moment().subtract(1, 'days').calendar() } </p>
-   </div>
-  
-
-
-</div>
-
-</Link>
     </div>
         
         

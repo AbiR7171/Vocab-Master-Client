@@ -9,6 +9,11 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../../Authentication/Provider/AuthProvider";
 import SpeechRecognitionComponent from "../../../../components/Features/SpeechRecognitionComponent";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import succesfully from "../../../../assets/LottieAnimation/succesfully.json"
+import rights from "../../../../assets/LottieAnimation/right.json"
+import left from "../../../../assets/LottieAnimation/left.json"
+import middle from "../../../../assets/LottieAnimation/middle.json"
+import Lottie from "lottie-react";
 
 const LessOnSlider = ({ lesson, index }) => {
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -16,6 +21,7 @@ const LessOnSlider = ({ lesson, index }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
   const [userInfo, refetch] = useUsers();
+  const[right, setRight]=useState(false);
   // console.log(userInfo);
   // console.log(selectedOption);
 
@@ -26,6 +32,9 @@ const LessOnSlider = ({ lesson, index }) => {
     setDisable(true);
 
     if (event.target.value == `${lesson.quiz.correctAnswer}`) {
+     
+      // <Lottie animationData={succesfully} loop={true} />
+
       axios
         .patch(
           `https://vocab-master-server.vercel.app/singleUser/users?email=${user.email}`,
@@ -37,6 +46,7 @@ const LessOnSlider = ({ lesson, index }) => {
           // console.log(data);
           if (data.data.matchedCount > 0) {
             refetch();
+            setRight(true)
           }
         });
 
@@ -265,7 +275,40 @@ const LessOnSlider = ({ lesson, index }) => {
           </label>
         </form>
       </div>
-      {/* --------------end the quize */}
+      {/* --------------end the quize */} 
+
+      
+
+     {
+        right &&  
+
+        <div>
+
+        <div className="absolute left-0  w-96 h-96">
+
+        <Lottie animationData={succesfully} loop={false} />
+
+        </div>
+
+        <div className="absolute right-0  w-96 h-96">
+
+        <Lottie animationData={succesfully} loop={false} />
+
+            
+        </div>
+
+       
+
+
+        </div>
+        
+    
+
+     }
+
+         
+    
+
     </div>
   );
 };
