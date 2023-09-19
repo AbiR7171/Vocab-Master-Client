@@ -22,7 +22,7 @@ const StepSeasonSix = () => {
             {/* Unit 1 */}
             <div className="bg-black bg-opacity-30 w-full rounded p-6 flex justify-between">
               <div>
-                <h2 className="text-white fw-bold text-2xl">ইউনিট 5</h2>
+                <h2 className="text-white fw-bold text-2xl">Season 6</h2>
     
                 <p className="text-white fw-bold">
                   
@@ -37,7 +37,7 @@ const StepSeasonSix = () => {
           </div>
     
           {/* Get Started tooltip */}
-          <div className="text-center items-center mx-[500px] my-12">
+          <div className="text-center items-center md:mx-[500px] my-12">
             <div
               className="tooltip tooltip-open tooltip-accent p-2"
               data-tip="GET STARTED"

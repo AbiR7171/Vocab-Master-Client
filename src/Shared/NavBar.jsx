@@ -52,7 +52,7 @@ import { AuthContext } from "../Authentication/Provider/AuthProvider";
 const NavBar = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
