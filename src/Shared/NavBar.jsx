@@ -48,11 +48,12 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../context/Context";
 import { AuthContext } from "../Authentication/Provider/AuthProvider";
+import useUsers from "../hooks/useUsers";
 
 const NavBar = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  const [userInfo] = useUsers();
 
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
@@ -78,8 +79,8 @@ const NavBar = () => {
         </h2>
         {user && (
           <h1>
-            𝓦𝓮𝓵𝓬𝓸𝓶𝓮  
-            <span className="font-bold"> "{   user.displayName}"</span>
+            𝓦𝓮𝓵𝓬𝓸𝓶𝓮
+            <span className="font-bold"> "{user && userInfo[0]?.name}"</span>
           </h1>
         )}
         <div className="lg:flex items-center lg:space-x-4 justify-center">

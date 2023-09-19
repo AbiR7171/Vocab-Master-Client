@@ -265,6 +265,31 @@ const LessOnSlider = ({ lesson, index }) => {
           </label>
         </form>
       </div>
+      {/* <div className="relative overflow-hidden bg-opacity-40 bg-white bg-blur-md p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105">
+        <div className="mb-4">
+          <h2 className="text-2xl font-bold">{lesson.quiz.question}</h2>
+        </div>
+        <div className="grid grid-cols-1 gap-4">
+          {lesson.quiz.options.map((option, index) => (
+            <label
+              key={index}
+              className="relative flex items-center p-4 bg-gray-200 rounded-lg cursor-pointer hover:bg-gray-300 transition"
+            >
+              <input
+                type="radio"
+                name="name"
+                className="absolute opacity-0 w-0 h-0"
+                value={option}
+                checked={selectedOption === option}
+                onChange={handleOptionChange}
+                // disabled={disable}
+              />
+              <span className="ml-2 text-gray-800">{option}</span>
+            </label>
+          ))}
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full border-2 border-blue-500 animate-pulse opacity-50"></div>
+      </div> */}
       {/* --------------end the quize */}
     </div>
   );

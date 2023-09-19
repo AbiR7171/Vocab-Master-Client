@@ -169,17 +169,16 @@ const router = createBrowserRouter([
         element: <Learn />,
       },
       {
-        path:"/allRouts/leaderBoard",
-        element:<LeaderBoard/>
-
+        path: "/allRouts/leaderBoard",
+        element: <LeaderBoard />,
       },
       {
-            path: "/allRouts/sentWordRequest",
-            element:<WordRequest/>
+        path: "/allRouts/sentWordRequest",
+        element: <WordRequest />,
       },
       {
-        path:"/allRouts/adminHome",
-        element: <AdminHome/>
+        path: "/allRouts/adminHome",
+        element: <AdminHome />,
       },
       {
         path: "/allRouts/manageUsers",
@@ -195,21 +194,22 @@ const router = createBrowserRouter([
       },
       {
         path: "/allRouts/editWord/:id",
-        element:<EditWord/>,
-        loader:({params})=> fetch(`https://vocab-master-server.vercel.app/word/${params.id}`)
+        element: <EditWord />,
+        loader: ({ params }) =>
+          fetch(`https://vocab-master-server.vercel.app/word/${params.id}`),
       },
       {
-        path:"/allRouts/Adminissue",
-        element:<AdminIssue/>
+        path: "/allRouts/Adminissue",
+        element: <AdminIssue />,
       },
       {
         path: "/allRouts/feedback",
-        element: <Feedback/>
+        element: <Feedback />,
       },
       {
         path: "/allRouts/userProfile",
-        element: <Profile/>
-      }
+        element: <Profile />,
+      },
     ],
   },
   {
@@ -467,21 +467,21 @@ const router = createBrowserRouter([
     element: <SeasonSix9 />,
   },
   {
-    path:"/allRouts/seasonOneQuiz",
-    element: <SeasonONeQuiz/>
- },
- {
-     path: "/allRouts/issue",
-     element: <Issue/>
- },
-  {
-    path: "/docs",
-    element: <Docs />
+    path: "/allRouts/seasonOneQuiz",
+    element: <SeasonONeQuiz />,
   },
   {
-    path:"/allRouts/users/message",
-    element:<ChatApp/>
-  }
+    path: "/allRouts/issue",
+    element: <Issue />,
+  },
+  {
+    path: "/docs",
+    element: <Docs />,
+  },
+  {
+    path: "/allRouts/users/message",
+    element: <ChatApp />,
+  },
 ]);
 
 export default router;

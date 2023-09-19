@@ -11,7 +11,7 @@ import { useState } from "react";
 
 const Register = () => {
   // const { register, handleSubmit, watch, reset, formState: {errors },} = useForm();
-  const { createUser, user,  } = useContext(AuthContext);
+  const { createUser, user } = useContext(AuthContext);
   const [error, setError] = useState("");
   const location = useLocation();
 
@@ -25,8 +25,10 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.value || "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
-    const data = { name, email, password, photo }
+    const photo =
+      form.photo.value ||
+      "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
+    const data = { name, email, password, photo };
 
     console.log(data);
 
@@ -92,7 +94,7 @@ const Register = () => {
             timer: 1500,
           });
         }
-        navigate(form);
+        navigate('/');
       });
   };
 

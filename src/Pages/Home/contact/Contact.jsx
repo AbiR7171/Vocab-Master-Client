@@ -2,8 +2,10 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import contactImg from "../../../assets/images/contact-img.svg";
+import { useLocation } from "react-router";
 
 export const Contact = () => {
+  const location = useLocation();
   const formInitialDetails = {
     firstName: "",
     lastName: "",
@@ -53,11 +55,10 @@ export const Contact = () => {
   };
 
   return (
-    
     <section className="contact" id="connect">
       <div className="container mx-auto px-4 py-12 mb-12">
         <h2 className="text-5xl font-semibold text-white mb-6 text-center lg:py-6 py-4">
-          Get In Touch
+          {location.pathname === "/contact" ? "Contact Us " : "Get In Touch"}
         </h2>
         <div className="flex flex-wrap mx-0">
           <div className="w-full md:w-1/2 px-4 mb-4">
