@@ -16,53 +16,55 @@ body {
 
 
 
-.font-primary{
+.font-primary {
   font-family: 'Merriweather', serif;
 }
 
-.font-Sec{
+.font-Sec {
   font-family: 'Cormorant Garamond', serif;
 }
 
-.font-Logo{
+.font-Logo {
   font-family: 'Dancing Script', cursive;
-   font-style: italic;
-  
+  font-style: italic;
+
 }
 
 
 
-.text-1xl{
+.text-1xl {
   font-size: 18px;
-  
+
 }
 
-.space-y{
+.space-y {
   letter-spacing: 1.2px;
 }
 
 
-.bg-Back{
-   background-image: url(./assets/images/Background1.jpg);
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-
-
-}
-.bg-Backs{
-   background-image: url(./assets/images/Background2.jpg);
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   min-height: 100vh;
-   padding: 20px;
+.bg-Back {
+  background-image: url(./assets/images/myGalaxy.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 
 }
 
+.bg-Backs {
+  background-image: url(./assets/images/galaxy.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 20px;
 
-body,html{
-   overflow-x: hidden;
-   /* overflow-y: scroll; */
-  
+}
+
+
+body,
+html {
+  overflow-x: hidden;
+  /* overflow-y: scroll; */
+
 }
