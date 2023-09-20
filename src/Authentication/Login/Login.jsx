@@ -16,7 +16,7 @@ const Login = () => {
     const { signin } = useContext(AuthContext);
     // const [error, setError] = useState('');
 
-    const [isAdmin]=useAdmin();
+    const [isAdmin] = useAdmin();
 
     console.log(isAdmin);
 
@@ -48,7 +48,7 @@ const Login = () => {
                 // console.log(error);
 
                 Swal.fire(`${error.message}`)
-               
+
             })
     }
 
@@ -69,40 +69,38 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-[url('https://i.ibb.co/nRYQHYz/space-galaxy-background.jpg')]">
-                <div className="hero-content flex-col lg:flex-row">
-                    {/* <div className="text-center lg:text-left">
-                        <img src={svg} alt="" />
-                    </div> */}
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 bg-opacity-50">
-                        <form onSubmit={handleSubmit} className="card-body text-black">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="text" name='email' placeholder="email" className="input input-bordered" />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div className="form-control mt-3">
-                                <button className="btn btn-primary">Login</button>
-                            </div>
-                        </form>
-
-
-                        <div className="mt-6">
-                            <p><SocialLogin></SocialLogin></p>
+            <div className="hero min-h-screen bg-Back">
+                <div className="card w-95/100 md:w-1/3 mx-auto md:px-5 shadow-2xl bg-base-100 bg-opacity-50">
+                    <h1 className="text-5xl text-slate-800 text-center font-bold font-serif p-5">
+                        Login
+                    </h1>
+                    <form onSubmit={handleSubmit} className="card-body text-black">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="text" name='email' required placeholder="email" className="input input-bordered" />
                         </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input type="password" name='password' required placeholder="password" className="input input-bordered" />
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                        </div>
+                        <div className="form-control mt-3">
+                            <button className="btn btn-primary">Login</button>
+                        </div>
+                    </form>
 
-                        <p className=' mx-5 my-5 text-black'>Don't have account ? <Link className='text-lime-800 font-bold' to='/register'>Sign up</Link></p>
+
+                    <div className="mt-6">
+                        <p><SocialLogin></SocialLogin></p>
                     </div>
+
+                    <p className=' text-center my-5 text-black'>Don't have account ? <Link className='text-lime-800 font-bold' to='/register'>Sign up</Link></p>
                 </div>
 
                 {/* <p className='text-error text-center mt-10'>{error}</p> */}

@@ -16,8 +16,13 @@ import axios from 'axios';
 const ChatApp = () => {
 
     const[userInfo]=useUsers();
+   
 
     const[conversations, setConversation]=useState([]);
+    const[messages, setMessages]=useState({});
+
+
+    console.log(conversations);j
 
     console.log(userInfo);
 
@@ -50,14 +55,27 @@ const ChatApp = () => {
 
     useEffect(()=>{
              
-           axios.get(`http://localhost:5000/message/conversation/${userInfo[0]._id}`)
+           axios.get(`http://localhost:5000/message/conversations/${userInfo[0]?._id}`)
            .then(res => {
              console.log(res.data);
              setConversation(res.data)
            })
         
                 
-    },[])
+    },[]);
+
+
+
+    const fetchMessages = (conversationId, user) => {
+            
+            axios.get(`http://localhost:5000/message/messages/${conversationId}`)
+            .then(res => {
+
+                      console.log(res.data);
+                      setMessages({messages: res.data, receiver:user, conversationId})
+
+            })
+    }
 
 
 
@@ -68,8 +86,8 @@ const ChatApp = () => {
 
               <div className="drawer lg:drawer-open">
               <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-             <div className="drawer-content flex flex-col items-center justify-center">
-               {/* Page content here */} <ChatContent/>
+             <div className="drawer-content flex flex-col items-center justify-center ">
+               {/* Page content here */} <ChatContent messages={messages} fetchMessages={fetchMessages} />
              <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   
              </div> 
@@ -79,11 +97,11 @@ const ChatApp = () => {
             
 
 
-           <div className=" w-96 min-h-full bg-base-200 text-base-content flex  ">
+           <div className=" w-80 min-h-full bg-base-200 text-base-content flex  ">
          {/* Sidebar content here */}
 
          <div>
-<Box sx={{
+{/* <Box sx={{
    boxShadow:"0px 0px 2px rgba(0, 0, 0, 0.25)", height:"100vh", 
     padding:"4px",
     color:"black",
@@ -125,7 +143,7 @@ const ChatApp = () => {
 
 </div>
 
-</Box>
+</Box> */}
 
 
 </div> 
@@ -145,13 +163,13 @@ const ChatApp = () => {
 
        
 
-       {
-         conversations?.map(({conversationId, user}) => {
-                     return  <Link>
+       { 
 
-                        <div className='flex items-center gap-2 border border-sky-600 p-2 rounded bg-sky-700'>
+    
+          conversations?.map(({conversationId, user}) => {
+                     return   <div onClick={()=> fetchMessages(conversationId, user )}  className='flex items-center gap-2 border border-sky-600 p-2 rounded bg-sky-700 mb-2 mt-2'>
                      
-                         <img src={user.image} className='w-10 h-10 rounded-full' alt="" />
+                         <img src={user?.image} className='w-10 h-10 rounded-full' alt="" />
                      
                         <div>
                              <p>{user.name}</p>
@@ -162,8 +180,8 @@ const ChatApp = () => {
                      
                      </div>
                      
-                     </Link>
-         })
+                     
+         }) 
        }
 
     

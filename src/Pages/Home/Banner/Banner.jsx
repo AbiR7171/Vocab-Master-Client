@@ -9,7 +9,7 @@ import useAdmin from "../../../hooks/useAdmin";
 const Banner = () => {
   const { language } = useContext(LanguageContext);
   const { user, logOut } = useContext(AuthContext);
-  console.log(language, user);
+  // console.log(language, user);
 
   const signout = () => {
     logOut((user) => {
