@@ -54,7 +54,7 @@ const Feedback = () => {
     <div className='bg-Backs w-full h-full'>
 
       {/* <p className="text-4xl font-semibold text-center text-white ms-72  ">Send us Your Valuable Feedback and Rating</p> */}
-      <div className="text-center text-4xl font-semibold text-white ms-72 ">
+      <div className="text-center text-lg md:text-4xl font-semibold text-white md:ms-72 ">
         <Typewriter
           options={{
             strings: "Send us Your Valuable Feedback and Rating",

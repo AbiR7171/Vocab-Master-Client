@@ -23,8 +23,9 @@ const StepLessonOne = () => {
   const paragraphs = [
     'This is season one',
     'There are 9 category in this season',
+    'There are 10 words in a category',
     'First of all you have to learn level 1.1',
-    'For start your learning command me: go to level 1.1',
+    'For start your learning, command me: go to level 1.1',
     'Thank you'
   ]
 
@@ -43,7 +44,7 @@ const StepLessonOne = () => {
       setIsSpeaking(false);
     }
   }
-
+  //-------voice command end---------------//
   return (
     <div className='bg-Backs'>
       {/* Container */}
