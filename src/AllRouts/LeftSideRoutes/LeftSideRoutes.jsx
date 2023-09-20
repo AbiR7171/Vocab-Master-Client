@@ -9,6 +9,8 @@ import { PiDotsThreeCircle } from "react-icons/pi";
 import useAdmin from '../../hooks/useAdmin';
 import SpeechRecognitionComponent from '../../components/Features/SpeechRecognitionComponent';
 import { Icon } from '@iconify/react';
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+
 
 const LeftSideRoutes = () => {
     const [isSpeaking, setIsSpeaking] = useState(false);
@@ -28,8 +30,9 @@ const LeftSideRoutes = () => {
         'Thank you'
     ]
 
-    useEffect(() => {
-        if (isSpeaking) {
+    const handleSpeak = () => {
+
+        if (isSpeaking === false) {
             const utterances = paragraphs.map(content => {
                 const utterance = new SpeechSynthesisUtterance(content);
                 return utterance;
@@ -41,7 +44,7 @@ const LeftSideRoutes = () => {
             speechSynthesis.cancel();
             setIsSpeaking(false);
         }
-    }, [isSpeaking])
+    }
     //-------------------------------------------
 
 
@@ -58,8 +61,12 @@ const LeftSideRoutes = () => {
                 <ul className={`menu p-4 w-80 h-full  fixed  space-y-1 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white border border-black `}>
                     {/* Sidebar content here */}
                     <h2 className='ms-5 text-3xl text-emerald-500 font-bold mb-5 font-Logo  '>Vocab Master</h2>
-                    <p >{isSpeaking ? 'Speaking...' : 'Mute'}</p>
-                    <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking}></SpeechRecognitionComponent>
+                    {/* ------------voce command component------------- */}
+                    <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
+                    <div className="">
+                        <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+                    </div>
+                    {/* ------------end voice comand part-------------- */}
 
                     {
                         isAdmin ?
@@ -71,9 +78,13 @@ const LeftSideRoutes = () => {
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/wordRequest">Word Request</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/manageWords">Manage Words</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminIssue">Manage Issue</Link></li>
+                    <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/allRouts/adminfeedback">Manage Feedback</Link></li>
                     <li  className='ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl'><Link to="/">Home</Link></li>
                   
                 
+                              
+
+
                             </>
 
                             :
@@ -84,7 +95,7 @@ const LeftSideRoutes = () => {
                                 <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/sentWordRequest"><GiSaloonDoors></GiSaloonDoors> Word Request</Link></li>
                                 <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/issue"><Icon icon="pajamas:issue-block" />Issue</Link></li>
                                 <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/feedback"> <Icon icon="fluent-mdl2:feedback" /> Feedback</Link></li>
-                                <li className='ms-5 text-xl font-semibold uppercase'><Link><CgProfile></CgProfile> profile</Link></li>
+                                <li className='ms-5 text-xl font-semibold uppercase'><Link to="/allRouts/userProfile"><CgProfile></CgProfile> profile</Link></li>
                                 <li className='ms-5 text-xl font-semibold'><Link to="/"><PiDotsThreeCircle></PiDotsThreeCircle> Home</Link></li>
                             </>
                     }

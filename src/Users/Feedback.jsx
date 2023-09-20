@@ -24,7 +24,7 @@ const Feedback = () => {
        //  console.log(issue); 
 
 
-        axios.post("http://localhost:5000/feedback", {
+        axios.post("https://vocab-master-server.vercel.app/feedback", {
            name:userInfo[0].name, email: userInfo[0].email, date: moment().format("DD, MMM, yyyy"), feedback, rating
         })
         .then(res => {
@@ -41,7 +41,7 @@ const Feedback = () => {
                    timer: 1500
                  })
 
-                 form.reset();
+                 event.target.reset();
            }
         })
        
@@ -53,7 +53,7 @@ const Feedback = () => {
 
             <p className="text-4xl text-center mt-6 mb-10 text-red-600  ">Send us Your Valuable Feedback and Rating</p>
 
-            <div className="w-full max-w-md mx-auto mt-20">
+            <div className="w-full max-w-lg mx-auto mt-20">
       <form onSubmit={handleIssue} className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
         <div className='mb-4'>

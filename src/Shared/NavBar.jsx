@@ -47,12 +47,12 @@
 
 import React, { useContext } from "react";
 import { LanguageContext } from "../context/Context";
-import AuthProvider from "../Authentication/Provider/AuthProvider";
+import { AuthContext } from "../Authentication/Provider/AuthProvider";
 
 const NavBar = () => {
   const { language, setLanguage } = useContext(LanguageContext);
-  // const { user } = useContext(AuthProvider);
-  // console.log(user)
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
@@ -76,7 +76,12 @@ const NavBar = () => {
         <h2 className=" font-primary lg:ms-12 mb-4 lg:mb-0 text-3xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-red-600">
           𝓥𝓸𝓬𝓪𝓫𝓜𝓪𝓼𝓽𝓮𝓻
         </h2>
-
+        {user && (
+          <h1>
+            𝓦𝓮𝓵𝓬𝓸𝓶𝓮  
+            <span className="font-bold"> "{   user.displayName}"</span>
+          </h1>
+        )}
         <div className="lg:flex items-center lg:space-x-4 justify-center">
           <p className="lg:text-1xl max-w-xs">
             {textContent[language].selectLanguage}

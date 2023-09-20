@@ -46,7 +46,7 @@ const LeaderBoard = () => {
                 <td>{word.season}</td>
                 <td>{word.diamond}</td>
                
-                <td><Link ><button  className=" p-4 rounded-lg text-red-600" ><Icon icon="material-symbols:chat-sharp" className='text-3xl' /></button></Link></td>
+                <td><Link to="/allRouts/users/message" ><button  className=" p-4 rounded-lg text-red-600" ><Icon icon="material-symbols:chat-sharp" className='text-3xl' /></button></Link></td>
               </tr>
               })}
              

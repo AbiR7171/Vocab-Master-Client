@@ -51,15 +51,18 @@ const Issue = () => {
 
     
     return (
-        <div className='bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-[200vh] p-2'> 
+        <div  className='bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-[200vh] p-2'> 
 
 
          <div onClick={()=> navigate(-1)} className='mt-10 ms-20'>
                 <Icon icon="emojione-monotone:left-arrow"  className='text-4xl text-orange-700'/>
-         </div>
+         </div>  
 
+       
 
 <div className="w-full max-w-md mx-auto mt-20">
+
+  
       <form onSubmit={handleIssue} className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
