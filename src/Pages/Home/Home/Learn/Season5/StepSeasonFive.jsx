@@ -43,7 +43,7 @@ const StepSeasonFive = () => {
               data-tip="GET STARTED"
             >
               {/* active button */}
-             <Link to="/allRouts/learn/season5">
+             <Link to="/allRouts/learn/season5.1">
              <div 
                
                 className="  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"

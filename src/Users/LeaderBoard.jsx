@@ -11,7 +11,7 @@ const LeaderBoard = () => {
     useEffect(()=>{
 
 
-        axios.get("https://vocab-master-server-new.vercel.app/users/student")
+        axios.get("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/users/student")
         .then(res =>{
              console.log(res.data);
              setStudent(res.data);

@@ -11,7 +11,7 @@ const useWords = () => {
         queryKey:["words"],
         enabled:!loading,
         queryFn:async()=>{
-              const res = await axios.get("https://vocab-master-server-new.vercel.app/words");
+              const res = await axios.get("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/words");
               return res.data;
         }
     })
