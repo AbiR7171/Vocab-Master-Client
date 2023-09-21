@@ -218,13 +218,13 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/allRouts/learn/sesson1.1",
+    path: "/allRouts/learn/season1.1",
     element: <LessonOne />,
     loader: () =>
-      fetch("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/lesson/category/TeaStall"),
+      fetch("https://vocab-master-server-new.vercel.app/lesson/category/TeaStall"),
   },
   {
-    path: "/allRouts/learn/lessonOneStep",
+    path: "/allRouts/learn/stepSeason1",
     element: <StepLessonOne />,
   },
   // {
@@ -320,7 +320,7 @@ const router = createBrowserRouter([
     element: <SeasonThree1 />,
   },
   {
-    path: "/allRouts/learn/season3.1",
+    path: "/allRouts/learn/season3.2",
     element: <SeasonThree2 />,
   },
   {
