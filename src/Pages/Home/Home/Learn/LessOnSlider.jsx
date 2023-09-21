@@ -27,6 +27,40 @@ const LessOnSlider = ({ lesson, index }) => {
 
   // console.log(lesson);
 
+  // const handleOptionChange = (event) => {
+  //   setSelectedOption(event.target.value);
+  //   console.log("the select value:", event.target.value)
+  //   setDisable(true);
+
+  //   if (event.target.value === `${lesson.quiz.correctAnswer}`) {
+  //     console.log('right answer')
+  //     axios
+  //       .patch(`https://vocab-master-server-new.vercel.app/singleUser/users?email=${user.email}`, {
+  //         diamond: userInfo[0].diamond,
+  //       })
+  //       .then((data) => {
+  //         if (data.data.matchedCount > 0) {
+  //           refetch();
+  //         }
+  //       });
+
+  //     Swal.fire({
+  //       position: 'top-center',
+  //       icon: 'success',
+  //       title: 'Awesome! Correct Answer',
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   } else {
+  //     console.log('wrong answer')
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops... Wrong Answer',
+  //       html: `Correct Answer is: ${lesson.quiz.correctAnswer}`,
+  //     });
+  //   }
+  // };
+
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
     setDisable(true);
@@ -37,7 +71,7 @@ const LessOnSlider = ({ lesson, index }) => {
 
       axios
         .patch(
-          `https://vocab-master-server-27bb9zgej-abir7171.vercel.app/singleUser/users?email=${user.email}`,
+          `https://vocab-master-server-new.vercel.app/singleUser/users?email=${user.email}`,
           {
             diamond: userInfo[0].diamond,
           }

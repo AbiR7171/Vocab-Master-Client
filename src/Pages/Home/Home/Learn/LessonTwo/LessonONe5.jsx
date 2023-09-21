@@ -51,7 +51,11 @@ const LessonOne5 = () => {
 
   // useEffect(()=>{
 
+<<<<<<< HEAD
+  //     fetch('https://vocab-master-server-new.vercel.app/quiz')
+=======
   //     fetch('https://vocab-master-server-27bb9zgej-abir7171.vercel.app/quiz')
+>>>>>>> e5787b426eb8da2f457f572c2e68a0e5471a232d
   //     .then(res => res.json())
   //     .then(data =>{
   //       console.log(data);
@@ -83,7 +87,11 @@ const LessonOne5 = () => {
 
 
 
+<<<<<<< HEAD
+      axios.patch(`https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
+=======
       axios.patch(`https://vocab-master-server-27bb9zgej-abir7171.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
+>>>>>>> e5787b426eb8da2f457f572c2e68a0e5471a232d
         season : 1.6
       })
       .then(res =>{

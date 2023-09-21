@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import NavBar from "../../../Shared/NavBar";
 import Footer from "../../../Shared/Footer";
@@ -11,13 +11,15 @@ import HomeFeedback from "../Banner/HomeFeedback";
 
 
 import { Contact } from "../contact/Contact";
+import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
 
 const Home = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
-
+  const {user} = useContext(AuthContext)
   //text to speech features (meraj)
+  const userItro = `Hi, ${user? user?.displayName +' ,' + 'welcome to our vocabulary galaxy' : 'their. Please login for increase your vocabulary skill' }`
   const paragraphs = [
-    "Hi there, welcome to our Vocab Master",
+    userItro,
     "Free, Fun, Effective",
     "Learning with VocabMaster is free, fun, and highly effective. Our quick, bite-sized lessons will help you earn points and unlock new levels, all while gaining real-world communication skills.",
     "Special Quiz",
