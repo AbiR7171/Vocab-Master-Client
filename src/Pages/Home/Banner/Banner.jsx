@@ -28,9 +28,8 @@ const Banner = () => {
       getStartedButton: "Get started",
       userAvailableGetStartedButton: "Continue session",
       alreadyHaveAccountButton: "I Already have an account",
-      userAvailableHaveAccountButton: `Not "${
-        user && user.displayName
-      }"? logout.`,
+      userAvailableHaveAccountButton: `Not "${user && user.displayName
+        }"? logout.`,
     },
     bn: {
       heading1: "বিনামূল্যে, মজার এবং কার্যকর শেখার উপায়!",
@@ -39,9 +38,8 @@ const Banner = () => {
       userAvailableGetStartedButton: "সেশন চালিয়ে যান",
       alreadyHaveAccountButton: "আমার ইতিমধ্যে একটি অ্যাকাউন্ট আছে",
 
-      userAvailableHaveAccountButton: `"${
-        user && user.displayName
-      }" না? লগআউট.`,
+      userAvailableHaveAccountButton: `"${user && user.displayName
+        }" না? লগআউট.`,
     },
     hi: {
       heading1: "मुफ्त, मजेदार और प्रभावी तरीका सीखने का",
@@ -49,9 +47,8 @@ const Banner = () => {
       getStartedButton: "शुरू हो जाओ",
       userAvailableGetStartedButton: "सत्र जारी रखें",
       alreadyHaveAccountButton: "मेरे पास पहले से ही खाता है",
-      userAvailableHaveAccountButton: `"${
-        user && user.displayName
-      }" नहीं? लॉगआउट.`,
+      userAvailableHaveAccountButton: `"${user && user.displayName
+        }" नहीं? लॉगआउट.`,
     },
   };
 
@@ -72,23 +69,26 @@ const Banner = () => {
 
       <div className="gap-4 flex flex-col items-center justify-center">
 
-        <p className="text-4xl shadow-sm text-slate-800 flex items-center justify-center">{heading2}</p>
+        <p className="text-6xl font-mono font-bold  shadow-sm text-slate-800 flex items-center justify-center">{heading2}</p>
+        <p className="text-sm shadow-sm text-slate-800 flex items-center justify-center">{heading1}</p>
+        <hr />
+        <div className="flex justify-center gap-5">
+          <button className=" uppercase bg-orange-700 lg:w-3/6 w-2/6 py-4 text-white rounded-lg">
+            {user ? (
+              <Link to="/allRouts/learn">{userAvailableGetStartedButton}</Link>
+            ) : (
+              <Link to="/register">{getStartedButton}</Link>
+            )}
+          </button>
 
-        <button className="uppercase bg-orange-700 lg:w-9/12 w-6/12 py-4 text-white rounded-lg">
-          {user ? (
-            <Link to="/allRouts/learn">{userAvailableGetStartedButton}</Link>
-          ) : (
-            <Link to="/register">{getStartedButton}</Link>
-          )}
-        </button>
-
-        <button className="uppercase bg-slate-200 lg:w-9/12 w-6/12 py-4 text-black rounded-lg">
-          {user ? (
-            <Link onClick={signout}>{userAvailableHaveAccountButton}</Link>
-          ) : (
-            <Link to="/allRouts/learn">{alreadyHaveAccountButton}</Link>
-          )}
-        </button>
+          <button className=" uppercase bg-slate-200 lg:w-9/12 w-6/12 py-4 text-black rounded-lg border-black">
+            {user ? (
+              <Link onClick={signout}>{userAvailableHaveAccountButton}</Link>
+            ) : (
+              <Link to="/allRouts/learn">{alreadyHaveAccountButton}</Link>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

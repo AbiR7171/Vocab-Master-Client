@@ -48,6 +48,7 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../context/Context";
 import { AuthContext } from "../Authentication/Provider/AuthProvider";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const { language, setLanguage } = useContext(LanguageContext);
@@ -78,8 +79,8 @@ const NavBar = () => {
         </h2>
         {user && (
           <h1>
-            𝓦𝓮𝓵𝓬𝓸𝓶𝓮  
-            <span className="font-bold"> "{   user.displayName}"</span>
+            𝓦𝓮𝓵𝓬𝓸𝓶𝓮
+            <span className="font-bold"> "{user.displayName}"</span>
           </h1>
         )}
         <div className="lg:flex items-center lg:space-x-4 justify-center">
@@ -96,9 +97,22 @@ const NavBar = () => {
             <option value="bn">বাংলা</option>
             <option value="hi">Hindi</option>
           </select>
+        </div>
 
-          {/* user Photo */}
-          
+        {/* user Photo */}
+        <div >
+          <span className='btn btn-ghost btn-circle '>
+            {
+              user ?
+                <>
+                  <div className='w-10 rounded-full'>
+                    <img className='btn-circle' src={user?.photoURL} alt="" />
+                  </div>
+                </> : <>
+                  <NavLink to='/login'><button className="btn btn-active btn-accent">Docs</button></NavLink>
+                </>
+            }
+          </span>
         </div>
       </div>
     </div>
