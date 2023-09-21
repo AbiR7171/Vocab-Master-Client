@@ -35,7 +35,7 @@ const LessOnSlider = ({ lesson, index }) => {
   //   if (event.target.value === `${lesson.quiz.correctAnswer}`) {
   //     console.log('right answer')
   //     axios
-  //       .patch(`https://vocab-master-server-new.vercel.app/singleUser/users?email=${user.email}`, {
+  //       .patch(`https://vocab-master-server.onrender.com/singleUser/users?email=${user.email}`, {
   //         diamond: userInfo[0].diamond,
   //       })
   //       .then((data) => {
@@ -71,7 +71,7 @@ const LessOnSlider = ({ lesson, index }) => {
 
       axios
         .patch(
-          `https://vocab-master-server-new.vercel.app/singleUser/users?email=${user.email}`,
+          `https://vocab-master-server.onrender.com/singleUser/users?email=${user.email}`,
           {
             diamond: userInfo[0].diamond,
           }

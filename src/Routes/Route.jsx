@@ -197,7 +197,7 @@ const router = createBrowserRouter([
       {
         path: "/allRouts/editWord/:id",
         element:<EditWord/>,
-        loader:({params})=> fetch(`https://vocab-master-server-new.vercel.app/word/${params.id}`)
+        loader:({params})=> fetch(`https://vocab-master-server.onrender.com/word/${params.id}`)
       },
       {
         path:"/allRouts/Adminissue",
@@ -221,7 +221,7 @@ const router = createBrowserRouter([
     path: "/allRouts/learn/season1.1",
     element: <LessonOne />,
     loader: () =>
-      fetch("https://vocab-master-server-new.vercel.app/lesson/category/TeaStall"),
+      fetch("https://vocab-master-server.onrender.com/lesson/category/TeaStall"),
   },
   {
     path: "/allRouts/learn/stepSeason1",
@@ -231,8 +231,8 @@ const router = createBrowserRouter([
 
   //   path: "/allRouts/learn/sesson1",
   //   element: <LessonOne />,
-  //   loader: () => fetch("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/vocabs")
-  //   // loader:()=> fetch("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/lesson/category/TeaStall")
+  //   loader: () => fetch("https://vocab-master-server.onrender.com/vocabs")
+  //   // loader:()=> fetch("https://vocab-master-server.onrender.com/lesson/category/TeaStall")
 
   // },
   {

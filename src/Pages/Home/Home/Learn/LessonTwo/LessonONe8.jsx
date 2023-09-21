@@ -13,7 +13,7 @@ import axios from "axios";
 import useWords from "../../../../../hooks/useWords";
 
 
-const LessonOne8 = () => {
+const LessonOne1 = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
   const [level, setLevel] = useState(0);
@@ -39,19 +39,19 @@ const LessonOne8 = () => {
   console.log(words);
 
 
-  const level3 = words?.filter(l => l.level == 1.8)
+  const level2 = words?.filter(l => l.level == 1.9)
 
 
 
 
 
 
-  console.log(level3);
+  console.log(level2);
   // console.log(lessons);
 
   // useEffect(()=>{
 
-  //     fetch('https://vocab-master-server-new.vercel.app/quiz')
+  //     fetch('https://vocab-master-server.onrender.com/quiz')
   //     .then(res => res.json())
   //     .then(data =>{
   //       console.log(data);
@@ -83,8 +83,8 @@ const LessonOne8 = () => {
 
 
 
-      axios.patch(`https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
-        season : 1.9
+      axios.patch(`https://vocab-master-server.onrender.com/singleUser/users/level?email=${userInfo[0]?.email}`, {
+        season : 1.10
       })
       .then(res =>{
                
@@ -110,7 +110,7 @@ const LessonOne8 = () => {
 
 
   const backGroundStyle = {
-    backgroundImage: `url(${level3[0]?.categoryImage})`,
+    backgroundImage: `url(${level2[0]?.categoryImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -151,7 +151,7 @@ const LessonOne8 = () => {
               className="mySwiper"
             >
               {
-                level3?.map((lesson, index) =>
+                level2?.map((lesson, index) =>
                   <SwiperSlide key={lesson._id}>
                     <LessOnSlider lesson={lesson} setNumber={setNumber} number={number} index={index} ></LessOnSlider>
                   </SwiperSlide>
@@ -170,4 +170,4 @@ const LessonOne8 = () => {
   );
 };
 
-export default LessonOne8;
+export default LessonOne1;

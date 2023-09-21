@@ -13,7 +13,7 @@ import axios from "axios";
 import useWords from "../../../../../hooks/useWords";
 
 
-const LessonOne9 = () => {
+const LessonOne1 = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
   const [level, setLevel] = useState(0);
@@ -39,14 +39,14 @@ const LessonOne9 = () => {
   console.log(words);
 
 
-  const level3 = words?.filter(l => l.level == 1.9)
+  const level2 = words?.filter(l => l.level == 1.9)
 
 
 
 
 
 
-  console.log(level3);
+  console.log(level2);
   // console.log(lessons);
 
   // useEffect(()=>{
@@ -84,7 +84,7 @@ const LessonOne9 = () => {
 
 
       axios.patch(`https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
-        season : 1.10
+        season : 2
       })
       .then(res =>{
                
@@ -110,7 +110,7 @@ const LessonOne9 = () => {
 
 
   const backGroundStyle = {
-    backgroundImage: `url(${level3[0]?.categoryImage})`,
+    backgroundImage: `url(${level2[0]?.categoryImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -151,7 +151,7 @@ const LessonOne9 = () => {
               className="mySwiper"
             >
               {
-                level3?.map((lesson, index) =>
+                level2?.map((lesson, index) =>
                   <SwiperSlide key={lesson._id}>
                     <LessOnSlider lesson={lesson} setNumber={setNumber} number={number} index={index} ></LessOnSlider>
                   </SwiperSlide>
@@ -170,4 +170,4 @@ const LessonOne9 = () => {
   );
 };
 
-export default LessonOne9;
+export default LessonOne1;

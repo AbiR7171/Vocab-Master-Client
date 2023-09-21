@@ -11,7 +11,7 @@ const ManageFeedback = () => {
 
      useEffect(()=> {
          
-            axios.get("https://vocab-master-server-new.vercel.app/feedback")
+            axios.get("https://vocab-master-server.onrender.com/feedback")
             .then(res => {
 
                    console.log(res.data);
@@ -23,7 +23,7 @@ const ManageFeedback = () => {
 
      const handleShow = (id) => {
 
-                  axios.patch(`https://vocab-master-server-new.vercel.app/feedback/show/${id}`)
+                  axios.patch(`https://vocab-master-server.onrender.com/feedback/show/${id}`)
                   .then(res => {
                             console.log(res);
                             if(res.data.modifiedCount > 0){
