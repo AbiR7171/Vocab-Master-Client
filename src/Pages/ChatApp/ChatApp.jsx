@@ -9,6 +9,7 @@ import ChatContent from './ChatContent';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { io } from "socket.io-client";
 
 
 // theme.palette.background.paper ||
@@ -20,9 +21,13 @@ const ChatApp = () => {
 
     const[conversations, setConversation]=useState([]);
     const[messages, setMessages]=useState({});
+    const[socket, setSocket]=useState(null);
+    const[message, setMessage]=useState('');
+    
 
 
-    console.log(conversations);j
+    console.log(conversations);
+    console.log(messages);
 
     console.log(userInfo);
 
@@ -30,6 +35,30 @@ const ChatApp = () => {
    //  console.log(themes);
 
     const[theme, setTheme]=useState(localStorage.getItem("themes") ? localStorage.getItem("themes"): "dark");
+
+
+    useEffect(()=>{
+
+           setSocket(io('http://localhost:5050'))
+    },[])
+
+
+    useEffect(()=>{
+
+           socket?.emit("addUser", userInfo[0]?._id);
+           socket?.on("getUser", users => {
+                       console.log("activeUsrs", users);
+           });
+
+           socket?.on("getMessage", data =>{
+                     
+            console.log(data);
+            setMessages( prev =>({
+                ...prev,
+                messages: [...prev.message, { user: data.user, message: data.message }]
+            }))
+           })
+    },[socket])
 
 
 
@@ -66,16 +95,45 @@ const ChatApp = () => {
 
 
 
-    const fetchMessages = (conversationId, user) => {
+    const fetchMessages = async(conversationId, receiver) => {
             
-            axios.get(`http://localhost:5000/message/messages/${conversationId}`)
-            .then(res => {
-
-                      console.log(res.data);
-                      setMessages({messages: res.data, receiver:user, conversationId})
-
-            })
+                 const res = await fetch(`http://localhost:5000/message/messages/${conversationId}?senderId=${userInfo[0]?._id}&&receiverId=${receiver?.receiverId}`)
+                 const resData =  await res.json()
+                 console.log(resData);
+                 setMessages({messages: resData, receiver, conversationId})
     }
+
+
+
+    // (`http://localhost:5000/message/messages/${conversationId}`
+
+    // setMessages({messages: res.data, receiver:user, conversationId})
+
+
+    const sendMessage =  async() => {
+
+      socket?.emit("sendMessage", {
+
+       conversationId:messages?.conversationId,
+       senderId:userInfo[0]?._id,
+       message,
+       receiverId:messages?.receiver?.receiverId
+
+   })
+
+  axios.post("http://localhost:5000/message/messages", {
+
+       conversationId:messages?.conversationId,
+       senderId:userInfo[0]._id,
+       message,
+       receiverId:messages?.receiver?.receiverId
+  })
+  .then(res => {
+          console.log(res.data);
+          setMessage('')
+  })
+
+}
 
 
 
@@ -86,8 +144,10 @@ const ChatApp = () => {
 
               <div className="drawer lg:drawer-open">
               <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-             <div className="drawer-content flex flex-col items-center justify-center ">
-               {/* Page content here */} <ChatContent messages={messages} fetchMessages={fetchMessages} />
+             <div className="drawer-content flex flex-col items-center justify-center "> 
+               {/* Page content here */} <ChatContent messages={messages} fetchMessages={fetchMessages} 
+                message={message} setMessage={setMessage} sendMessage={sendMessage}
+               />
              <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   
              </div> 

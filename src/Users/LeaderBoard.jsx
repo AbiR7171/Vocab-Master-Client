@@ -11,7 +11,7 @@ const LeaderBoard = () => {
     useEffect(()=>{
 
 
-        axios.get("https://vocab-master-server.vercel.app/users/student")
+        axios.get("https://vocab-master-server-new.vercel.app/users/student")
         .then(res =>{
              console.log(res.data);
              setStudent(res.data);
@@ -19,7 +19,7 @@ const LeaderBoard = () => {
     },[students]);
 
 
-    
+
 
     return (
         <div className='bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full px-20 '>

@@ -88,7 +88,7 @@ const LessonTwo = () => {
 >>>>>>> c487ed887bd6a312fb60f91d3209ee41276d76c2
 
 //   useEffect(() => {
-//     fetch("https://vocab-master-server.vercel.app/quiz")
+//     fetch("https://vocab-master-server-new.vercel.app/quiz")
 //       .then((res) => res.json())
 //       .then((data) => {
 //         console.log(data);

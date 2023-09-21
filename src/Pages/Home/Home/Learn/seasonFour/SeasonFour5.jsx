@@ -51,7 +51,7 @@ const SeasonFour5 = () => {
 
   // useEffect(()=>{
 
-  //     fetch('https://vocab-master-server.vercel.app/quiz')
+  //     fetch('https://vocab-master-server-new.vercel.app/quiz')
   //     .then(res => res.json())
   //     .then(data =>{
   //       console.log(data);
@@ -70,7 +70,7 @@ const SeasonFour5 = () => {
 
 
 
-      axios.patch(`https://vocab-master-server.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
+      axios.patch(`https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
         season : 4.6
       })
       .then(res =>{

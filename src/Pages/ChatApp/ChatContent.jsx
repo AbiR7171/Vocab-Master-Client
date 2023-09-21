@@ -2,37 +2,24 @@ import React, { useEffect, useState } from 'react';
 import useUsers from '../../hooks/useUsers';
 import { Icon } from '@iconify/react';
 import axios from 'axios';
+import {  io } from "socket.io-client";
 
-const ChatContent = ({messages, fetchMessages}) => {
+const ChatContent = ({messages, fetchMessages, message, setMessage, sendMessage}) => {
 
     const [userInfo]=useUsers();
-    const[message, setMessage]=useState('');
+   //  const[message, setMessage]=useState('');
 
     const[users, setUsers]=useState([])
 
 
 
 
-    const sendMessage = e => {
-      
-               axios.post("http://localhost:5000/message/messages", {
-
-                    conversationId:messages?.conversationId,
-                    senderId:userInfo[0]._id,
-                    message,
-                    receiverId:messages?.receiver?.receiverId
-               })
-               .then(res => {
-                       console.log(res.data);
-                       setMessage('')
-               })
-        
-    }
+  
 
 
     useEffect(()=> {
         
-              axios.get("http://localhost:5000/message/users")
+              axios.get(`http://localhost:5000/message/users/${userInfo[0]?._id}`)
               .then(res => {
                          console.log(res.data);
                          setUsers(res.data)
@@ -88,7 +75,7 @@ const ChatContent = ({messages, fetchMessages}) => {
                   messages?.messages?.map(({message, user:{id}= {}}) => {
 
                      return (
-                          <div className={`max-w-[40%] rounded-b-xl p-4 mb-6 ${id === userInfo[0]._id ? "bg-sky-700 text-white rounded-tl-xl ml-auto": "bg-gray-200 rounded-tr-xl"}`}>
+                          <div className={`max-w-[40%] rounded-b-xl p-4 mb-6  ${id === userInfo[0]._id ? "bg-sky-700 text-white rounded-tl-xl ml-auto": "bg-gray-200 rounded-tr-xl"}`}>
                              {message}
                           </div>
                      )
