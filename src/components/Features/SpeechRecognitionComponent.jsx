@@ -45,9 +45,9 @@ const SpeechRecognitionComponent = ({handleSpeak,setIsSpeaking }) => {
             }
         },
         {
-            command: 'go to level 1.1',
-            callback: () => {
-                navigate('/allRouts/learn/sesson1')
+            command: 'go to level *',
+            callback: (path) => {
+                navigate(`/allRouts/learn/season${path}`)
                 return setIsSpeaking(true)
             }
         },
