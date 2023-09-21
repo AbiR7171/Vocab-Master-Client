@@ -10,7 +10,7 @@ const useUsers = () => {
         queryKey:["email", user?.email],
         enabled:!loading,
         queryFn:async ()=>{
-            const res = await fetch(`https://vocab-master-server.vercel.app/singleUser/users?email=${user?.email}`)
+            const res = await fetch(`https://vocab-master-server-new.vercel.app/singleUser/users?email=${user?.email}`)
             return res.json();
         }
     })
@@ -21,4 +21,4 @@ export default useUsers;
 
 
 
-// https://vocab-master-server.vercel.app/singleUser/users?email=nani@nana58.com
+// https://vocab-master-server-new.vercel.app/singleUser/users?email=nani@nana58.com

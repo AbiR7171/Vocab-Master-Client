@@ -26,7 +26,7 @@
 //    useEffect(()=>{
 
 
-//     fetch("https://vocab-master-server.vercel.app/words")
+//     fetch("https://vocab-master-server-new.vercel.app/words")
 //     .then(res => res.json())
 //     .then(data =>{
 //         console.log(data);
