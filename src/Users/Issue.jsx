@@ -25,7 +25,7 @@ const Issue = () => {
         //  console.log(issue); 
 
 
-         axios.post("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/issue", {
+         axios.post("https://vocab-master-server-new.vercel.app/issue", {
             name, email, date, issue
          })
          .then(res => {

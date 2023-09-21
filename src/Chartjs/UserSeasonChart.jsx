@@ -29,7 +29,7 @@ export default function UseSeasonChart() {
 
     
   useEffect(()=>{
-       axios.get("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/users")
+       axios.get("https://vocab-master-server-new.vercel.app/users")
        .then(data =>{
             // console.log(data.data);
             setUsers(data.data)

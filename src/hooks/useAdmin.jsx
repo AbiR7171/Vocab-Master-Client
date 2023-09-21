@@ -13,7 +13,7 @@ const useAdmin = () => {
          queryKey:["isAdmin", user?.email],
          enabled:!loading,
          queryFn: async ()=>{
-               const res = await axios.get(`https://vocab-master-server-27bb9zgej-abir7171.vercel.app/singleUser/users/admin?email=${user?.email}`)
+               const res = await axios.get(`https://vocab-master-server-new.vercel.app/singleUser/users/admin?email=${user?.email}`)
                return res.data.admin;
          }
     })

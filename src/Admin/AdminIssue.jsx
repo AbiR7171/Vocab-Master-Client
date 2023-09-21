@@ -10,7 +10,7 @@ const AdminIssue = () => {
 
     useEffect(()=>{
 
-         axios.get("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/issue")
+         axios.get("https://vocab-master-server-new.vercel.app/issue")
          .then(res =>  {
             console.log(res.data);
             setIssues(res.data)
