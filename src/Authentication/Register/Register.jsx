@@ -63,7 +63,11 @@ const Register = () => {
                   console.log('upadte done');
 
                   axios
+<<<<<<< HEAD
                     .post("https://vocab-master-server-new.vercel.app/users", {
+=======
+                    .post("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/users", {
+>>>>>>> e5787b426eb8da2f457f572c2e68a0e5471a232d
                       name: name,
                       email: email,
                       image: image_url,

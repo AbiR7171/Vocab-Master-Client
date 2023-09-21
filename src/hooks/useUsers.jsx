@@ -8,7 +8,6 @@ const useUsers = () => {
 
     const {refetch, data:userInfo =[]}=useQuery({
         queryKey:["email", user?.email],
-        enabled:!loading,
         queryFn:async ()=>{
             const res = await fetch(`https://vocab-master-server-new.vercel.app/singleUser/users?email=${user?.email}`)
             return res.json();

@@ -218,15 +218,23 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/allRouts/learn/stepSeason1",
-    element: <StepLessonOne />,
-  },
-  {
-    path: "/allRouts/learn/sesson1",
+    path: "/allRouts/learn/sesson1.1",
     element: <LessonOne />,
     loader: () =>
-      fetch("https://vocab-master-server-new.vercel.app/lesson/category/TeaStall"),
+      fetch("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/lesson/category/TeaStall"),
   },
+  {
+    path: "/allRouts/learn/lessonOneStep",
+    element: <StepLessonOne />,
+  },
+  // {
+
+  //   path: "/allRouts/learn/sesson1",
+  //   element: <LessonOne />,
+  //   loader: () => fetch("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/vocabs")
+  //   // loader:()=> fetch("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/lesson/category/TeaStall")
+
+  // },
   {
     path: "/allRouts/learn/season1.2",
     element: <LessonOne1 />,
@@ -268,7 +276,7 @@ const router = createBrowserRouter([
     element: <StepSeasonTwo />,
   },
   {
-    path: "/allRouts/learn/season2",
+    path: "/allRouts/learn/season2.1",
     element: <SeasonTwo1 />,
   },
   {
@@ -308,7 +316,7 @@ const router = createBrowserRouter([
     element: <StepSeasonThree />,
   },
   {
-    path: "/allRouts/learn/season3",
+    path: "/allRouts/learn/season3.1",
     element: <SeasonThree1 />,
   },
   {
@@ -348,7 +356,7 @@ const router = createBrowserRouter([
     element: <StepSeasonFour />,
   },
   {
-    path: "/allRouts/learn/season4",
+    path: "/allRouts/learn/season4.1",
     element: <SeasonFour1 />,
   },
   {
@@ -388,7 +396,7 @@ const router = createBrowserRouter([
     element: <StepSeasonFive />,
   },
   {
-    path: "/allRouts/learn/season5",
+    path: "/allRouts/learn/season5.1",
     element: <SeasonFive1 />,
   },
   {
@@ -428,7 +436,7 @@ const router = createBrowserRouter([
     element: <StepSeasonSix />,
   },
   {
-    path: "/allRouts/learn/season6",
+    path: "/allRouts/learn/season6.1",
     element: <SeasonSix1 />,
   },
   {
