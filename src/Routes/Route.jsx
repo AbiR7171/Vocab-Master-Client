@@ -197,7 +197,7 @@ const router = createBrowserRouter([
       {
         path: "/allRouts/editWord/:id",
         element:<EditWord/>,
-        loader:({params})=> fetch(`https://vocab-master-server-new.vercel.app/word/${params.id}`)
+        loader:({params})=> fetch(`https://vocab-master-server.onrender.com/word/${params.id}`)
       },
       {
         path:"/allRouts/Adminissue",
@@ -221,18 +221,18 @@ const router = createBrowserRouter([
     path: "/allRouts/learn/sesson1.1",
     element: <LessonOne />,
     loader: () =>
-      fetch("https://vocab-master-server-new.vercel.app/lesson/category/TeaStall"),
+      fetch("https://vocab-master-server.onrender.com/lesson/category/TeaStall"),
   },
   {
-    path: "/allRouts/learn/lessonOneStep",
+    path: "/allRouts/learn/stepSeason1",
     element: <StepLessonOne />,
   },
   // {
 
   //   path: "/allRouts/learn/sesson1",
   //   element: <LessonOne />,
-  //   loader: () => fetch("https://vocab-master-server-new.vercel.app/vocabs")
-  //   // loader:()=> fetch("https://vocab-master-server-new.vercel.app/lesson/category/TeaStall")
+  //   loader: () => fetch("https://vocab-master-server.onrender.com/vocabs")
+  //   // loader:()=> fetch("https://vocab-master-server.onrender.com/lesson/category/TeaStall")
 
   // },
   {
@@ -272,7 +272,7 @@ const router = createBrowserRouter([
     element: <LessonOne9 />,
   },
   {
-    path: "/allRouts/learn/stepSeasonTwo",
+    path: "/allRouts/learn/stepSeason2",
     element: <StepSeasonTwo />,
   },
   {
@@ -312,7 +312,7 @@ const router = createBrowserRouter([
     element: <SeasonTwo9 />,
   },
   {
-    path: "/allRouts/learn/stepSeasonThree",
+    path: "/allRouts/learn/stepSeason3",
     element: <StepSeasonThree />,
   },
   {
@@ -320,7 +320,7 @@ const router = createBrowserRouter([
     element: <SeasonThree1 />,
   },
   {
-    path: "/allRouts/learn/season3.1",
+    path: "/allRouts/learn/season3.2",
     element: <SeasonThree2 />,
   },
   {
@@ -352,7 +352,7 @@ const router = createBrowserRouter([
     element: <SeasonThree9 />,
   },
   {
-    path: "/allRouts/learn/stepSeasonFour",
+    path: "/allRouts/learn/stepSeason4",
     element: <StepSeasonFour />,
   },
   {
@@ -392,7 +392,7 @@ const router = createBrowserRouter([
     element: <SeasonFour9 />,
   },
   {
-    path: "/allRouts/learn/stepSeasonFive",
+    path: "/allRouts/learn/stepSeason5",
     element: <StepSeasonFive />,
   },
   {
@@ -432,7 +432,7 @@ const router = createBrowserRouter([
     element: <SeasonFive9 />,
   },
   {
-    path: "/allRouts/learn/stepSeasonSix",
+    path: "/allRouts/learn/stepSeason6",
     element: <StepSeasonSix />,
   },
   {

@@ -25,10 +25,10 @@ const Learn = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
-  // from-slate-900 via-purple-900 to-slate-900  border border-black
+  // bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900
   return (
     <>
-      <div className="  h-full w-full  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  ">
+      <div className="  h-full w-full bg-Backs  ">
       
           {/* Container */} 
 
@@ -46,7 +46,7 @@ const Learn = () => {
               data-tip="CLICK THE GALAXY TO START"
             >
               {/* active button */}
-              <Link to="/allRouts/learn/lessonOneStep">
+              <Link to="/allRouts/learn/stepSeason1">
                 <div className="w-52">
                   <Lottie animationData={animation} loop={true} />
                 </div>
@@ -77,7 +77,7 @@ const Learn = () => {
                 // className="tooltip tooltip-open tooltip-error  "
                 // data-tip="CLICK THE GALAXY TO START"
               >
-                <Link to="/allRouts/learn/stepSeasonTwo">
+                <Link to="/allRouts/learn/stepSeason2">
                   <div className="w-32 ">
                     <Lottie animationData={animation1} loop={true} />
                   </div>
@@ -92,7 +92,7 @@ const Learn = () => {
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
               >
-                <Link to="/allRouts/learn/stepSeasonTwo">
+                <Link to="/allRouts/learn/stepSeason2">
                   <div className="w-32 ">
                     <Lottie animationData={quizGalaxy} loop={true} />
                   </div>
@@ -105,7 +105,7 @@ const Learn = () => {
                           // className="tooltip tooltip-open tooltip-error step step-primary "
                           // data-tip="CLICK THE GALAXY TO START"
                 >
-                <Link to="/allRouts/learn/stepSeasonThree">
+                <Link to="/allRouts/learn/stepSeason3">
                   <div className="w-44">
                     <Lottie animationData={animation4} loop={true} />
                   </div>
@@ -121,7 +121,7 @@ const Learn = () => {
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
               >
-                <Link to="/allRouts/learn/stepSeasonTwo">
+                <Link to="/allRouts/learn/stepSeason2">
                   <div className="w-32 ">
                     <Lottie animationData={quizGalaxy} loop={true} />
                   </div>
@@ -135,7 +135,7 @@ const Learn = () => {
                           // className="tooltip tooltip-open tooltip-error step step-primary "
                           // data-tip="CLICK THE GALAXY TO START"
                 >
-                <Link to="/allRouts/learn/stepSeasonFour">
+                <Link to="/allRouts/learn/stepSeason4">
                   <div className="w-52 ">
                     <Lottie animationData={animation3} loop={true} />
                   </div>
@@ -149,7 +149,7 @@ const Learn = () => {
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
               >
-                <Link to="/allRouts/learn/stepSeasonTwo">
+                <Link to="/allRouts/learn/stepSeason2">
                   <div className="w-32 ">
                     <Lottie animationData={quizGalaxy} loop={true} />
                   </div>
@@ -164,7 +164,7 @@ const Learn = () => {
                 // className="tooltip tooltip-open tooltip-error  "
                 // data-tip="CLICK THE GALAXY TO START"
               >
-                <Link to="/allRouts/learn/stepSeasonFive">
+                <Link to="/allRouts/learn/stepSeason5">
                   <div className="w-44 ">
                     <Lottie animationData={animation5} loop={true} />
                   </div>
@@ -179,7 +179,7 @@ const Learn = () => {
                  className="tooltip tooltip-open  tooltip-right tooltip-error  "
                  data-tip="Quiz Galaxy"
               >
-                <Link to="/allRouts/learn/stepSeasonTwo">
+                <Link to="/allRouts/learn/stepSeason2">
                   <div className="w-32 ">
                     <Lottie animationData={quizGalaxy} loop={true} />
                   </div>
@@ -195,7 +195,7 @@ const Learn = () => {
                 // className="tooltip tooltip-open tooltip-error  "
                 // data-tip="CLICK THE GALAXY TO START"
               >
-                <Link to="/allRouts/learn/stepSeasonSix">
+                <Link to="/allRouts/learn/stepSeason6">
                   <div className="w-52 ">
                     <Lottie animationData={animation6} loop={true} />
                   </div>

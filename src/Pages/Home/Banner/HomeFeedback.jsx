@@ -17,7 +17,7 @@ const HomeFeedback = () => {
 
     useEffect(() => {
 
-        axios.get("https://vocab-master-server-new.vercel.app/feedback")
+        axios.get("https://vocab-master-server.onrender.com/feedback")
             .then(res => {
                 console.log(res.data);
                 const homeFeedback = res.data.filter(r => r.show === true);
