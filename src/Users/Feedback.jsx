@@ -24,7 +24,7 @@ const Feedback = () => {
        //  console.log(issue); 
 
 
-        axios.post("https://vocab-master-server-new.vercel.app/feedback", {
+        axios.post("https://vocab-master-server-27bb9zgej-abir7171.vercel.app/feedback", {
            name:userInfo[0].name, email: userInfo[0].email, date: moment().format("DD, MMM, yyyy"), feedback, rating
         })
         .then(res => {
