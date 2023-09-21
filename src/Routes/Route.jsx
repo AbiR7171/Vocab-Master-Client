@@ -218,7 +218,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/allRouts/learn/sesson1.1",
+    path: "/allRouts/learn/season1.1",
     element: <LessonOne />,
     loader: () =>
       fetch("https://vocab-master-server.onrender.com/lesson/category/TeaStall"),
