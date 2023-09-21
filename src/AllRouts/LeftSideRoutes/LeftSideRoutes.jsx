@@ -14,9 +14,9 @@ import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
 const LeftSideRoutes = () => {
     const [isSpeaking, setIsSpeaking] = useState(false);
-    // const [isAdmin] = useAdmin()
+    const [isAdmin] = useAdmin()
 
-    const isAdmin = false
+    // const isAdmin = false
     console.log(isAdmin);
 
     // const isAdmin = true;
