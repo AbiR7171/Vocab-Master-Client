@@ -11,21 +11,20 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-
-// import { app } from '../../firebase/firebase.config';
-// import { app } from '../component/firebase/firebase.config';
-// import { app } from '../firebase/firebase.config';
 import app from "../../firebase/firebase.config";
 
+
+
 export const AuthContext = createContext(null);
+
+const googleProvider = new GoogleAuthProvider();
+const appleProvider = new OAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const googleProvider = new GoogleAuthProvider();
-  const appleProvider = new OAuthProvider();
-  const facebookProvider = new FacebookAuthProvider();
-  const auth = getAuth(app);
 
   //for register----------------------------
   const createUser = (email, password) => {
