@@ -10,7 +10,7 @@ const ManageFeedback = () => {
 
   useEffect(() => {
     axios
-      .get("https://vocab-master-server-new.vercel.app/feedback")
+      .get("https://vocab-master-server.onrender.com/feedback")
       .then((res) => {
         console.log(res.data);
         setFeedback(res.data);
@@ -19,7 +19,7 @@ const ManageFeedback = () => {
 
   const handleShow = (id) => {
     axios
-      .patch(`https://vocab-master-server-new.vercel.app/feedback/show/${id}`)
+      .patch(`https://vocab-master-server.onrender.com/feedback/show/${id}`)
       .then((res) => {
         console.log(res);
         if (res.data.modifiedCount > 0) {
@@ -41,9 +41,9 @@ const ManageFeedback = () => {
       </p>
 
       <div className="grid grid-cols-1 gap-5  px-20 mt-10 ">
-        {feedbacks.map((feedback,i) => {
+        {feedbacks.map((feedback) => {
           return (
-            <div key={i} className="bg-gradient-to-r from-red-200 to-red-600 p-2 rounded ">
+            <div className="bg-gradient-to-r from-red-200 to-red-600 p-2 rounded ">
               <div className="flex items-center justify-evenly mb-2">
                 <p>Name: {feedback?.name}</p>
                 <p>Email: {feedback?.email}</p>

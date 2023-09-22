@@ -12,12 +12,10 @@ const AdminHome = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://vocab-master-server-new.vercel.app/users")
-      .then((data) => {
-        // console.log(data.data);
-        setUsers(data.data);
-      });
+    axios.get("https://vocab-master-server.onrender.com/users").then((data) => {
+      // console.log(data.data);
+      setUsers(data.data);
+    });
   }, []);
 
   const season = users.map((user) => user.season);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaUsers } from "react-icons/fa";
-import { FcHome } from "react-icons/fc";
+import { FcHome, FcMenu } from "react-icons/fc";
 import { Link, Outlet } from "react-router-dom";
 import { GiSaloonDoors } from "react-icons/gi";
 import { FaCartShopping } from "react-icons/fa6";
@@ -13,8 +13,9 @@ import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
 const LeftSideRoutes = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isAdmin] = useAdmin();
+  // const [isAdmin] = useAdmin()
 
+  const isAdmin = false;
   console.log(isAdmin);
 
   // const isAdmin = true;
@@ -48,37 +49,39 @@ const LeftSideRoutes = () => {
   return (
     <div className="drawer lg:drawer-open ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center ms-80 h-full ">
+      <div className="drawer-content flex flex-col items-center justify-center h-full ">
         {/* Page content here */} <Outlet />
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
+          className="btn bg-transparent border-0 absolute top-2 left-2 drawer-button lg:hidden"
         >
-          Open drawer
+          <FcMenu size={32}></FcMenu>
         </label>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side z-50">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul
-          className={`menu p-4 w-80 h-full  fixed  space-y-1 bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white border border-black `}
+          className={`menu p-4 md:p-4 w-60 md:w-72 h-full  fixed  space-y-1 bg-black opacity-50  `}
         >
           {/* Sidebar content here */}
-          <h2 className=" font-primary mb-4 lg:mb-0 text-3xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-yellow-300 mx-auto">
-            <Link to="/">𝓥𝓸𝓬𝓪𝓫𝓜𝓪𝓼𝓽𝓮𝓻</Link>
+          <h2 className=" font-primary mb-4 lg:mb-0 text-3xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-yellow-300">
+            𝓥𝓸𝓬𝓪𝓫𝓜𝓪𝓼𝓽𝓮𝓻
           </h2>
           {/* ------------voce command component------------- */}
-          <button onClick={handleSpeak}>
-            {isSpeaking ? (
-              <FaVolumeUp size={32} title="Mute"></FaVolumeUp>
-            ) : (
-              <FaVolumeMute title="Speak" size={32}></FaVolumeMute>
-            )}
-          </button>
-          <div className="">
-            <SpeechRecognitionComponent
-              setIsSpeaking={setIsSpeaking}
-              handleSpeak={handleSpeak}
-            ></SpeechRecognitionComponent>
+          <div className="flex gap-2 w-48 mx-2 justify-between items-center border-2 border-blue-600 rounded-lg px-2">
+            <div>
+              <SpeechRecognitionComponent
+                setIsSpeaking={setIsSpeaking}
+                handleSpeak={handleSpeak}
+              ></SpeechRecognitionComponent>
+            </div>
+            <button onClick={handleSpeak}>
+              {isSpeaking ? (
+                <FaVolumeUp size={32} title="Mute"></FaVolumeUp>
+              ) : (
+                <FaVolumeMute title="Speak" size={32}></FaVolumeMute>
+              )}
+            </button>
           </div>
           {/* ------------end voice comand part-------------- */}
 

@@ -10,7 +10,7 @@ const Footer = () => {
       <footer className="footer p-10 bg-transparent bg-opacity-50 text-white">
         <div>
           {/* <BiHash className="text-4xl"></BiHash> */}
-          <img src={img} alt="" />
+          <img src={img} alt="logo not found" />
           <h2 className=" font-primary mb-4 lg:mb-0 text-3xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-yellow-300">
             𝓥𝓸𝓬𝓪𝓫𝓜𝓪𝓼𝓽𝓮𝓻
           </h2>

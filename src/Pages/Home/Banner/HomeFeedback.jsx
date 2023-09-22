@@ -15,10 +15,12 @@ const HomeFeedback = () => {
 
   useEffect(() => {
     axios
-      .get("https://vocab-master-server-new.vercel.app/feedback")
+      .get("https://vocab-master-server.onrender.com/feedback")
       .then((res) => {
         console.log(res.data);
         const homeFeedback = res.data.filter((r) => r.show === true);
+
+        console.log(homeFeedback);
 
         setFeedback(homeFeedback);
       });
@@ -27,9 +29,9 @@ const HomeFeedback = () => {
   return (
     <div className="container mx-auto px-52 mt-20 ">
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        {feedbacks.map((feedback, i) => {
+        {feedbacks.map((feedback) => {
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide>
               <div className="bg-white rounded-lg p-5">
                 <div className="flex justify-center items-center">
                   <Rating

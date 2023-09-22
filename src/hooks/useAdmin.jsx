@@ -11,7 +11,7 @@ const useAdmin = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await axios.get(
-        `https://vocab-master-server-new.vercel.app/singleUser/users/admin?email=${user?.email}`
+        `https://vocab-master-server.onrender.com/singleUser/users/admin?email=${user?.email}`
       );
       return res.data.admin;
     },

@@ -8,6 +8,8 @@ import moment from 'moment';
 import ChatContent from './ChatContent';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import axios from 'axios';
+import { io } from "socket.io-client";
 
 
 // theme.palette.background.paper ||
@@ -15,13 +17,48 @@ import { useEffect } from 'react';
 const ChatApp = () => {
 
     const[userInfo]=useUsers();
+   
+
+    const[conversations, setConversation]=useState([]);
+    const[messages, setMessages]=useState({});
+    const[socket, setSocket]=useState(null);
+    const[message, setMessage]=useState('');
+    
+
+
+    console.log(conversations);
+    console.log(messages);
 
     console.log(userInfo);
 
     const themes = useTheme();
-    console.log(themes);
+   //  console.log(themes);
 
     const[theme, setTheme]=useState(localStorage.getItem("themes") ? localStorage.getItem("themes"): "dark");
+
+
+    useEffect(()=>{
+
+           setSocket(io('http://localhost:5050'))
+    },[])
+
+
+    useEffect(()=>{
+
+           socket?.emit("addUser", userInfo[0]?._id);
+           socket?.on("getUser", users => {
+                       console.log("activeUsrs", users);
+           });
+
+           socket?.on("getMessage", data =>{
+                     
+            console.log(data);
+            setMessages( prev =>({
+                ...prev,
+                messages: [...prev.message, { user: data.user, message: data.message }]
+            }))
+           })
+    },[socket])
 
 
 
@@ -42,15 +79,75 @@ const ChatApp = () => {
             localStorage.setItem("themes", theme);
             const localTheme = localStorage.getItem("themes");
             document.querySelector("html").setAttribute("data-theme", localTheme)
-    },[theme])
+    },[theme]);
+
+
+    useEffect(()=>{
+             
+           axios.get(`http://localhost:5000/message/conversations/${userInfo[0]?._id}`)
+           .then(res => {
+             console.log(res.data);
+             setConversation(res.data)
+           })
+        
+                
+    },[]);
+
+
+
+    const fetchMessages = async(conversationId, receiver) => {
+            
+                 const res = await fetch(`http://localhost:5000/message/messages/${conversationId}?senderId=${userInfo[0]?._id}&&receiverId=${receiver?.receiverId}`)
+                 const resData =  await res.json()
+                 console.log(resData);
+                 setMessages({messages: resData, receiver, conversationId})
+    }
+
+
+
+    // (`http://localhost:5000/message/messages/${conversationId}`
+
+    // setMessages({messages: res.data, receiver:user, conversationId})
+
+
+    const sendMessage =  async() => {
+
+      socket?.emit("sendMessage", {
+
+       conversationId:messages?.conversationId,
+       senderId:userInfo[0]?._id,
+       message,
+       receiverId:messages?.receiver?.receiverId
+
+   })
+
+  axios.post("http://localhost:5000/message/messages", {
+
+       conversationId:messages?.conversationId,
+       senderId:userInfo[0]._id,
+       message,
+       receiverId:messages?.receiver?.receiverId
+  })
+  .then(res => {
+          console.log(res.data);
+          setMessage('')
+  })
+
+}
+
+
+
+     
     return (
         <div>
 
 
               <div className="drawer lg:drawer-open">
               <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-             <div className="drawer-content flex flex-col items-center justify-center">
-               {/* Page content here */} <ChatContent/>
+             <div className="drawer-content flex flex-col items-center justify-center "> 
+               {/* Page content here */} <ChatContent messages={messages} fetchMessages={fetchMessages} 
+                message={message} setMessage={setMessage} sendMessage={sendMessage}
+               />
              <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   
              </div> 
@@ -60,11 +157,11 @@ const ChatApp = () => {
             
 
 
-           <div className=" w-96 min-h-full bg-base-200 text-base-content flex  ">
+           <div className=" w-80 min-h-full bg-base-200 text-base-content flex  ">
          {/* Sidebar content here */}
 
          <div>
-<Box sx={{
+{/* <Box sx={{
    boxShadow:"0px 0px 2px rgba(0, 0, 0, 0.25)", height:"100vh", 
     padding:"4px",
     color:"black",
@@ -90,7 +187,7 @@ const ChatApp = () => {
      <p><Icon icon="uiw:setting" className='text-3xl' /></p>
 
       </div> 
-
+ 
       <div className='mt-auto'> 
 
       <input type="checkbox" className="toggle" onChange={handleToggle} />
@@ -106,7 +203,7 @@ const ChatApp = () => {
 
 </div>
 
-</Box>
+</Box> */}
 
 
 </div> 
@@ -124,56 +221,32 @@ const ChatApp = () => {
           <hr className='border-b border-sky-700 ' />
 
 
-         <Link>
+       
 
-             <div className='flex items-center gap-2 mt-4 mb-4 border border-sky-600 p-2 rounded bg-sky-700'>
+       { 
 
-                <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
+    
+          conversations?.map(({conversationId, user}) => {
+                     return   <div onClick={()=> fetchMessages(conversationId, user )}  className='flex items-center gap-2 border border-sky-600 p-2 rounded bg-sky-700 mb-2 mt-2'>
+                     
+                         <img src={user?.image} className='w-10 h-10 rounded-full' alt="" />
+                     
+                        <div>
+                             <p>{user.name}</p>
+                             <p> { moment().subtract(1, 'days').calendar() } </p>
+                        </div>
+                       
+                     
+                     
+                     </div>
+                     
+                     
+         }) 
+       }
 
-                <div>
-                     <p>Yasin</p>
-                     <p> { moment().subtract(1, 'days').calendar() } </p>
-                </div>
-               
-
-            
-            </div>
-
-         </Link>
-
-         <Link>
-
-<div className='flex items-center gap-2 mb-4 border border-sky-600 p-2 rounded bg-sky-700'>
-
-   <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
-
-   <div>
-        <p>Yasin</p>
-        <p> { moment().subtract(1, 'days').calendar() } </p>
-   </div>
-  
+    
 
 
-</div>
-
-</Link>
-
-<Link>
-
-<div className='flex items-center gap-2 border border-sky-600 p-2 rounded bg-sky-700'>
-
-   <img src={userInfo[0]?.image} className='w-10 h-10 rounded-full' alt="" />
-
-   <div>
-        <p>Yasin</p>
-        <p> { moment().subtract(1, 'days').calendar() } </p>
-   </div>
-  
-
-
-</div>
-
-</Link>
     </div>
         
         

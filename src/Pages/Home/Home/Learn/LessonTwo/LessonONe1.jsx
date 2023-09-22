@@ -41,7 +41,7 @@ const LessonOne1 = () => {
 
   // useEffect(()=>{
 
-  //     fetch('https://vocab-master-server-new.vercel.app/quiz')
+  //     fetch('https://vocab-master-server.onrender.com/quiz')
   //     .then(res => res.json())
   //     .then(data =>{
   //       console.log(data);
@@ -69,27 +69,34 @@ const LessonOne1 = () => {
   };
 
   const handleComplete = () => {
-    axios
-      .patch(
-        `https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`,
-        {
-          season: 1.3,
-        }
-      )
-      .then((res) => {
-        console.log(res);
-        if (res.data.modifiedCount > 0) {
-          setDisable(true);
-          Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: `Congratulations You Completed Your First Lesson`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-  };
+
+
+
+      axios.patch(`https://vocab-master-server.onrender.com/singleUser/users/level?email=${userInfo[0]?.email}`, {
+        season : 1.3
+      })
+      .then(res =>{
+               
+             console.log(res);
+             if(res.data.modifiedCount > 0){
+
+                 setDisable(true)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                         title: `Congratulations You Completed Your First Lesson`,
+                          showConfirmButton: false,
+                         timer: 1500
+                 })
+             }
+      })
+
+   
+   
+    
+  }
+
+
 
   const backGroundStyle = {
     backgroundImage: `url(${level2[0]?.categoryImage})`,

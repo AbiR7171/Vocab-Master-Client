@@ -16,7 +16,7 @@ const ManageWords = () => {
   useEffect(() => {
     axios
       .get(
-        `https://vocab-master-server-new.vercel.app/quiz?search=${searchvalue}`
+        `https://vocab-master-server.onrender.com/quiz?search=${searchvalue}`
       )
       .then((res) => {
         console.log(res.data);
@@ -36,7 +36,7 @@ const ManageWords = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://vocab-master-server-new.vercel.app/word/${word._id}`)
+          .delete(`https://vocab-master-server.onrender.com/word/${word._id}`)
           .then((data) => {
             console.log(data);
             if (data.data.deletedCount > 0) {
@@ -52,7 +52,7 @@ const ManageWords = () => {
     console.log(searhRef.current.value);
     setSearchvalue(searhRef.current.value);
 
-    // axios.get(`https://vocab-master-server-new.vercel.app/quiz?search=${searchvalue}`)
+    // axios.get(`https://vocab-master-server.onrender.com/quiz?search=${searchvalue}`)
     // .then(res =>{
     //       console.log(res.data);
     //       setWords(res.data)

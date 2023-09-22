@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import NavBar from "../../../Shared/NavBar";
 import Footer from "../../../Shared/Footer";
@@ -11,13 +11,17 @@ import HomeFeedback from "../Banner/HomeFeedback";
 
 
 import { Contact } from "../contact/Contact";
+import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
 
 const Home = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
-
+  const { user } = useContext(AuthContext)
+  console.log(user);
+  
   //text to speech features (meraj)
+  const userItro = `Hi, ${user? user?.displayName +' ,' + 'welcome to our vocabulary galaxy' : 'their. Please login for increase your vocabulary skill' }`
   const paragraphs = [
-    "Hi there, welcome to our Vocab Master",
+    userItro,
     "Free, Fun, Effective",
     "Learning with VocabMaster is free, fun, and highly effective. Our quick, bite-sized lessons will help you earn points and unlock new levels, all while gaining real-world communication skills.",
     "Special Quiz",
@@ -50,18 +54,11 @@ const Home = () => {
     >
       <NavBar />
       {/* ------------voce command component------------- */}
-      <button onClick={handleSpeak}>
-        {isSpeaking ? (
-          <FaVolumeUp size={32} title="Mute"></FaVolumeUp>
-        ) : (
-          <FaVolumeMute title="Speak" size={32}></FaVolumeMute>
-        )}
-      </button>
-      <div className="">
-        <SpeechRecognitionComponent
-          setIsSpeaking={setIsSpeaking}
-          handleSpeak={handleSpeak}
-        ></SpeechRecognitionComponent>
+      <div className='flex gap-2 w-48 mx-2 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
+        <div>
+          <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+        </div>
+        <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
       </div>
       {/* ------------end voice comand part-------------- */}
       <Banner />

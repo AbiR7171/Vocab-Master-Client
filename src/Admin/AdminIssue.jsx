@@ -7,12 +7,10 @@ const AdminIssue = () => {
   const [issues, setIssues] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://vocab-master-server-new.vercel.app/issue")
-      .then((res) => {
-        console.log(res.data);
-        setIssues(res.data);
-      });
+    axios.get("https://vocab-master-server.onrender.com/issue").then((res) => {
+      console.log(res.data);
+      setIssues(res.data);
+    });
   }, []);
   return (
     <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full p-2">
@@ -40,6 +38,10 @@ const AdminIssue = () => {
             </div>
           );
         })}
+
+        <div className="w-full flex justify-end mt-2 me-4">
+          <button className="bg-green-700 p-3 rounded">Solved</button>
+        </div>
       </div>
     </div>
   );

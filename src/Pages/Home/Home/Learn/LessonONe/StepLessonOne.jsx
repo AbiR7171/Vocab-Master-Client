@@ -12,6 +12,7 @@ import SpeechRecognitionComponent from "../../../../../components/Features/Speec
 
 const StepLessonOne = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [trues, setTrues]=useState(false)
 
   const level = localStorage.getItem("level")
   console.log(level);
@@ -23,8 +24,9 @@ const StepLessonOne = () => {
   const paragraphs = [
     'This is season one',
     'There are 9 category in this season',
+    'There are 10 words in a category',
     'First of all you have to learn level 1.1',
-    'For start your learning command me: go to level 1.1',
+    'For start your learning, command me: go to level 1.1',
     'Thank you'
   ]
 
@@ -43,19 +45,21 @@ const StepLessonOne = () => {
       setIsSpeaking(false);
     }
   }
-
+  //-------voice command end---------------//
   return (
     <div className='bg-Backs'>
       {/* Container */}
-      <div className="  lg:flex items-center justify-around gap-5 font-primary w-full h-full">
+      <div className="lg:flex items-center justify-around gap-5 font-primary w-full h-full">
         {/* Unit 1 */}
-        <div className="bg-black bg-opacity-30 w-full rounded p-6 flex justify-between">
-          <div>
-            <h2 className="text-white fw-bold text-2xl">ইউনিট 1</h2>
+        <div className="bg-black bg-opacity-30 w-full rounded px-6 py-2 flex justify-between">
+          <div className='md:flex gap-5'>
+            <h2 className="text-white fw-bold text-2xl">Season 1</h2>
             {/* ------------voce command component------------- */}
-            <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
-            <div className="">
-              <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+            <div className='flex gap-2 w-48 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
+              <div>
+                <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+              </div>
+              <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
             </div>
             {/* ------------end voice comand part-------------- */}
             <p className="text-white fw-bold">
@@ -71,13 +75,13 @@ const StepLessonOne = () => {
       </div>
 
       {/* Get Started tooltip */}
-      <div className="text-center items-center mx-[500px] my-12">
+      <div className="text-center items-center md:mx-[500px] my-12">
         <div
           className="tooltip tooltip-open tooltip-accent p-2"
           data-tip="GET STARTED"
         >
           {/* active button */}
-          <Link to="/allRouts/learn/sesson1">
+          <Link to="/allRouts/learn/season1.1">
             <div
 
               className="  bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
@@ -89,29 +93,10 @@ const StepLessonOne = () => {
         </div>
 
         {/* Other buttons */}
-        <Link to="/allRouts/learn/season1.2">
+        <Link  to={userInfo[0]?.season >= 1.2 ? "/allRouts/learn/season1.2" : ""}>
 
           <div
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
-
-          >
-
-            {
-              userInfo[0]?.season >= 1.1 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
-                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
-
-            }
-
-
-          </div>
-
-
-        </Link>
-
-        <Link to="/allRouts/learn/season1.3">
-
-          <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
 
           >
 
@@ -127,7 +112,26 @@ const StepLessonOne = () => {
 
         </Link>
 
-        <Link to="/allRouts/learn/season1.4">
+        <Link to={userInfo[0]?.season >= 1.3 ? "/allRouts/learn/season1.3" : ""}>
+
+          <div
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+
+          >
+
+            {
+              userInfo[0]?.season >= 1.3 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
+                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
+
+            }
+
+
+          </div>
+
+
+        </Link>
+
+        <Link to={userInfo[0]?.season >= 1.4 ? "/allRouts/learn/season1.4" : ""}>
           <div
 
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 "
@@ -135,7 +139,7 @@ const StepLessonOne = () => {
           >
 
             {
-              userInfo[0]?.season >= 1.3 ? <Lottie animationData={animation} className=' flex justify-center items-center w-32 ' loop={true} />
+              userInfo[0]?.season >= 1.4 ? <Lottie animationData={animation} className=' flex justify-center items-center w-32 ' loop={true} />
                 : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
 
             }
@@ -144,25 +148,9 @@ const StepLessonOne = () => {
         </Link>
 
 
-        <Link to="/allRouts/learn/season1.5">
+        <Link to={userInfo[0]?.season >= 1.5 ? "/allRouts/learn/season1.5" : ""}>
           <div
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
-
-          >
-
-            {
-              userInfo[0]?.season >= 1.4 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
-                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
-
-            }
-
-          </div>
-        </Link>
-
-
-        <Link to="/allRouts/learn/season1.6">
-          <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
@@ -176,9 +164,9 @@ const StepLessonOne = () => {
         </Link>
 
 
-        <Link to="/allRouts/learn/season1.7">
+        <Link to={userInfo[0]?.season >= 1.6 ? "/allRouts/learn/season1.6" : ""}>
           <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
@@ -192,9 +180,9 @@ const StepLessonOne = () => {
         </Link>
 
 
-        <Link to="/allRouts/learn/season1.8">
+        <Link to={userInfo[0]?.season >= 1.7 ? "/allRouts/learn/season1.7" : ""}>
           <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
 
           >
 
@@ -207,9 +195,10 @@ const StepLessonOne = () => {
           </div>
         </Link>
 
-        <Link to="/allRouts/learn/season1.9">
+
+        <Link to={userInfo[0]?.season >= 1.8 ? "/allRouts/learn/season1.8" : ""}>
           <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
@@ -222,15 +211,30 @@ const StepLessonOne = () => {
           </div>
         </Link>
 
+        <Link to={userInfo[0]?.season >= 1.9 ? "/allRouts/learn/season1.9" : ""}>
+          <div
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
 
-        <Link to="/allRouts/learn/season1.10">
+          >
+
+            {
+              userInfo[0]?.season >= 1.9 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
+                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
+
+            }
+
+          </div>
+        </Link>
+
+
+        <Link to={userInfo[0]?.season >= 1.10 ? "/allRouts/learn/season1.10" : ""}>
           <div
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
             {
-              userInfo[0]?.season >= 1.9 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
+              userInfo[0]?.season >= 1.10 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
                 : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
 
             }

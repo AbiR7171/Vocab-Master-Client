@@ -9,6 +9,11 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../../Authentication/Provider/AuthProvider";
 import SpeechRecognitionComponent from "../../../../components/Features/SpeechRecognitionComponent";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import succesfully from "../../../../assets/LottieAnimation/succesfully.json";
+import rights from "../../../../assets/LottieAnimation/right.json";
+import left from "../../../../assets/LottieAnimation/left.json";
+import middle from "../../../../assets/LottieAnimation/middle.json";
+import Lottie from "lottie-react";
 
 const LessOnSlider = ({ lesson, index }) => {
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -16,19 +21,56 @@ const LessOnSlider = ({ lesson, index }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [disable, setDisable] = useState(false);
   const [userInfo, refetch] = useUsers();
+  const [right, setRight] = useState(false);
   // console.log(userInfo);
   // console.log(selectedOption);
 
   // console.log(lesson);
+
+  // const handleOptionChange = (event) => {
+  //   setSelectedOption(event.target.value);
+  //   console.log("the select value:", event.target.value)
+  //   setDisable(true);
+
+  //   if (event.target.value === `${lesson.quiz.correctAnswer}`) {
+  //     console.log('right answer')
+  //     axios
+  //       .patch(`https://vocab-master-server.onrender.com/singleUser/users?email=${user.email}`, {
+  //         diamond: userInfo[0].diamond,
+  //       })
+  //       .then((data) => {
+  //         if (data.data.matchedCount > 0) {
+  //           refetch();
+  //         }
+  //       });
+
+  //     Swal.fire({
+  //       position: 'top-center',
+  //       icon: 'success',
+  //       title: 'Awesome! Correct Answer',
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   } else {
+  //     console.log('wrong answer')
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops... Wrong Answer',
+  //       html: `Correct Answer is: ${lesson.quiz.correctAnswer}`,
+  //     });
+  //   }
+  // };
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
     setDisable(true);
 
     if (event.target.value == `${lesson.quiz.correctAnswer}`) {
+      // <Lottie animationData={succesfully} loop={true} />
+
       axios
         .patch(
-          `https://vocab-master-server-new.vercel.app/singleUser/users?email=${user.email}`,
+          `https://vocab-master-server.onrender.com/singleUser/users?email=${user.email}`,
           {
             diamond: userInfo[0].diamond,
           }
@@ -37,6 +79,7 @@ const LessOnSlider = ({ lesson, index }) => {
           // console.log(data);
           if (data.data.matchedCount > 0) {
             refetch();
+            setRight(true);
           }
         });
 
@@ -265,32 +308,19 @@ const LessOnSlider = ({ lesson, index }) => {
           </label>
         </form>
       </div>
-      {/* <div className="relative overflow-hidden bg-opacity-40 bg-white bg-blur-md p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105">
-        <div className="mb-4">
-          <h2 className="text-2xl font-bold">{lesson.quiz.question}</h2>
-        </div>
-        <div className="grid grid-cols-1 gap-4">
-          {lesson.quiz.options.map((option, index) => (
-            <label
-              key={index}
-              className="relative flex items-center p-4 bg-gray-200 rounded-lg cursor-pointer hover:bg-gray-300 transition"
-            >
-              <input
-                type="radio"
-                name="name"
-                className="absolute opacity-0 w-0 h-0"
-                value={option}
-                checked={selectedOption === option}
-                onChange={handleOptionChange}
-                // disabled={disable}
-              />
-              <span className="ml-2 text-gray-800">{option}</span>
-            </label>
-          ))}
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full border-2 border-blue-500 animate-pulse opacity-50"></div>
-      </div> */}
       {/* --------------end the quize */}
+
+      {right && (
+        <div>
+          <div className="absolute left-0  w-96 h-96">
+            <Lottie animationData={succesfully} loop={false} />
+          </div>
+
+          <div className="absolute right-0  w-96 h-96">
+            <Lottie animationData={succesfully} loop={false} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

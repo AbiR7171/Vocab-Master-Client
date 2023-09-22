@@ -7,19 +7,19 @@ const LeaderBoard = () => {
 
   useEffect(() => {
     axios
-      .get("https://vocab-master-server-new.vercel.app/users/student")
+      .get("https://vocab-master-server.onrender.com/users/student")
       .then((res) => {
         console.log(res.data);
         setStudent(res.data);
       });
   }, [students]);
-
+  // bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full px-20 ">
+    <div className=" bg-Backs w-full h-full px-20 ">
       <h2 className="text-6xl text-center mt-6 mb-10">LeaderBoard</h2>
 
-      <div className="overflow-x-auto px-20 p-4 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500  rounded">
-        <table className="table table-zebra">
+      <div className="overflow-x-auto px-20 p-4 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-70 w-full md:w-4/5 ml-auto rounded">
+        <table className="table table-zebra ">
           {/* head */}
           <thead>
             <tr className="text-white text-1xl font-Sec ">
@@ -35,7 +35,7 @@ const LeaderBoard = () => {
           <tbody>
             {students.map((word, index) => {
               return (
-                <tr className="text-1xl font-Sec text-black     ">
+                <tr className="text-1xl font-Sec text-black ">
                   <th>{index + 1}</th>
                   <td className="font-bold">
                     <img

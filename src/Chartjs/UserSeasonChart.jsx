@@ -24,14 +24,17 @@ const data02 = [
 export default function UseSeasonChart() {
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("https://vocab-master-server-new.vercel.app/users")
-      .then((data) => {
-        // console.log(data.data);
-        setUsers(data.data);
-      });
-  }, [users]);
+
+
+
+    
+  useEffect(()=>{
+       axios.get("https://vocab-master-server.onrender.com/users")
+       .then(data =>{
+            // console.log(data.data);
+            setUsers(data.data)
+       })
+  },[users])
   return (
     <PieChart width={1000} height={400}>
       <Pie

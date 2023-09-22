@@ -20,7 +20,7 @@ const SeasonONeQuiz = () => {
 
   useEffect(() => {
     axios
-      .get("https://vocab-master-server-new.vercel.app/seasonQuiz")
+      .get("https://vocab-master-server.onrender.com/seasonQuiz")
       .then((res) => {
         console.log(res.data);
         setQuizs(res.data);
@@ -30,7 +30,7 @@ const SeasonONeQuiz = () => {
   const handleCompleted = () => {
     axios
       .put(
-        `https://vocab-master-server-new.vercel.app/singleUser/firstSeasonMark/${userInfo[0].email}`,
+        `https://vocab-master-server.onrender.com/singleUser/firstSeasonMark/${userInfo[0].email}`,
         {
           first: marks,
         }
@@ -52,6 +52,14 @@ const SeasonONeQuiz = () => {
     <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full p-2">
       <div className="flex justify-between px-20 mt-4">
         <p className="text-4xl mb-20">WelCome To YOur First Quiz Test</p>
+
+        <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
+          <Icon
+            icon="basil:diamond-solid"
+            className="text-4xl text-green-900"
+          />{" "}
+          <p className="text-4xl  text-red-900">{marks}</p>
+        </div>
 
         <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
           <Icon

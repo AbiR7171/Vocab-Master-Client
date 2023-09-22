@@ -12,7 +12,8 @@ import useUsers from "../../../../../hooks/useUsers";
 import axios from "axios";
 import useWords from "../../../../../hooks/useWords";
 
-const LessonOne9 = () => {
+
+const LessonOne1 = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
   const [level, setLevel] = useState(0);
@@ -34,9 +35,15 @@ const LessonOne9 = () => {
 
   console.log(words);
 
-  const level3 = words?.filter((l) => l.level == 1.9);
 
-  console.log(level3);
+  const level2 = words?.filter(l => l.level == 1.9)
+
+
+
+
+
+
+  console.log(level2);
   // console.log(lessons);
 
   // useEffect(()=>{
@@ -69,33 +76,40 @@ const LessonOne9 = () => {
   };
 
   const handleComplete = () => {
-    axios
-      .patch(
-        `https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`,
-        {
-          season: 1.1,
-        }
-      )
-      .then((res) => {
-        console.log(res);
-        if (res.data.modifiedCount > 0) {
-          setDisable(true);
-          Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: `Congratulations You Completed Your First Lesson`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-  };
+
+
+
+      axios.patch(`https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
+        season : 2
+      })
+      .then(res =>{
+               
+             console.log(res);
+             if(res.data.modifiedCount > 0){
+
+                 setDisable(true)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                         title: `Congratulations You Completed Your First Lesson`,
+                          showConfirmButton: false,
+                         timer: 1500
+                 })
+             }
+      })
+
+   
+   
+    
+  }
+
+
 
   const backGroundStyle = {
-    backgroundImage: `url(${level3[0]?.categoryImage})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
+    backgroundImage: `url(${level2[0]?.categoryImage})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
     width: "100vw",
   };
 
@@ -133,16 +147,13 @@ const LessonOne9 = () => {
               modules={[Navigation, Pagination, Mousewheel, Keyboard]}
               className="mySwiper"
             >
-              {level3?.map((lesson, index) => (
-                <SwiperSlide key={lesson._id}>
-                  <LessOnSlider
-                    lesson={lesson}
-                    setNumber={setNumber}
-                    number={number}
-                    index={index}
-                  ></LessOnSlider>
-                </SwiperSlide>
-              ))}
+              {
+                level2?.map((lesson, index) =>
+                  <SwiperSlide key={lesson._id}>
+                    <LessOnSlider lesson={lesson} setNumber={setNumber} number={number} index={index} ></LessOnSlider>
+                  </SwiperSlide>
+                )
+              }
               <SwiperSlide>
                 <div className="Container mx-auto px-96 h-full mt-40 px-auto">
                   <button
@@ -162,4 +173,4 @@ const LessonOne9 = () => {
   );
 };
 
-export default LessonOne9;
+export default LessonOne1;

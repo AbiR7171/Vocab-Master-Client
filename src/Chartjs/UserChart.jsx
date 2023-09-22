@@ -66,16 +66,19 @@ export default function UserChart() {
       });
   }, [users]);
 
-  const userCountByDate = users.reduce((acc, user) => {
-    const date = user.date;
-    acc[date] = (acc[date] || 0) + 1;
-    return acc;
-  }, {});
 
-  const chartData = Object.keys(userCountByDate).map((date) => ({
-    date,
-    count: userCountByDate[date],
-  }));
+    const userCountByDate = users.reduce((acc, user) => {
+      const date = user.date;
+      acc[date] = (acc[date] || 0) + 1;
+      return acc;
+    }, {});
+ 
+    const chartData = Object.keys(userCountByDate).map(date => ({
+      date,
+      count: userCountByDate[date],
+    }));
+
+
 
   return (
     <AreaChart

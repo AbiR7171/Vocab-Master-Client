@@ -38,16 +38,16 @@ const SpeechRecognitionComponent = ({handleSpeak,setIsSpeaking }) => {
             }
         },
         {
-            command: 'go to season 1',
-            callback: () => {
-                navigate('/allRouts/learn/lessonOneStep')
+            command: 'go to season *',
+            callback: (path) => {
+                navigate(`/allRouts/learn/stepSeason${path}`)
                 return setIsSpeaking(false)
             }
         },
         {
-            command: 'go to level 1.1',
-            callback: () => {
-                navigate('/allRouts/learn/sesson1')
+            command: 'go to level *',
+            callback: (path) => {
+                navigate(`/allRouts/learn/season${path}`)
                 return setIsSpeaking(true)
             }
         },
@@ -108,7 +108,7 @@ const SpeechRecognitionComponent = ({handleSpeak,setIsSpeaking }) => {
             {/* <p>Microphone: {listening ? 'on' : 'off'}</p> */}
             
             {/* <button className='mx-2' onClick={() => SpeechRecognition.startListening()}> Start </button> */}
-            <button onKeyDown={handleKeyDown} >{listening ? "on" : "off"} </button>
+            <button onKeyDown={handleKeyDown} >Command:{listening ? "on" : "off"} </button>
             {/* <button disabled onClick={() => SpeechRecognition.stopListening()}>Stop</button> */}
             {/* <button disabled onClick={resetTranscript}>Reset</button> */}
             {/* <p>{transcript}</p> */}

@@ -21,7 +21,7 @@ const Issue = () => {
     //  console.log(issue);
 
     axios
-      .post("https://vocab-master-server-new.vercel.app/issue", {
+      .post("https://vocab-master-server.onrender.com/issue", {
         name,
         email,
         date,
@@ -44,29 +44,31 @@ const Issue = () => {
       });
   };
 
+  // bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900
+
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-[200vh] p-2">
-      <div onClick={() => navigate(-1)} className="mt-10 ms-20">
+    <div className="max-h-screen bg-Backs  w-full">
+      <div onClick={() => navigate(-1)} className="mt-2 md:mt-5 ms-2 md:ms-20">
         <Icon
           icon="emojione-monotone:left-arrow"
           className="text-4xl text-orange-700"
         />
       </div>
 
-      <div className="w-full max-w-md mx-auto mt-20">
+      <div className="w-full max-w-md mx-auto flex justify-center items-center">
         <form
           onSubmit={handleIssue}
-          className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-80 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full"
         >
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className=" text-black text-sm font-bold mb-2"
               htmlFor="name"
             >
               Name
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               name="name"
               type="text"
               placeholder="Your Name"
@@ -75,13 +77,13 @@ const Issue = () => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-black text-sm font-bold mb-2"
               htmlFor="email"
             >
               Email
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               name="email"
               type="email"
               placeholder="you@example.com"
@@ -90,13 +92,13 @@ const Issue = () => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-black text-sm font-bold mb-2"
               htmlFor="date"
             >
               Date
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               name="date"
               type="input"
               value={moment().format("DD, MMM, yyyy")}
@@ -104,13 +106,13 @@ const Issue = () => {
           </div>
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-black text-sm font-bold mb-2"
               htmlFor="issue"
             >
               Issue
             </label>
             <textarea
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               name="issue"
               placeholder="Describe your issue..."
               rows="4"

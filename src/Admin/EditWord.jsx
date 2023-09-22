@@ -16,7 +16,7 @@ const EditWord = () => {
     const antonyms = form.antonyms.value;
 
     axios
-      .get(`https://vocab-master-server-new.vercel.app/word/${word._id}`)
+      .get(`https://vocab-master-server.onrender.com/word/${word._id}`)
       .then((res) => {
         console.log(res);
         if (res.data.modifyCount > 0) {

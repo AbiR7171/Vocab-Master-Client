@@ -11,7 +11,7 @@ const ManageUser = () => {
 
     axios
       .patch(
-        `https://vocab-master-server-new.vercel.app/singleUser/users/admin/${user._id}`
+        `https://vocab-master-server.onrender.com/singleUser/users/admin/${user._id}`
       )
       .then((data) => {
         console.log(data);
@@ -42,7 +42,7 @@ const ManageUser = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `https://vocab-master-server-new.vercel.app/singleUser/users/${user._id}`
+            `https://vocab-master-server.onrender.com/singleUser/users/${user._id}`
           )
           .then((data) => {
             console.log(data);
