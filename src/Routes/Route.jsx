@@ -95,6 +95,8 @@ import Feedback from "../Users/Feedback";
 import Profile from "../Users/Profile";
 import ChatApp from "../Pages/ChatApp/ChatApp";
 import ManageFeedback from "../Admin/ManageFeedback";
+import ApproveWord from "../Admin/ApproveWord";
+import HomeFeedback from "../AboutUs/HomeFeedback";
 
 const router = createBrowserRouter([
   {
@@ -139,6 +141,22 @@ const router = createBrowserRouter([
         element: <CookiesPolicy></CookiesPolicy>,
       },
       {
+        path: "feedback",
+        element: (
+          <div
+            style={{
+              backgroundColor: "#4158D0",
+              backgroundImage:
+                "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
+              height: "100vh",
+              marginTop: "0px",
+            }}
+          >
+            <HomeFeedback></HomeFeedback>
+          </div>
+        ),
+      },
+      {
         path: "contact",
         element: (
           <div
@@ -170,17 +188,16 @@ const router = createBrowserRouter([
         element: <Learn />,
       },
       {
-        path:"/allRouts/leaderBoard",
-        element:<LeaderBoard/>
-
+        path: "/allRouts/leaderBoard",
+        element: <LeaderBoard />,
       },
       {
-            path: "/allRouts/sentWordRequest",
-            element:<WordRequest/>
+        path: "/allRouts/sentWordRequest",
+        element: <WordRequest />,
       },
       {
-        path:"/allRouts/adminHome",
-        element: <AdminHome/>
+        path: "/allRouts/adminHome",
+        element: <AdminHome />,
       },
       {
         path: "/allRouts/manageUsers",
@@ -200,21 +217,29 @@ const router = createBrowserRouter([
         loader:({params})=> fetch(`https://vocab-master-server.onrender.com/word/${params.id}`)
       },
       {
-        path:"/allRouts/Adminissue",
-        element:<AdminIssue/>
+        path: "/allRouts/approveWord/:id",
+        element: <ApproveWord />,
+        loader: ({ params }) =>
+          fetch(
+            `https://vocab-master-server-new.vercel.app/user/approveword/${params.id}`
+          ),
+      },
+      {
+        path: "/allRouts/Adminissue",
+        element: <AdminIssue />,
       },
       {
         path: "/allRouts/feedback",
-        element: <Feedback/>
+        element: <Feedback />,
       },
       {
         path: "/allRouts/userProfile",
-        element: <Profile/>
+        element: <Profile />,
       },
       {
-        path:"/allRouts/adminfeedback",
-        element:<ManageFeedback/>
-      }
+        path: "/allRouts/adminfeedback",
+        element: <ManageFeedback />,
+      },
     ],
   },
   {
@@ -472,21 +497,21 @@ const router = createBrowserRouter([
     element: <SeasonSix9 />,
   },
   {
-    path:"/allRouts/seasonOneQuiz",
-    element: <SeasonONeQuiz/>
- },
- {
-     path: "/allRouts/issue",
-     element: <Issue/>
- },
-  {
-    path: "/docs",
-    element: <Docs />
+    path: "/allRouts/seasonOneQuiz",
+    element: <SeasonONeQuiz />,
   },
   {
-    path:"/allRouts/users/message",
-    element:<ChatApp/>
-  }
+    path: "/allRouts/issue",
+    element: <Issue />,
+  },
+  {
+    path: "/docs",
+    element: <Docs />,
+  },
+  {
+    path: "/allRouts/users/message",
+    element: <ChatApp />,
+  },
 ]);
 
 export default router;

@@ -3,13 +3,12 @@ import { BiHash } from "react-icons/bi";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
-import img from "/img/logo56aa.png";
+import img from "/img/logo.png";
 const Footer = () => {
   return (
     <div className="mt-20 container mx-auto rounded-lg">
       <footer className="footer p-10 bg-transparent bg-opacity-50 text-white">
         <div>
-
           {/* <BiHash className="text-4xl"></BiHash> */}
           <img src={img} alt="logo not found" />
           <h2 className=" font-primary mb-4 lg:mb-0 text-3xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-yellow-300">
@@ -35,7 +34,7 @@ const Footer = () => {
             Contact
           </a>
           <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a href="/feedback" className="link link-hover">Feedback</a>
         </div>
 
         <div>

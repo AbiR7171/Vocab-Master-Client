@@ -9,7 +9,7 @@ const data01 = [
   { name: "Group C", value: 300 },
   { name: "Group D", value: 200 },
   { name: "Group E", value: 278 },
-  { name: "Group F", value: 189 }
+  { name: "Group F", value: 189 },
 ];
 
 const data02 = [
@@ -18,13 +18,13 @@ const data02 = [
   { name: "Group C", value: 1398 },
   { name: "Group D", value: 9800 },
   { name: "Group E", value: 3908 },
-  { name: "Group F", value: 4800 }
+  { name: "Group F", value: 4800 },
 ];
 
 export default function UseSeasonChart() {
+  const [users, setUsers] = useState([]);
 
 
-  const [users, setUsers]=useState([])
 
 
     
@@ -48,7 +48,7 @@ export default function UseSeasonChart() {
         label
       />
 
-<Pie
+      <Pie
         dataKey="diamond"
         data={users}
         cx={500}
@@ -57,7 +57,7 @@ export default function UseSeasonChart() {
         outerRadius={80}
         fill="#82ca9d"
       />
-      
+
       <Tooltip />
     </PieChart>
   );

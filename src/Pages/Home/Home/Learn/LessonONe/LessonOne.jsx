@@ -27,8 +27,6 @@ const LessonOne = () => {
 
   // console.log(lessonsss);
 
-
-
   // console.log(level1);
   // console.log(selectedOption);
 
@@ -81,24 +79,17 @@ const LessonOne = () => {
 
         console.log(res);
         if (res.data.modifiedCount > 0) {
-
-          setDisable(true)
+          setDisable(true);
           Swal.fire({
-            position: 'top-center',
-            icon: 'success',
+            position: "top-center",
+            icon: "success",
             title: `Congratulations You Completed Your First Lesson`,
             showConfirmButton: false,
-            timer: 1500
-          })
+            timer: 1500,
+          });
         }
-      })
-
-
-
-
-  }
-
-
+      });
+  };
 
   const backGroundStyle = {
     backgroundImage: `url(${level1[0]?.categoryImage})`,
@@ -121,7 +112,7 @@ const LessonOne = () => {
         <div className="flex justify-between pe-8 py-4 bg-black bg-opacity-80">
           <div></div>
           <p className="text-center text-2xl md:text-4xl font-primary text-red-400">
-            Welcome to Your  Vocabulary Lesson
+            Welcome to Your Vocabulary Lesson
           </p>
           <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
             <Icon
@@ -130,18 +121,13 @@ const LessonOne = () => {
             />{" "}
             <p className="text-4xl  text-red-900">{userInfo[0]?.diamond}</p>
           </div>
-
-
-
         </div>
 
         <div className="bg-black bg-opacity-80">
-
           <div className="h-[calc(100vh-80px)] pt-5 md:pt-20">
             <Swiper
               cssMode={true}
               navigation={true}
-     
               pagination={true}
               mousewheel={false}
               keyboard={true}
@@ -160,7 +146,13 @@ const LessonOne = () => {
               ))}
               <SwiperSlide>
                 <div className="Container mx-auto px-96 h-full mt-40 px-auto">
-                  <button onClick={handleComplete} disabled={disable} className="bg-red-800  px-32 p-4 text-white rounded  ms-40">Completed</button>
+                  <button
+                    onClick={handleComplete}
+                    disabled={disable}
+                    className="bg-red-800  px-32 p-4 text-white rounded  ms-40"
+                  >
+                    Completed
+                  </button>
                 </div>
               </SwiperSlide>
             </Swiper>

@@ -15,7 +15,9 @@ import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
 
 const Home = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
+  console.log(user);
+  
   //text to speech features (meraj)
   const userItro = `Hi, ${user? user?.displayName +' ,' + 'welcome to our vocabulary galaxy' : 'their. Please login for increase your vocabulary skill' }`
   const paragraphs = [
