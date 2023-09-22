@@ -4,7 +4,6 @@ const Loader = () => {
 
     return (
         <div className='flex justify-center mt-40'>
-            {/* <h1 className='text-4xl font-bold text-black'>heloos</h1> */}
             <Dna
                 visible={true}
                 height="100"
