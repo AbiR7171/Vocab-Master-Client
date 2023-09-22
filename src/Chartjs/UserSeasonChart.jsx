@@ -9,7 +9,7 @@ const data01 = [
   { name: "Group C", value: 300 },
   { name: "Group D", value: 200 },
   { name: "Group E", value: 278 },
-  { name: "Group F", value: 189 }
+  { name: "Group F", value: 189 },
 ];
 
 const data02 = [
@@ -18,23 +18,20 @@ const data02 = [
   { name: "Group C", value: 1398 },
   { name: "Group D", value: 9800 },
   { name: "Group E", value: 3908 },
-  { name: "Group F", value: 4800 }
+  { name: "Group F", value: 4800 },
 ];
 
 export default function UseSeasonChart() {
+  const [users, setUsers] = useState([]);
 
-
-  const [users, setUsers]=useState([])
-
-
-    
-  useEffect(()=>{
-       axios.get("https://vocab-master-server.vercel.app/users")
-       .then(data =>{
-            // console.log(data.data);
-            setUsers(data.data)
-       })
-  },[users])
+  useEffect(() => {
+    axios
+      .get("https://vocab-master-server-new.vercel.app/users")
+      .then((data) => {
+        // console.log(data.data);
+        setUsers(data.data);
+      });
+  }, [users]);
   return (
     <PieChart width={1000} height={400}>
       <Pie
@@ -48,7 +45,7 @@ export default function UseSeasonChart() {
         label
       />
 
-<Pie
+      <Pie
         dataKey="diamond"
         data={users}
         cx={500}
@@ -57,7 +54,7 @@ export default function UseSeasonChart() {
         outerRadius={80}
         fill="#82ca9d"
       />
-      
+
       <Tooltip />
     </PieChart>
   );

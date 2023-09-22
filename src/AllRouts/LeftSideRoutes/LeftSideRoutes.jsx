@@ -100,6 +100,9 @@ const LeftSideRoutes = () => {
                 <Link to="/allRouts/adminIssue">Manage Issue</Link>
               </li>
               <li className="ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl">
+                <Link to="/allRouts/adminfeedback">Manage Feedback</Link>
+              </li>
+              <li className="ms-5 text-xl font-semibold font-Sec  border border-black rounded-xl">
                 <Link to="/">Home</Link>
               </li>
             </>
@@ -110,7 +113,7 @@ const LeftSideRoutes = () => {
                   <FcHome></FcHome> Learn
                 </Link>
               </li>
-              <li className="ms-5 text-xl font-semibold uppercase ">
+              <li className="ms-5 text-xl font-semibold uppercase">
                 <Link to="/allRouts/leaderBoard">
                   <FaUsers></FaUsers> Leaderboard
                 </Link>

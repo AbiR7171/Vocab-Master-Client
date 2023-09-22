@@ -8,8 +8,6 @@
 // import { Pagination, Navigation } from 'swiper/modules';
 // import Swal from 'sweetalert2';
 
-
-
 // const Session1 = () => {
 
 //     const navigate = useNavigate()
@@ -19,14 +17,9 @@
 //     console.log(level);
 //     console.log(lesson);
 
-
-
-  
-
 //    useEffect(()=>{
 
-
-//     fetch("https://vocab-master-server.vercel.app/words")
+//     fetch("https://vocab-master-server-new.vercel.app/words")
 //     .then(res => res.json())
 //     .then(data =>{
 //         console.log(data);
@@ -35,14 +28,13 @@
 //     })
 //    },[])
 
-
 //     const handleBack =()=>{
-  
+
 //         navigate(-1)
 //     }
 
 //     const handleLevel = ()=>{
-//         setLevel(level + 1) 
+//         setLevel(level + 1)
 //         setDisable(true)
 //         localStorage.setItem("level", level +1)
 //         Swal.fire({
@@ -54,8 +46,6 @@
 //           })
 //     }
 
-    
-  
 //     return (
 //         <div
 //         className=' w-full h-full'
@@ -67,12 +57,10 @@
 
 //             <div
 
-            
-            
 //             >
 //                  <p className='text-center mt-20 text-2xl font-primary'>Welcome to Your First Vocabulary Lesson</p>
 //                  <div
-                 
+
 //                  className='mt-20'>
 
 //                  <Swiper
@@ -85,7 +73,7 @@
 //       >
 //        {
 //         lesson.map((less, index) =>  <SwiperSlide>
-         
+
 //        <div
 //        className='w-1/2 mx-auto font-serif space-y-4'
 //        >
@@ -94,8 +82,8 @@
 //       >
 //       <p> Word No.{index + 1}</p>
 //        <p>Category: {less.category}</p>
-//       </div> 
- 
+//       </div>
+
 //         <p className="text-2xl font-bold">Word: {less.word}</p>
 //         <div
 //         className='flex justify-between items-center'
@@ -112,21 +100,20 @@
 //        </div>
 
 //        <p>Examples : {less.examples}</p>
-      
 
 //        </div>
 
 //         </SwiperSlide>)
-//        } 
-//        <SwiperSlide>  <button onClick={ handleLevel}  disabled={disable} 
+//        }
+//        <SwiperSlide>  <button onClick={ handleLevel}  disabled={disable}
 //        className={`w-1/3 mx-auto  mt-24 ms-96 p-5 rounded-lg  uppercase font-bold ${disable ? "bg-red-200 text-white ": "bg-red-700   text-white" }`}
 //        >Completed</button> </SwiperSlide>
-       
+
 //       </Swiper>
 
 //                  </div>
 //             </div>
-            
+
 //         </div>
 //     );
 // };

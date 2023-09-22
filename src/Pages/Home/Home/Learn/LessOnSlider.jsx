@@ -28,7 +28,7 @@ const LessOnSlider = ({ lesson, index }) => {
     if (event.target.value == `${lesson.quiz.correctAnswer}`) {
       axios
         .patch(
-          `https://vocab-master-server.vercel.app/singleUser/users?email=${user.email}`,
+          `https://vocab-master-server-new.vercel.app/singleUser/users?email=${user.email}`,
           {
             diamond: userInfo[0].diamond,
           }

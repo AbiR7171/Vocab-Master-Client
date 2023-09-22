@@ -19,8 +19,6 @@ const Banner = () => {
     });
   };
 
-  const [isAdmin] = useAdmin();
-
   const textContent = {
     en: {
       heading1: `The free, fun, and effective way to learn`,

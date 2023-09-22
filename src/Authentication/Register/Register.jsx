@@ -74,7 +74,7 @@ const Register = () => {
       });
 
     axios
-      .post("https://vocab-master-server.vercel.app/users", {
+      .post("https://vocab-master-server-new.vercel.app/users", {
         name: name,
         email: email,
         image: photo,
@@ -94,7 +94,7 @@ const Register = () => {
             timer: 1500,
           });
         }
-        navigate('/');
+        navigate("/");
       });
   };
 
@@ -111,7 +111,7 @@ const Register = () => {
   //     .catch((error) => console.log(error));
 
   //   axios
-  //     .post("https://vocab-master-server.vercel.app/users", {
+  //     .post("https://vocab-master-server-new.vercel.app/users", {
   //       name: data.name,
   //       email: data.email,
   //       image: data.image,

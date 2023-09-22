@@ -34,7 +34,7 @@ const Footer = () => {
             Contact
           </a>
           <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a href="/feedback" className="link link-hover">Feedback</a>
         </div>
 
         <div>

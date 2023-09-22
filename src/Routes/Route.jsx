@@ -94,6 +94,9 @@ import AdminIssue from "../Admin/AdminIssue";
 import Feedback from "../Users/Feedback";
 import Profile from "../Users/Profile";
 import ChatApp from "../Pages/ChatApp/ChatApp";
+import ManageFeedback from "../Admin/ManageFeedback";
+import ApproveWord from "../Admin/ApproveWord";
+import HomeFeedback from "../AboutUs/HomeFeedback";
 
 const router = createBrowserRouter([
   {
@@ -136,6 +139,22 @@ const router = createBrowserRouter([
       {
         path: "cookies",
         element: <CookiesPolicy></CookiesPolicy>,
+      },
+      {
+        path: "feedback",
+        element: (
+          <div
+            style={{
+              backgroundColor: "#4158D0",
+              backgroundImage:
+                "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
+              height: "100vh",
+              marginTop: "0px",
+            }}
+          >
+            <HomeFeedback></HomeFeedback>
+          </div>
+        ),
       },
       {
         path: "contact",
@@ -196,7 +215,15 @@ const router = createBrowserRouter([
         path: "/allRouts/editWord/:id",
         element: <EditWord />,
         loader: ({ params }) =>
-          fetch(`https://vocab-master-server.vercel.app/word/${params.id}`),
+          fetch(`https://vocab-master-server-new.vercel.app/word/${params.id}`),
+      },
+      {
+        path: "/allRouts/approveWord/:id",
+        element: <ApproveWord />,
+        loader: ({ params }) =>
+          fetch(
+            `https://vocab-master-server-new.vercel.app/user/approveword/${params.id}`
+          ),
       },
       {
         path: "/allRouts/Adminissue",
@@ -210,13 +237,19 @@ const router = createBrowserRouter([
         path: "/allRouts/userProfile",
         element: <Profile />,
       },
+      {
+        path: "/allRouts/adminfeedback",
+        element: <ManageFeedback />,
+      },
     ],
   },
   {
     path: "/allRouts/learn/sesson1",
     element: <LessonOne />,
     loader: () =>
-      fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall"),
+      fetch(
+        "https://vocab-master-server-new.vercel.app/lesson/category/TeaStall"
+      ),
   },
   {
     path: "/allRouts/learn/lessonOneStep",
@@ -226,8 +259,8 @@ const router = createBrowserRouter([
 
   //   path: "/allRouts/learn/sesson1",
   //   element: <LessonOne />,
-  //   loader: () => fetch("https://vocab-master-server.vercel.app/vocabs")
-  //   // loader:()=> fetch("https://vocab-master-server.vercel.app/lesson/category/TeaStall")
+  //   loader: () => fetch("https://vocab-master-server-new.vercel.app/vocabs")
+  //   // loader:()=> fetch("https://vocab-master-server-new.vercel.app/lesson/category/TeaStall")
 
   // },
   {
