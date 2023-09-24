@@ -20,7 +20,7 @@
 //    useEffect(()=>{
 
 <<<<<<< HEAD
-//     fetch("https://vocab-master-server-new.vercel.app/words")
+//     fetch("https://vocab-master-server.onrender.com/words")
 =======
 
 //     fetch("https://vocab-master-server.onrender.com/words")

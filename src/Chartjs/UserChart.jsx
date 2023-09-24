@@ -58,27 +58,22 @@ export default function UserChart() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://vocab-master-server-new.vercel.app/users")
-      .then((data) => {
-        // console.log(data.data);
-        setUsers(data.data);
-      });
+    axios.get("https://vocab-master-server.onrender.com/users").then((data) => {
+      // console.log(data.data);
+      setUsers(data.data);
+    });
   }, [users]);
 
+  const userCountByDate = users.reduce((acc, user) => {
+    const date = user.date;
+    acc[date] = (acc[date] || 0) + 1;
+    return acc;
+  }, {});
 
-    const userCountByDate = users.reduce((acc, user) => {
-      const date = user.date;
-      acc[date] = (acc[date] || 0) + 1;
-      return acc;
-    }, {});
- 
-    const chartData = Object.keys(userCountByDate).map(date => ({
-      date,
-      count: userCountByDate[date],
-    }));
-
-
+  const chartData = Object.keys(userCountByDate).map((date) => ({
+    date,
+    count: userCountByDate[date],
+  }));
 
   return (
     <AreaChart

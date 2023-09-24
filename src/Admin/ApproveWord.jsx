@@ -93,7 +93,7 @@ const ApproveWord = () => {
           // Delete the request word
           axios
             .delete(
-              `https://vocab-master-server-new.vercel.app/user/deleteRequestWord/${reqWord[0]._id}`
+              `https://vocab-master-server.onrender.com/user/deleteRequestWord/${reqWord[0]._id}`
             )
             .then((data) => {
               console.log(data);

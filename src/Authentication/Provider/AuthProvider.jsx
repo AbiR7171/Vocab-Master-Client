@@ -12,10 +12,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 
+import app from "../../firebase/firebase.config";
+
 // import { app } from '../../firebase/firebase.config';
 // import { app } from '../component/firebase/firebase.config';
 // import { app } from '../firebase/firebase.config';
-import app from "../../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
 
@@ -35,11 +36,11 @@ const AuthProvider = ({ children }) => {
 
   //update user------------------------
   const updateUser = (name, photo) => {
-
     return updateProfile(auth.currentUser, {
-      displayName: name, photoURL: photo
-    })
-  }
+      displayName: name,
+      photoURL: photo,
+    });
+  };
 
   //for login--------------------------
   const signin = (email, password) => {
@@ -68,9 +69,9 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log('current user:', currentUser);
+      console.log("current user:", currentUser);
       setLoading(false);
     });
     return () => {
@@ -87,7 +88,7 @@ const AuthProvider = ({ children }) => {
     googleSignIn,
     appleSignIn,
     facebookSignIn,
-    updateUser
+    updateUser,
   };
 
   return (

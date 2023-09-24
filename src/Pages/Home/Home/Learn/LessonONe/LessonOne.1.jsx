@@ -1,21 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Icon } from "@iconify/react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import Swal from "sweetalert2";
-import LessOnSlider from "../LessOnSlider";
 import useUsers from "../../../../../hooks/useUsers";
 import axios from "axios";
 import useWords from "../../../../../hooks/useWords";
 import ProgressBar from "@ramonak/react-progress-bar";
-
 import { FaVolumeUp } from "react-icons/fa";
 
-const LessonOne = () => {
+export const LessonOne = () => {
   const navigate = useNavigate();
   const [lessons, setLesson] = useState([]);
   const [level, setLevel] = useState(0);
@@ -33,21 +27,16 @@ const LessonOne = () => {
   const [choiceStatus, setChoiceStatus] = useState(Array(4).fill("")); // Initialize an array to track the correctness of choices
 
   // const lessonsss = useLoaderData()
-
   // console.log(lessonsss);
-
   // console.log(level1);
   // console.log(selectedOption);
-
   const [words] = useWords();
 
   // console.log(words);
-
   const level1 = words?.filter((l) => l.level == 1.1);
 
   // console.log(level1);
   // console.log(lessons);
-
   useEffect(() => {
     fetch("https://vocab-master-server.onrender.com/quiz")
       .then((res) => res.json())
@@ -405,5 +394,3 @@ const LessonOne = () => {
     </div>
   );
 };
-
-export default LessonOne;

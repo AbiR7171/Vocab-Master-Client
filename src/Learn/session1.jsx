@@ -17,11 +17,7 @@ const Session1 = () => {
   console.log(lesson);
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch("https://vocab-master-server-new.vercel.app/words")
-=======
     fetch("https://vocab-master-server.onrender.com/words")
->>>>>>> 948d4b3b878f029788479790a2f0ff650146c292
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

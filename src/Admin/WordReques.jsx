@@ -28,7 +28,7 @@ const WordReques = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `https://vocab-master-server-new.vercel.app/user/deleteRequestWord/${word._id}`
+            `https://vocab-master-server.onrender.com/user/deleteRequestWord/${word._id}`
           )
           .then((data) => {
             console.log(data);
@@ -60,31 +60,26 @@ const WordReques = () => {
             <tbody>
               {wordRequest.map((word, index) => {
                 return (
-          
-                    <tr
-                      key={index}
-                      className="text-1xl font-Sec text-black     "
-                    >
-                      <th>{index + 1}</th>
-                      <td className="font-bold">{word.word}</td>
-                      <td>{word.userName || word.userEmail}</td>
-                      <td>
-                        <Link to={`/allRouts/approveWord/${word._id}`}>
-                          <button className="bg-red-700 p-4 rounded-lg text-white">
-                            Edit And Approve
-                          </button>
-                        </Link>
-                      </td>
-                      <td>
-                        <button
-                          onClick={() => handleDeleteWord(word)}
-                          className="bg-red-700 p-4 rounded-lg text-white"
-                        >
-                          DELETE
+                  <tr key={index} className="text-1xl font-Sec text-black     ">
+                    <th>{index + 1}</th>
+                    <td className="font-bold">{word.word}</td>
+                    <td>{word.userName || word.userEmail}</td>
+                    <td>
+                      <Link to={`/allRouts/approveWord/${word._id}`}>
+                        <button className="bg-red-700 p-4 rounded-lg text-white">
+                          Edit And Approve
                         </button>
-                      </td>
-                    </tr>
-           
+                      </Link>
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => handleDeleteWord(word)}
+                        className="bg-red-700 p-4 rounded-lg text-white"
+                      >
+                        DELETE
+                      </button>
+                    </td>
+                  </tr>
                 );
               })}
             </tbody>

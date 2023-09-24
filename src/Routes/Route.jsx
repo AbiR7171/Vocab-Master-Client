@@ -97,6 +97,7 @@ import ChatApp from "../Pages/ChatApp/ChatApp";
 import ManageFeedback from "../Admin/ManageFeedback";
 import ApproveWord from "../Admin/ApproveWord";
 import HomeFeedback from "../AboutUs/HomeFeedback";
+import QuizComponent from "../test/QuizComponent";
 
 const router = createBrowserRouter([
   {
@@ -213,8 +214,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/allRouts/editWord/:id",
-        element:<EditWord/>,
-        loader:({params})=> fetch(`https://vocab-master-server.onrender.com/word/${params.id}`)
+        element: <EditWord />,
+        loader: ({ params }) =>
+          fetch(`https://vocab-master-server.onrender.com/word/${params.id}`),
       },
       {
         path: "/allRouts/approveWord/:id",
@@ -246,11 +248,17 @@ const router = createBrowserRouter([
     path: "/allRouts/learn/season1.1",
     element: <LessonOne />,
     loader: () =>
-      fetch("https://vocab-master-server.onrender.com/lesson/category/TeaStall"),
+      fetch(
+        "https://vocab-master-server.onrender.com/lesson/category/TeaStall"
+      ),
   },
   {
     path: "/allRouts/learn/stepSeason1",
     element: <StepLessonOne />,
+  },
+  {
+    path: "/abcd",
+    element: <QuizComponent />,
   },
   // {
 

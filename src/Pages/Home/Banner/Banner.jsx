@@ -4,7 +4,7 @@ import banner from "../../../assets/LottieAnimation/Banner.json";
 import { LanguageContext } from "../../../context/Context";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
-import useAdmin from "../../../hooks/useAdmin";
+
 import useUsers from "../../../hooks/useUsers";
 
 const Banner = () => {
@@ -12,6 +12,8 @@ const Banner = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const [userInfo] = useUsers();
+
+  console.log(userInfo);
 
   const signout = () => {
     logOut((user) => {
@@ -27,7 +29,7 @@ const Banner = () => {
       userAvailableGetStartedButton: "Continue session",
       alreadyHaveAccountButton: "I Already have an account",
       userAvailableHaveAccountButton: `Not "${
-        user && userInfo[0]?.name
+        (user && user.displayName) || userInfo[0]?.name
       }"? logout.`,
     },
     bn: {
@@ -38,7 +40,7 @@ const Banner = () => {
       alreadyHaveAccountButton: "আমার ইতিমধ্যে একটি অ্যাকাউন্ট আছে",
 
       userAvailableHaveAccountButton: `"${
-        user && user.displayName
+        (user && user.displayName) || userInfo[0]?.name
       }" না? লগআউট.`,
     },
     hi: {
@@ -48,7 +50,7 @@ const Banner = () => {
       userAvailableGetStartedButton: "सत्र जारी रखें",
       alreadyHaveAccountButton: "मेरे पास पहले से ही खाता है",
       userAvailableHaveAccountButton: `"${
-        user && user.displayName
+        (user && user.displayName) || userInfo[0]?.name
       }" नहीं? लॉगआउट.`,
     },
   };

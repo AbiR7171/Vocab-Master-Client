@@ -33,7 +33,7 @@ const NavBar = () => {
         {user && (
           <h1>
             𝓦𝓮𝓵𝓬𝓸𝓶𝓮
-            <span className="font-bold"> "{user && userInfo[0]?.name}"</span>
+            <span className="font-bold"> "{user && user.displayName || userInfo[0]?.name}"</span>
           </h1>
         )}
         <div className="lg:flex items-center lg:space-x-4 justify-center">

@@ -63,18 +63,15 @@ const Register = () => {
                   console.log("upadte done");
 
                   axios
-                    .post(
-                      "https://vocab-master-server-27bb9zgej-abir7171.vercel.app/users",
-                      {
-                        name: name,
-                        email: email,
-                        image: image_url,
-                        season: 1,
-                        diamond: 0,
-                        role: "student",
-                        date: moment().format("D,MM,yyyy"),
-                      }
-                    )
+                    .post("https://vocab-master-server.onrender.com/users", {
+                      name: name,
+                      email: email,
+                      image: image_url,
+                      season: 1,
+                      diamond: 0,
+                      role: "student",
+                      date: moment().format("D,MM,yyyy"),
+                    })
                     .then((data) => {
                       console.log(data);
                       if (data.data.insertedId) {

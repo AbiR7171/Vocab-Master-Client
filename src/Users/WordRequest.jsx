@@ -91,7 +91,7 @@ const WordRequest = () => {
 
     console.log(processedData);
 
-    fetch("https://vocab-master-server-new.vercel.app/user/wordrequest", {
+    fetch("https://vocab-master-server.onrender.com/user/wordrequest", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
