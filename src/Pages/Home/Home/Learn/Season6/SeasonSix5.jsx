@@ -115,7 +115,7 @@ const SeasonSix5 = () => {
           <Icon icon="solar:round-arrow-left-bold" />
         </button>
 
-        <div className="flex justify-end  me-8 py-4 bg-black bg-opacity-80 p-2">
+        <div className="flex justify-end  pe-8 py-4 bg-black bg-opacity-80 p-2">
           <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
             <Icon icon="basil:diamond-solid" className="text-4xl text-green-900" /> <p className="text-4xl  text-red-900">{userInfo[0]?.diamond}</p>
           </div>
@@ -123,11 +123,11 @@ const SeasonSix5 = () => {
 
         </div>
 
-        <div className="bg-black bg-opacity-80 p-2">
+        <div className="bg-black bg-opacity-80">
           <p className="text-center  text-4xl font-primary text-red-400">
             Welcome to Your  Vocabulary Lesson
           </p>
-          <div className="mt-20">
+          <div className="h-[calc(100vh-120px)] pt-5 md:pt-20">
             <Swiper
               cssMode={true}
               navigation={true}

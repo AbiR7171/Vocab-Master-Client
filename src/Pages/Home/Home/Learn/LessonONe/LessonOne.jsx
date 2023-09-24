@@ -23,17 +23,8 @@ const LessonOne = () => {
 
   const [number, setNumber] = useState(0);
 
-  // const lessonsss = useLoaderData()
-
-  // console.log(lessonsss);
-
-
-
-  // console.log(level1);
-  // console.log(selectedOption);
-
   const [words] = useWords();
-
+  
   // console.log(words);
 
   const level1 = words?.filter((l) => l.level == 1.1);
@@ -71,8 +62,6 @@ const LessonOne = () => {
   };
 
   const handleComplete = () => {
-
-
 
     axios.patch(`https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
       season: 1.2
@@ -130,9 +119,6 @@ const LessonOne = () => {
             />{" "}
             <p className="text-4xl  text-red-900">{userInfo[0]?.diamond}</p>
           </div>
-
-
-
         </div>
 
         <div className="bg-black bg-opacity-80">
@@ -141,7 +127,7 @@ const LessonOne = () => {
             <Swiper
               cssMode={true}
               navigation={true}
-     
+
               pagination={true}
               mousewheel={false}
               keyboard={true}
