@@ -13,7 +13,7 @@
 //             {/* Unit 1 */}
 //             <div className="bg-[#63DBBF] w-[600px] rounded p-6 flex justify-between">
 //               <div>
-//                 <h2 className="text-white fw-bold text-2xl">ইউনিট 1</h2>
+//                 <h2 className="text-white fw-bold text-4xl">ইউনিট 1</h2>
     
 //                 <p className="text-white fw-bold">
 //                   নিজের পরিচয় দেয়া, অন্যদের পরিচয়
