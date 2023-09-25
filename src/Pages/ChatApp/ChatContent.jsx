@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import useUsers from '../../hooks/useUsers';
 import { Icon } from '@iconify/react';
 import axios from 'axios';
-import {  io } from "socket.io-client";
+
 
 const ChatContent = ({messages, fetchMessages, message, setMessage, sendMessage}) => {
 
     const [userInfo]=useUsers();
    //  const[message, setMessage]=useState('');
 
-    const[users, setUsers]=useState([])
+    const[users, setUsers]=useState([]);
+
+    console.log(users);
 
 
 

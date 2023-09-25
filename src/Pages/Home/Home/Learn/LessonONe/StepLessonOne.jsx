@@ -12,6 +12,7 @@ import SpeechRecognitionComponent from "../../../../../components/Features/Speec
 
 const StepLessonOne = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [trues, setTrues]=useState(false)
 
   const level = localStorage.getItem("level")
   console.log(level);
@@ -92,29 +93,10 @@ const StepLessonOne = () => {
         </div>
 
         {/* Other buttons */}
-        <Link to="/allRouts/learn/season1.2">
+        <Link  to={userInfo[0]?.season >= 1.2 ? "/allRouts/learn/season1.2" : ""}>
 
           <div
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
-
-          >
-
-            {
-              userInfo[0]?.season >= 1.1 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
-                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
-
-            }
-
-
-          </div>
-
-
-        </Link>
-
-        <Link to="/allRouts/learn/season1.3">
-
-          <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
 
           >
 
@@ -130,7 +112,26 @@ const StepLessonOne = () => {
 
         </Link>
 
-        <Link to="/allRouts/learn/season1.4">
+        <Link to={userInfo[0]?.season >= 1.3 ? "/allRouts/learn/season1.3" : ""}>
+
+          <div
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+
+          >
+
+            {
+              userInfo[0]?.season >= 1.3 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
+                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
+
+            }
+
+
+          </div>
+
+
+        </Link>
+
+        <Link to={userInfo[0]?.season >= 1.4 ? "/allRouts/learn/season1.4" : ""}>
           <div
 
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 "
@@ -138,7 +139,7 @@ const StepLessonOne = () => {
           >
 
             {
-              userInfo[0]?.season >= 1.3 ? <Lottie animationData={animation} className=' flex justify-center items-center w-32 ' loop={true} />
+              userInfo[0]?.season >= 1.4 ? <Lottie animationData={animation} className=' flex justify-center items-center w-32 ' loop={true} />
                 : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
 
             }
@@ -147,25 +148,9 @@ const StepLessonOne = () => {
         </Link>
 
 
-        <Link to="/allRouts/learn/season1.5">
+        <Link to={userInfo[0]?.season >= 1.5 ? "/allRouts/learn/season1.5" : ""}>
           <div
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
-
-          >
-
-            {
-              userInfo[0]?.season >= 1.4 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
-                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
-
-            }
-
-          </div>
-        </Link>
-
-
-        <Link to="/allRouts/learn/season1.6">
-          <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
@@ -179,9 +164,9 @@ const StepLessonOne = () => {
         </Link>
 
 
-        <Link to="/allRouts/learn/season1.7">
+        <Link to={userInfo[0]?.season >= 1.6 ? "/allRouts/learn/season1.6" : ""}>
           <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
@@ -195,9 +180,9 @@ const StepLessonOne = () => {
         </Link>
 
 
-        <Link to="/allRouts/learn/season1.8">
+        <Link to={userInfo[0]?.season >= 1.7 ? "/allRouts/learn/season1.7" : ""}>
           <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
 
           >
 
@@ -210,9 +195,10 @@ const StepLessonOne = () => {
           </div>
         </Link>
 
-        <Link to="/allRouts/learn/season1.9">
+
+        <Link to={userInfo[0]?.season >= 1.8 ? "/allRouts/learn/season1.8" : ""}>
           <div
-            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
@@ -225,15 +211,30 @@ const StepLessonOne = () => {
           </div>
         </Link>
 
+        <Link to={userInfo[0]?.season >= 1.9 ? "/allRouts/learn/season1.9" : ""}>
+          <div
+            className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8 ms-32"
 
-        <Link to="/allRouts/learn/season1.10">
+          >
+
+            {
+              userInfo[0]?.season >= 1.9 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
+                : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
+
+            }
+
+          </div>
+        </Link>
+
+
+        <Link to={userInfo[0]?.season >= 1.10 ? "/allRouts/learn/season1.10" : ""}>
           <div
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
 
           >
 
             {
-              userInfo[0]?.season >= 1.9 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
+              userInfo[0]?.season >= 1.10 ? <Lottie animationData={animation} className='flex justify-center items-center w-32 ' loop={true} />
                 : <Lottie animationData={animation2} className='flex justify-center items-center w-32 ' loop={true} />
 
             }

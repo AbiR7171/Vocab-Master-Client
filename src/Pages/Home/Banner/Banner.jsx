@@ -5,19 +5,19 @@ import { LanguageContext } from "../../../context/Context";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../../Authentication/Provider/AuthProvider";
 import useAdmin from "../../../hooks/useAdmin";
+import useUsers from "../../../hooks/useUsers";
 
 const Banner = () => {
   const { language } = useContext(LanguageContext);
   const { user, logOut } = useContext(AuthContext);
-  // console.log(language, user);
+
+  const [userInfo] = useUsers();
 
   const signout = () => {
     logOut((user) => {
       console.log(user);
     });
   };
-
-  const [isAdmin] = useAdmin();
 
   const textContent = {
     en: {
@@ -27,7 +27,7 @@ const Banner = () => {
       userAvailableGetStartedButton: "Continue session",
       alreadyHaveAccountButton: "I Already have an account",
       userAvailableHaveAccountButton: `Not "${
-        user && user.displayName
+        user && userInfo[0]?.name
       }"? logout.`,
     },
     bn: {
@@ -63,7 +63,10 @@ const Banner = () => {
   } = textContent[language];
 
   return (
-    <div className="container mx-auto lg:px-28 mt-20 lg:flex items-center justify-around gap-5 font-primary">
+    <div
+      data-testid="banner-container"
+      className="container mx-auto lg:px-28 mt-20 lg:flex items-center justify-around gap-5 font-primary"
+    >
       <div className="lg:w-auto w-[300px] flex items-center justify-center mx-auto">
         <Lottie animationData={banner} loop={true} />
       </div>

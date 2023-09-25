@@ -23,11 +23,10 @@ const LessOnSlider = ({ lesson, index }) => {
   const handleOptionChange = (event) => {
     event.preventDefault()
     setSelectedOption(event.target.value);
-    console.log('option clicked',event.target.value);
+    // console.log('option clicked', event.target.value);
     setDisable(true);
 
     if (event.target.value == `${lesson.quiz.correctAnswer}`) {
-
       // <Lottie animationData={succesfully} loop={true} />
 
       axios
@@ -41,7 +40,7 @@ const LessOnSlider = ({ lesson, index }) => {
           // console.log(data);
           if (data.data.matchedCount > 0) {
             refetch();
-            setRight(true)
+            setRight(true);
           }
         });
 
@@ -230,24 +229,14 @@ const LessOnSlider = ({ lesson, index }) => {
         </div>
 
 
-
-
-
-
-
-
-
-
-
       </div>
       {/* --------------end the quize */}
 
-
-
-      {
-        right &&
-
+      {right && (
         <div>
+          <div className="absolute left-0  w-96 h-96">
+            <Lottie animationData={succesfully} loop={false} />
+          </div>
 
           <div className="absolute left-0  w-96 h-96">
 
@@ -261,8 +250,8 @@ const LessOnSlider = ({ lesson, index }) => {
 
           </div>
         </div>
-
-      }
+        )
+      };
 
 
 

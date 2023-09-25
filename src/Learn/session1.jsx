@@ -101,9 +101,8 @@ const Session1 = () => {
               <button
                 onClick={handleLevel}
                 disabled={disable}
-                className={`w-1/3 mx-auto  mt-24 ms-96 p-5 rounded-lg  uppercase font-bold ${
-                  disable ? "bg-red-200 text-white " : "bg-red-700   text-white"
-                }`}
+                className={`w-1/3 mx-auto  mt-24 ms-96 p-5 rounded-lg  uppercase font-bold ${disable ? "bg-red-200 text-white " : "bg-red-700   text-white"
+                  }`}
               >
                 Completed
               </button>{" "}

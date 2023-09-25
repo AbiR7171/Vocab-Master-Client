@@ -108,9 +108,21 @@ const SeasonTwo3 = () => {
         </div>
 
         <div className="bg-black bg-opacity-80">
-          <p className="text-center  text-4xl font-primary text-red-400">
-            Welcome to Your Vocabulary Lesson
-          </p>
+          <div className="text-center text-lg md:text-4xl font-primary ms-5 text-white">
+            <Typewriter
+              options={{
+                strings: "Welcome to Your  Vocabulary Lesson",
+                autoStart: true,
+                loop: true,
+                cursor: "|",
+                typeSpeed: 50,
+                deleteSpeed: 10,
+              }}
+              onInit={(typewriter) => {
+                typewriter.pauseFor(1000).deleteAll().typeString("").start();
+              }}
+            />
+          </div>
           <div className="h-[calc(100vh-104px)] pt-5 md:pt-20">
             <Swiper
               cssMode={true}

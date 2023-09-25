@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { AuthContext } from '../Authentication/Provider/AuthProvider';
+import React, { useContext } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { AuthContext } from "../Authentication/Provider/AuthProvider";
 
-const useUsers = () => { 
-    const {user, loading}=useContext(AuthContext)
-   
+const useUsers = () => {
+  const { user, loading } = useContext(AuthContext);
 
     const {refetch, data:userInfo =[]}=useQuery({
         queryKey:["email", user?.email],
@@ -20,4 +19,5 @@ export default useUsers;
 
 
 
+// https://vocab-master-server.onrender.com/singleUser/users?email=nani@nana58.com
 // https://vocab-master-server.onrender.com/singleUser/users?email=nani@nana58.com

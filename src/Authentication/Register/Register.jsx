@@ -9,7 +9,7 @@ import moment from "moment/moment";
 import svg from "../../../src/assets/register/undraw_welcome_re_h3d9.svg";
 import { useState } from "react";
 
-const image_key = 'aa7196d954be91dd4579589ce42d0536'
+const image_key = "aa7196d954be91dd4579589ce42d0536";
 
 const Register = () => {
   // const { register, handleSubmit, watch, reset, formState: {errors },} = useForm();
@@ -20,9 +20,9 @@ const Register = () => {
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
 
-  const image_host_url = `https://api.imgbb.com/1/upload?key=${image_key}`
+  const image_host_url = `https://api.imgbb.com/1/upload?key=${image_key}`;
   // "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -30,9 +30,9 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.files[0] 
+    const photo = form.photo.files[0];
 
-    const data = { name, email, password, photo }
+    const data = { name, email, password, photo };
     console.log(data);
 
     if (password.length < 6) {
@@ -40,27 +40,27 @@ const Register = () => {
       return;
     }
 
-    const formData = new FormData()
-    formData.append('image', photo)
+    const formData = new FormData();
+    formData.append("image", photo);
 
     fetch(image_host_url, {
       method: "POST",
-      body: formData
+      body: formData,
     })
-      .then(res => res.json())
-      .then(imageData => {
+      .then((res) => res.json())
+      .then((imageData) => {
         if (imageData.success) {
           const image_url = imageData.data.display_url;
-          console.log('Image BB url', image_url);
+          console.log("Image BB url", image_url);
 
           createUser(email, password)
             .then((result) => {
               const userCreated = result.user;
-              console.log('user created', userCreated);
+              console.log("user created", userCreated);
 
               updateUser(name, image_url)
                 .then(() => {
-                  console.log('upadte done');
+                  console.log("upadte done");
 
                   axios
                     .post("https://vocab-master-server.onrender.com/users", {
@@ -85,32 +85,24 @@ const Register = () => {
                         navigate("/allRouts/learn");
                       }
                     })
-                    .catch(err => console.log(err))
-
+                    .catch((err) => console.log(err));
                 })
-                .catch(err => {
+                .catch((err) => {
                   console.log(err);
-                })
-
+                });
             })
             .catch((error) => {
               console.log(error);
               Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
+                icon: "error",
+                title: "Oops...",
                 text: error.message,
-              })
+              });
             });
-
-
-
         }
       })
-      .catch(err => console.log(err))
-
+      .catch((err) => console.log(err));
   };
-
-
 
   return (
     <>
