@@ -6,15 +6,9 @@ const Profile = () => {
     const[userInfo]=useUsers();
     console.log(userInfo);
     return (
-        <div className='bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full px-20'> 
+        <div className=' bg-Backs w-full h-full '> 
 
-               <div className='bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 mt-20 p-4 rounded
-                
-               
-               '>
-
-             
-
+               <div className='bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-80 w-full md:w-4/5 ml-auto mt-10 md:mt-20 p-4 rounded'>
                 <div className='flex justify-between items-end '>
                 <div>
 
