@@ -14,6 +14,7 @@ const LeaderBoard = () => {
       });
   }, [students]);
   // bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900
+  
   return (
     <div className=" bg-Backs w-full h-full px-20 ">
       <h2 className="text-6xl text-center mt-6 mb-10">LeaderBoard</h2>

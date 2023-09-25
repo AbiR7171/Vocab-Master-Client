@@ -19,12 +19,17 @@
 
 //    useEffect(()=>{
 
-<<<<<<< HEAD
-//     fetch("https://vocab-master-server-new.vercel.app/words")
-=======
+
 
 //     fetch("https://vocab-master-server.onrender.com/words")
->>>>>>> 948d4b3b878f029788479790a2f0ff650146c292
+
+
+//     fetch("https://vocab-master-server-new.vercel.app/words")
+
+
+//     fetch("https://vocab-master-server.onrender.com/words")
+// >>>>>>> 948d4b3b878f029788479790a2f0ff650146c292
+// >>>>>>> 67150f1d197cb1d04129f8eea4c1cc24cb98926d
 //     .then(res => res.json())
 //     .then(data =>{
 //         console.log(data);

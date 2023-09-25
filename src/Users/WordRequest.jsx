@@ -109,13 +109,15 @@ const WordRequest = () => {
     reset();
   };
 
+  // bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900
+
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full">
-      <form className="mb-36 rounded" onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="text-3xl sm:text-5xl block font-extrabold  text-center my-12 rounded ">
+    <div className=" bg-Backs w-full h-full">
+      <form className=" mb-12 md:mb-36 rounded w-full md:w-4/5 ml-auto" onSubmit={handleSubmit(onSubmit)}>
+        <h2 className="text-3xl sm:text-5xl block font-extrabold  text-center my-10 rounded ">
           Request to add word
         </h2>
-        <div className="grid gap-6  md:grid-cols-2 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 shadow-md py-4 px-3  mx-6 rounded">
+        <div className="grid gap-6  md:grid-cols-2 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-80 shadow-md py-4 px-3 rounded">
           {!wordExist ? (
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-900">

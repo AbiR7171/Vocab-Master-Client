@@ -5,7 +5,8 @@
 // import "swiper/css";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
-// import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+// import Typewriter from "typewriter-effect";
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 // import Swal from "sweetalert2";
 
 

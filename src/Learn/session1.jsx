@@ -17,11 +17,7 @@ const Session1 = () => {
   console.log(lesson);
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch("https://vocab-master-server-new.vercel.app/words")
-=======
     fetch("https://vocab-master-server.onrender.com/words")
->>>>>>> 948d4b3b878f029788479790a2f0ff650146c292
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -105,9 +101,8 @@ const Session1 = () => {
               <button
                 onClick={handleLevel}
                 disabled={disable}
-                className={`w-1/3 mx-auto  mt-24 ms-96 p-5 rounded-lg  uppercase font-bold ${
-                  disable ? "bg-red-200 text-white " : "bg-red-700   text-white"
-                }`}
+                className={`w-1/3 mx-auto  mt-24 ms-96 p-5 rounded-lg  uppercase font-bold ${disable ? "bg-red-200 text-white " : "bg-red-700   text-white"
+                  }`}
               >
                 Completed
               </button>{" "}

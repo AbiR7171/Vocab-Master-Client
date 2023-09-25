@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Typewriter from "typewriter-effect";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import Swal from "sweetalert2";
 import LessOnSlider from "../LessOnSlider";
@@ -22,13 +23,6 @@ const LessonOne = () => {
   console.log(userInfo);
 
   const [number, setNumber] = useState(0);
-
-  // const lessonsss = useLoaderData()
-
-  // console.log(lessonsss);
-
-  // console.log(level1);
-  // console.log(selectedOption);
 
   const [words] = useWords();
 
@@ -70,8 +64,6 @@ const LessonOne = () => {
 
   const handleComplete = () => {
 
-
-
     axios.patch(`https://vocab-master-server.onrender.com/singleUser/users/level?email=${userInfo[0]?.email}`, {
       season: 1.2
     })
@@ -97,10 +89,11 @@ const LessonOne = () => {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     width: "100vw",
+    height: "100vh"
   };
 
   return (
-    <div style={backGroundStyle} className=" h-[100vh] bg-black bg-opacity-30">
+    <div style={backGroundStyle} className=" min-h-[100vh] bg-black bg-opacity-30">
       <div className=" w-full h-screen ">
         <button
           onClick={handleBack}
@@ -111,9 +104,26 @@ const LessonOne = () => {
 
         <div className="flex justify-between pe-8 py-4 bg-black bg-opacity-80">
           <div></div>
-          <p className="text-center text-2xl md:text-4xl font-primary text-red-400">
-            Welcome to Your Vocabulary Lesson
-          </p>
+          {/* <p className="text-center text-lg ms-5 md:text-4xl font-primary text-white">
+            Welcome to Your  Vocabulary Lesson
+          </p> */}
+
+          <div className="text-center text-lg md:text-4xl font-primary ms-5 text-white">
+            <Typewriter
+              options={{
+                strings: "Welcome to Your  Vocabulary Lesson",
+                autoStart: true,
+                loop: true,
+                cursor: "|",
+                typeSpeed: 50,
+                deleteSpeed: 10,
+              }}
+              onInit={(typewriter) => {
+                typewriter.pauseFor(1000).deleteAll().typeString("").start();
+              }}
+            />
+          </div>
+
           <div className="flex items-center justify-center container bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900   w-32 h-12  rounded-3xl  bg-opacity-50">
             <Icon
               icon="basil:diamond-solid"

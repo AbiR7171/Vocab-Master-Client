@@ -56,15 +56,14 @@ const data = [
 
 export default function UserChart() {
   const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://vocab-master-server-new.vercel.app/users")
-      .then((data) => {
-        // console.log(data.data);
-        setUsers(data.data);
-      });
-  }, [users]);
+    
+    useEffect(()=>{
+         axios.get("https://vocab-master-server.onrender.com/users")
+         .then(data =>{
+              // console.log(data.data);
+              setUsers(data.data)
+         })
+    },[users]);
 
 
     const userCountByDate = users.reduce((acc, user) => {
