@@ -22,17 +22,17 @@ const LessOnSlider = ({ lesson, index }) => {
 
   const handleOptionChange = (event) => {
     event.preventDefault()
-    console.log('option clicked');
     setSelectedOption(event.target.value);
+    console.log('option clicked',event.target.value);
     setDisable(true);
 
-    if (selectedOption == `${lesson.quiz.correctAnswer}`) {
+    if (event.target.value == `${lesson.quiz.correctAnswer}`) {
 
       // <Lottie animationData={succesfully} loop={true} />
 
       axios
         .patch(
-          `https://vocab-master-server-new.vercel.app/singleUser/users?email=${user.email}`,
+          `https://vocab-master-server.onrender.com/singleUser/users?email=${user.email}`,
           {
             diamond: userInfo[0].diamond,
           }
@@ -46,7 +46,7 @@ const LessOnSlider = ({ lesson, index }) => {
         });
 
       Swal.fire({
-        position: "top-center",
+        position: "center",
         icon: "success",
         title: "Awesome Write Answer",
         showConfirmButton: false,
@@ -198,7 +198,7 @@ const LessOnSlider = ({ lesson, index }) => {
       {/* -----------------end the main content part------------- */}
 
       {/* -----------------------quize start-------------------- */}
-      <div className="w-full md:w-2/5">
+      <div className="w-full md:w-2/5 mt-5 ">
 
 
         <div className="relative bg-opacity-40 bg-blur backdrop-blur-lg p-4 rounded-lg shadow-glow transform hover:scale-105 transition-transform duration-300 animate-pulse border border-sky-500">
@@ -206,7 +206,7 @@ const LessOnSlider = ({ lesson, index }) => {
             <p className="text-center text-3xl text-orange-400 ">Quiz</p>
             <Icon icon="twemoji:party-popper" className="text-5xl " />
           </div>
-          <p className="text-center text-3xl text-white font-bold mb-4">
+          <p className="text-center text-3xl text-red-500 md:text-white font-bold mb-4">
             Question : {lesson.quiz.question}
           </p>
           <form className="mt-4 text-xl font-Sec">

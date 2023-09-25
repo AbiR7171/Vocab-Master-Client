@@ -22,7 +22,7 @@ const SeasonONeQuiz = () => {
 
     useEffect(()=>{
 
-        axios.get("https://vocab-master-server-new.vercel.app/seasonQuiz")
+        axios.get("https://vocab-master-server.onrender.com/seasonQuiz")
         .then(res => {
                   console.log(res.data);
                   setQuizs(res.data);
@@ -32,7 +32,7 @@ const SeasonONeQuiz = () => {
 
     const handleCompleted = () =>{ 
         
-              axios.put(`https://vocab-master-server-new.vercel.app/singleUser/firstSeasonMark/${userInfo[0].email}`, {
+              axios.put(`https://vocab-master-server.onrender.com/singleUser/firstSeasonMark/${userInfo[0].email}`, {
                   first : marks
               })
               .then(res => {

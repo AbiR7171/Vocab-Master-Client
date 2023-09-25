@@ -35,7 +35,7 @@ const LessonOne = () => {
 
   // useEffect(()=>{
 
-  //     fetch('https://vocab-master-server-new.vercel.app/quiz')
+  //     fetch('https://vocab-master-server.onrender.com/quiz')
   //     .then(res => res.json())
   //     .then(data =>{
   //       console.log(data);
@@ -64,7 +64,7 @@ const LessonOne = () => {
 
   const handleComplete = () => {
 
-    axios.patch(`https://vocab-master-server-new.vercel.app/singleUser/users/level?email=${userInfo[0]?.email}`, {
+    axios.patch(`https://vocab-master-server.onrender.com/singleUser/users/level?email=${userInfo[0]?.email}`, {
       season: 1.2
     })
       .then(res => {
@@ -96,10 +96,11 @@ const LessonOne = () => {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     width: "100vw",
+    height: "100vh"
   };
 
   return (
-    <div style={backGroundStyle} className=" h-[100vh] bg-black bg-opacity-30">
+    <div style={backGroundStyle} className=" min-h-[100vh] bg-black bg-opacity-30">
       <div className=" w-full h-screen ">
         <button
           onClick={handleBack}

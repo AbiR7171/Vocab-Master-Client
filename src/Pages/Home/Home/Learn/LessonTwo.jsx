@@ -83,7 +83,7 @@ const LessonTwo = () => {
 //   console.log(lessons);
 
 //   useEffect(() => {
-//     fetch("https://vocab-master-server-new.vercel.app/quiz")
+//     fetch("https://vocab-master-server.onrender.com/quiz")
 //       .then((res) => res.json())
 //       .then((data) => {
 //         console.log(data);

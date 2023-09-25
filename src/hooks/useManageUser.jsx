@@ -7,7 +7,7 @@ const useManageUser = () => {
     const {data:users =[], refetch}=useQuery({
          queryKey:["users"],
          queryFn: async()=> {
-             const res = await axios.get("https://vocab-master-server-new.vercel.app/users")
+             const res = await axios.get("https://vocab-master-server.onrender.com/users")
              return res.data;
          }
     })
