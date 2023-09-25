@@ -6,6 +6,7 @@ import { RouterProvider } from 'react-router-dom'
 import router from './Routes/Route.jsx'
 import Context from './context/Context'
 import AuthProvider from './Authentication/Provider/AuthProvider';
+
 import {
   QueryClient,
   QueryClientProvider,
@@ -25,3 +26,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Context>
   </React.StrictMode>,
 )
+

@@ -53,7 +53,7 @@ const StepSeasonFive = () => {
         {/* Unit 1 */}
         <div className="bg-black bg-opacity-30 w-full rounded p-6 flex justify-between">
           <div className='md:flex gap-5'>
-            <h2 className="text-white fw-bold text-2xl">Season 5</h2>
+            <h2 className="text-white fw-bold text-4xl">Season 5</h2>
             {/* ------------voce command component------------- */}
             <div className='flex gap-2 w-48 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
               <div>

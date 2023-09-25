@@ -4,6 +4,9 @@ import { FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../Provider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import moment from 'moment';
 
 const SocialLogin = () => {
     const { googleSignIn, appleSignIn, facebookSignIn } = useContext(AuthContext)
@@ -11,31 +14,55 @@ const SocialLogin = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    
+
     const handelGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 const logByGoogle = result.user;
-                console.log(logByGoogle)
-                navigate(from, { replace: true })
+                console.log("from social login", logByGoogle.displayName, logByGoogle.email, logByGoogle.photoURL)
+                // navigate(from, { replace: true })
+                axios
+                    .post("https://vocab-master-server.onrender.com/users", {
+                        name: logByGoogle?.displayName,
+                        email: logByGoogle?.email,
+                        image: logByGoogle?.photoURL,
+                        season: 1,
+                        diamond: 0,
+                        role: "student",
+                        date: moment().format("D,MM,yyyy"),
+                    })
+                    .then((data) => {
+                        console.log('post to user colection from social',data);
+                        if (data.data.insertedId) {
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "Successfully Register",
+                                showConfirmButton: false,
+                                timer: 1500,
+                            });
+                            navigate("/allRouts/learn");
+                        }
+                    })
+                    .catch((err) => console.log(err));
 
             })
     }
 
-   
+
     const handelAppleSignIn = () => {
         appleSignIn()
         navigate(from, { replace: true })
-            
+
     }
 
-   
+
     const handelFacebookSignIn = () => {
         facebookSignIn()
-        .then(result => {
-            console.log(result.user)
-            navigate(from, { replace: true })
-        })
+            .then(result => {
+                console.log(result.user)
+                navigate(from, { replace: true })
+            })
     }
 
 

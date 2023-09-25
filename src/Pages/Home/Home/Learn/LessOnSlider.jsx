@@ -102,135 +102,137 @@ const LessOnSlider = ({ lesson, index }) => {
 
 
   return (
-    <div className="container px-2 md:px-20 md:flex justify-between items-center gap-20 font-Sec">
-      {/* <img src={lesson.categoryImage} alt="" /> */}
+    <>
+      <div className="container px-2 md:px-20 md:flex justify-between items-center gap-20 font-Sec">
 
-      {/*--------------- main content part start--------------- */}
-      <div className="w-full md:w-3/5 ">
-        {/* ------------voce command component------------- */}
-        <div className='flex gap-2 w-48 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
-          <div>
-            <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+        {/*--------------- main content part start--------------- */}
+        <div className="w-full md:w-3/5 ">
+          {/* ------------voce command component------------- */}
+          <div className='flex gap-2 w-48 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
+            <div>
+              <SpeechRecognitionComponent setIsSpeaking={setIsSpeaking} handleSpeak={handleSpeak}></SpeechRecognitionComponent>
+            </div>
+            <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
           </div>
-          <button onClick={handleSpeak}>{isSpeaking ? <FaVolumeUp size={32} title='Mute'></FaVolumeUp> : <FaVolumeMute title='Speak' size={32}></FaVolumeMute>}</button>
-        </div>
-        {/* ------------end voice comand part-------------- */}
-        <div className="flex justify-between items-center text-green-500 mb-5">
-          <p className="text-lg md:text-2xl font-bold me-2">Word No. {index + 1}</p>
-          <p className="text-lg md:text-2xl font-bold me-2">Level: {lesson.level}</p>
-          <p className="text-lg md:text-2xl font-bold ">
-            Defficulty level:
-            <span className="uppercase ms-2 text-xl ">
-              {lesson?.difficultyLevel}
-            </span>
-          </p>
-        </div>
+          {/* ------------end voice comand part-------------- */}
+          <div className="flex justify-between items-center text-green-500 mb-5">
+            <p className="text-lg md:text-2xl font-bold me-2">Word No. {index + 1}</p>
+            <p className="text-lg md:text-2xl font-bold me-2">Level: {lesson.level}</p>
+            <p className="text-lg md:text-2xl font-bold ">
+              Defficulty level:
+              <span className="uppercase ms-2 text-xl ">
+                {lesson?.difficultyLevel}
+              </span>
+            </p>
+          </div>
 
 
 
-        <div className="border border-sky-500 p-2 rounded shadow-glow mb-5">
-          <p className=" text-xl md:text-4xl font-bold text-white ">
-            Word: {lesson?.word}
-          </p>
+          <div className="border border-sky-500 p-2 rounded shadow-glow mb-5">
+            <p className=" text-xl md:text-4xl font-bold text-white ">
+              Word: {lesson?.word}
+            </p>
 
-          <div className="md:flex justify-between  items-center text-green-600  ">
-            <div className="flex items-center">
-              <p className="text-3xl font-semibold ">Meaning :</p>
+            <div className="md:flex justify-between  items-center text-green-600  ">
+              <div className="flex items-center">
+                <p className="text-3xl font-semibold ">Meaning :</p>
 
-              <ul className="flex items-center mt-2  font-bold ">
-                <li className="ms-2 font-bold">{lesson.meaning.originalBangla[0]},</li>
-                <li className="ms-2 font-bold">{lesson?.meaning?.originalBangla[1]}</li>
+                <ul className="flex items-center mt-2  font-bold ">
+                  <li className="ms-2 font-bold">{lesson.meaning.originalBangla[0]}</li>
+                  <li className="ms-2 font-bold">{lesson?.meaning?.originalBangla[1]}</li>
+                </ul>
+              </div>
+
+              <div className="flex items-center font-serif text-gray-300">
+                <p className="text-lg md:text-xl font-semibold ">Part Of Speech :</p>
+
+                <p className=" text-xl md:text-xl ms-2">{lesson.partsOfSpeech}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center mb-3">
+            <div className="">
+              <p className="text-lg md:text-2xl font-semibold text-white">Antonyms :</p>
+
+              <ul className=" text-lg md:text-xl ">
+                <li className="ms-2"> 1.{lesson?.antonyms[0]}</li>
+                <li className="ms-2">2.{lesson?.antonyms[1]}</li>
               </ul>
             </div>
 
-            <div className="flex items-center font-serif text-gray-300">
-              <p className="text-lg md:text-xl font-semibold ">Part Of Speech :</p>
+            <div className=" w-[150px] flex items-center justify-center mx-auto">
+              <Lottie animationData={vocabAnime} loop={true} />
+            </div>
 
-              <p className=" text-xl md:text-xl ms-2">{lesson.partsOfSpeech}</p>
+            <div className=" text-white">
+              <p className="font-semibold text-lg md:text-2xl ">Synonyms :</p>
+
+              <ul className=" text-lg md:text-xl ">
+                <li className="ms-2"> 1.{lesson?.synonyms[0]}</li>
+                <li className="ms-2">2.{lesson?.synonyms[1]}</li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div className="flex justify-between items-center mb-3">
-          <div className=" text-white">
-            <p className="text-lg md:text-2xl font-semibold ">Antonyms :</p>
+          <div className="border border-sky-500 p-2 rounded shadow-glow">
+            <p className="text-lg md:text-2xl  text-green-500 font-serif">
+              Definition: {lesson.definition}
+            </p>
 
-            <ul className="font-semibold text-lg md:text-2xl ">
-              <li className="ms-2"> 1.{lesson?.antonyms[0]}</li>
-              <li className="ms-2">2.{lesson?.antonyms[1]}</li>
-            </ul>
+            <div className="text-white my-2 ">
+              <p className="text-2xl font-semibold ">Examples</p>
+
+              <ul className=" font-semibold font-serif ">
+                <li  className="ms-2">1. {lesson.examples[0]}</li>
+                <li className="ms-2">2. {lesson.examples[1]}</li>
+                <li className="ms-2">3. {lesson.examples[2]}</li>
+              </ul>
+            </div>
+
           </div>
 
-          <div className=" w-[150px] flex items-center justify-center mx-auto">
-            <Lottie animationData={vocabAnime} loop={true} />
-          </div>
-
-          <div className=" text-white">
-            <p className="font-semibold text-lg md:text-2xl ">Synonyms :</p>
-
-            <ul className=" font-semibold text-lg md:text-2xl ">
-              <li className="ms-2"> 1.{lesson?.synonyms[0]}</li>
-              <li className="ms-2">2.{lesson?.synonyms[1]}</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border border-sky-500 p-2 rounded shadow-glow">
-          <p className="text-lg md:text-2xl  text-green-500 font-serif">
-            Definition: {lesson.definition}
-          </p>
-
-          <div className="text-white my-2 ">
-            <p className="text-2xl font-semibold ">Examples</p>
-
-            <ul className=" font-semibold  ">
-              <li className="ms-2">1.{lesson.examples[0]}</li>
-              <li className="ms-2">2.{lesson.examples[1]}</li>
-              <li className="ms-2">3.{lesson.examples[2]}</li>
-            </ul>
-          </div>
 
         </div>
+        {/* -----------------end the main content part------------- */}
 
+        {/* -----------------------quize start-------------------- */}
+        <div className="w-full md:w-2/5 mt-5 ">
+
+
+          <div className="relative bg-opacity-40 bg-blur backdrop-blur-lg p-4 rounded-lg shadow-glow transform hover:scale-105 transition-transform duration-300 animate-pulse border border-sky-500">
+            <div className="flex items-center justify-center gap-2 animate-bounce">
+              <p className="text-center text-3xl text-orange-400 ">Quiz</p>
+              <Icon icon="twemoji:party-popper" className="text-5xl " />
+            </div>
+            <p className="text-center text-3xl text-red-500 md:text-white font-bold mb-4">
+              Question : {lesson.quiz.question}
+            </p>
+            <form className="mt-4 text-xl font-Sec">
+              {lesson?.quiz?.options.map((item, i) => (
+                <label
+                  key={i}
+                  className="block relative mb-4 text-green-500 bg-transparent p-4 rounded-lg shadow-lg hover:bg-yellow-100 transition-colors duration-300 border "
+                >
+                  <input
+                    type="radio"
+                    name="option"
+                    value={item}
+                    onChange={handleOptionChange}
+                    disabled={disable}
+                    className="mr-2 font-bold cursor-pointer"
+                  />
+                  {item}
+                </label>
+              ))}
+            </form>
+          </div>
+
+
+        </div>
+        {/* --------------end the quize */}
 
       </div>
-      {/* -----------------end the main content part------------- */}
-
-      {/* -----------------------quize start-------------------- */}
-      <div className="w-full md:w-2/5 mt-5 ">
-
-
-        <div className="relative bg-opacity-40 bg-blur backdrop-blur-lg p-4 rounded-lg shadow-glow transform hover:scale-105 transition-transform duration-300 animate-pulse border border-sky-500">
-          <div className="flex items-center justify-center gap-2 animate-bounce ">
-            <p className="text-center text-3xl text-orange-400 ">Quiz</p>
-            <Icon icon="twemoji:party-popper" className="text-5xl " />
-          </div>
-          <p className="text-center text-3xl text-red-500 md:text-white font-bold mb-4">
-            Question : {lesson.quiz.question}
-          </p>
-          <form className="mt-4 text-xl font-Sec">
-            {lesson?.quiz?.options.map((item, i) => (
-              <label
-                key={i}
-                className="block relative mb-4 text-green-500 bg-transparent p-4 rounded-lg shadow-lg hover:bg-yellow-100 transition-colors duration-300 border "
-              >
-                <input
-                  type="radio"
-                  name="option"
-                  value={item}
-                  onChange={handleOptionChange}
-                  disabled={disable}
-                  className="mr-2 font-bold cursor-pointer"
-                />
-                {item}
-              </label>
-            ))}
-          </form>
-        </div>
-
-
-      </div>
-      {/* --------------end the quize */}
 
       {right && (
         <div>
@@ -250,13 +252,8 @@ const LessOnSlider = ({ lesson, index }) => {
 
           </div>
         </div>
-        )
-      };
-
-
-
-
-    </div>
+      )};
+    </>
   );
 };
 

@@ -12,7 +12,7 @@ import SpeechRecognitionComponent from "../../../../../components/Features/Speec
 
 const StepLessonOne = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [trues, setTrues]=useState(false)
+  const [trues, setTrues] = useState(false)
 
   const level = localStorage.getItem("level")
   console.log(level);
@@ -53,7 +53,7 @@ const StepLessonOne = () => {
         {/* Unit 1 */}
         <div className="bg-black bg-opacity-30 w-full rounded px-6 py-2 flex justify-between">
           <div className='md:flex gap-5'>
-            <h2 className="text-white fw-bold text-2xl">Season 1</h2>
+            <h2 className="text-white fw-bold text-4xl">Season 1</h2>
             {/* ------------voce command component------------- */}
             <div className='flex gap-2 w-48 justify-between items-center border-2 border-blue-600 rounded-lg px-2'>
               <div>
@@ -93,7 +93,7 @@ const StepLessonOne = () => {
         </div>
 
         {/* Other buttons */}
-        <Link  to={userInfo[0]?.season >= 1.2 ? "/allRouts/learn/season1.2" : ""}>
+        <Link to={userInfo[0]?.season >= 1.2 ? "/allRouts/learn/season1.2" : ""}>
 
           <div
             className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900  w-32 h-32  rounded-full flex border-4 border-[#450e0e] border-b-8"
