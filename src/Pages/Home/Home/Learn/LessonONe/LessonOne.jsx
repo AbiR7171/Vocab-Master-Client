@@ -102,7 +102,7 @@ const LessonOne = () => {
           <Icon icon="solar:round-arrow-left-bold" />
         </button>
 
-        <div className="flex justify-between pe-8 py-4 bg-black bg-opacity-80">
+        <div className="flex justify-between pe-8 py-2 bg-black bg-opacity-80">
           <div></div>
           {/* <p className="text-center text-lg ms-5 md:text-4xl font-primary text-white">
             Welcome to Your  Vocabulary Lesson
@@ -134,7 +134,7 @@ const LessonOne = () => {
         </div>
 
         <div className="bg-black bg-opacity-80">
-          <div className="h-[calc(100vh-80px)] pt-5 md:pt-20">
+          <div className="h-[calc(100vh-68px)] pt-5 md:pt-20">
             <Swiper
               cssMode={true}
               navigation={true}
