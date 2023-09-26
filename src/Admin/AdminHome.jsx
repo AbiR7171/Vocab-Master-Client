@@ -62,8 +62,8 @@ const AdminHome = () => {
   console.log(newArray);
 
   return (
-    <div className="w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
-      <div className="h-full w-full container mx-auto  px-2 mt-2 ">
+    <div className="bg-Backs w-full h-full">
+      <div className="w-full md:w-4/5 ml-auto rounded">
         <Tabs>
           <TabList className="bg-black p-4 rounded-lg flex space-x-5">
             <Tab className="text-white px-3">Users</Tab>

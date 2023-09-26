@@ -107,8 +107,8 @@ const ApproveWord = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full">
-      <form className="mb-36 rounded" onSubmit={handleSubmit(onSubmit)}>
+    <div className="bg-Backs w-full h-full">
+      <form className="mb-36 w-full md:w-4/5 ml-auto rounded" onSubmit={handleSubmit(onSubmit)}>
         <h2 className="text-3xl sm:text-5xl block font-extrabold  text-center my-12 rounded ">
           Review The Requested Word
         </h2>

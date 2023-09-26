@@ -29,11 +29,11 @@ const ChatApp = () => {
     console.log(conversations);
     console.log(messages);
 
-    console.log(userInfo);
+    console.log(userInfo[0]?._id);
 
     const themes = useTheme();
    //  console.log(themes);
-
+ 
     const[theme, setTheme]=useState(localStorage.getItem("themes") ? localStorage.getItem("themes"): "dark");
 
 
@@ -55,7 +55,7 @@ const ChatApp = () => {
             console.log(data);
             setMessages( prev =>({
                 ...prev,
-                messages: [...prev.message, { user: data.user, message: data.message }]
+                messages: [...prev.messages, { user: data.user, message: data.message }]
             }))
            })
     },[socket])
@@ -110,7 +110,7 @@ const ChatApp = () => {
     // setMessages({messages: res.data, receiver:user, conversationId})
 
 
-    const sendMessage =  async() => {
+    const sendMessage = () => {
 
       socket?.emit("sendMessage", {
 

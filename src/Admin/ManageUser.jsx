@@ -57,11 +57,11 @@ const ManageUser = () => {
   };
 
   return (
-    <div className="w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
+    <div className="bg-Backs w-full h-full">
       <p className="text-center text-red-600 font-Sec text-4xl underline mt-4">
         Manage Users
       </p>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto w-full md:w-4/5 ml-auto rounded">
         <table className="table table-zebra container mx-auto px-20 font-Sec mt-10">
           {/* head */}
           <thead>

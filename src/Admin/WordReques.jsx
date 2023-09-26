@@ -42,11 +42,11 @@ const WordReques = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full">
+    <div className="bg-Backs w-full h-full">
       <h2 className="text-3xl sm:text-5xl block font-extrabold  text-center my-12 rounded ">
         Request to add word
       </h2>
-      <div className="container  mx-auto  rounded-lg border border-black bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 shadow-md  mt-20">
+      <div className=" opacity-80  rounded-lg border border-black bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 shadow-md  w-full md:w-4/5 ml-auto  ">
         <div className="overflow-x-auto px-20 p-4">
           <table className="table table-zebra">
             {/* head */}
