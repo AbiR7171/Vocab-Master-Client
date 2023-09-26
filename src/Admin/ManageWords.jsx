@@ -61,11 +61,12 @@ const ManageWords = () => {
 
   console.log(words);
   return (
-    <div className="w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 px-20 ">
+    <div className="bg-Backs w-full h-full ">
       <p className="text-center text-4xl font-Sec underline mt-4 text-red-600 mb-20">
         Manage Words
       </p>
 
+      <div className="w-full md:w-4/5 ml-auto rounded ">
       <div className="w-full flex justify-end px-20 text-black">
         <input
           ref={searhRef}
@@ -122,6 +123,7 @@ const ManageWords = () => {
             </tbody>
           </table>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -15,6 +15,8 @@ const LeftSideRoutes = () => {
     const [isSpeaking, setIsSpeaking] = useState(false);
     const [isAdmin] = useAdmin()
 
+    // const isAdmin = true;
+
     // const isAdmin = false
     console.log(isAdmin);
 

@@ -35,12 +35,12 @@ const ManageFeedback = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full h-full p-2">
+    <div className="bg-Backs w-full h-full">
       <p className="text-center mt-10 uppercase underline text-4xl text-red-600">
         Manage Feedback
       </p>
 
-      <div className="grid grid-cols-1 gap-5  px-20 mt-10 ">
+      <div className="grid grid-cols-1 gap-5  px-20 mt-10 w-full md:w-4/5 ml-auto rounded ">
         {feedbacks.map((feedback) => {
           return (
             <div className="bg-gradient-to-r from-red-200 to-red-600 p-2 rounded ">
